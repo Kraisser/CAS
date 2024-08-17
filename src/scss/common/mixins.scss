@@ -1,0 +1,24 @@
+@import './variables.scss';
+
+@mixin font($size, $line-height: normal, $color: #fff, $font-weight: 400) {
+	font-size: $size;
+	line-height: $line-height;
+	font-weight: $font-weight;
+	color: $color;
+}
+
+@mixin grid($grid-template, $grids, $gaps: 0) {
+	display: grid;
+	#{$grid-template}: #{$grids};
+	grid-gap: $gaps;
+}
+
+@mixin gPos($align-items, $justify-content: stretch) {
+	align-items: $align-items;
+	justify-content: $justify-content;
+}
+
+@mixin size($width: auto, $height: auto) {
+	width: $width;
+	height: $height;
+}

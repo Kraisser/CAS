@@ -1,0 +1,28 @@
+@import './common/variables.scss';
+@import './common/mixins.scss';
+
+footer {
+	position: relative;
+}
+.desc-footer {
+	position: fixed;
+	bottom: 48px;
+	right: 48px;
+	@include grid(grid-template-columns, repeat(2, min-content));
+	z-index: 10;
+}
+.desc-messenger-wrapper {
+	@include grid(grid-template-columns, repeat(3, min-content), 50px);
+	@include gPos(center);
+	background-color: #fff;
+
+	padding: 0 41px 0 37px;
+
+	& .desc-messenger-item:first-child {
+	}
+}
+.footer-corner {
+	width: 54px;
+	height: 54px;
+	background: linear-gradient(to top left, #fff 50%, transparent 50%);
+}

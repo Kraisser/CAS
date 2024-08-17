@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Zen+Dots&display=swap');
+
+@import './variables.scss';
+@import './mixins.scss';
+
+* {
+	box-sizing: border-box;
+}
+
+main {
+	position: relative;
+	height: 100vh;
+	padding: 45px 48px 48px;
+	font-family: $font-family;
+	z-index: 5;
+}
+body {
+	position: relative;
+}
+
+.background-video {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
+	// @include size(100%, 100%);
+}
