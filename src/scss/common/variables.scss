@@ -3,7 +3,12 @@ $font-family: 'Zen Dots', sans-serif;
 $second-family: 'Inter', sans-serif;
 $main-text-color: #fff;
 $main-second-color: #787878;
+$def-text-color: #101114;
 $accent-text-color: #fc3f3f;
+$accent-hover-color: rgba(252, 63, 63, 0.8);
 
 // Colors
-$bg-color: #000;
+$bg-color: #fff;
+
+// Animation
+$gentle: cubic-bezier(0.47, 0, 0.23, 1.38);

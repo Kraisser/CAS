@@ -26,6 +26,6 @@
 .logo-description-wrapper {
 	max-width: 616px;
 	span {
-		@include font(42px, 90%, #fc3f3f);
+		@include font(42px, 90%, $accent-text-color);
 	}
 }

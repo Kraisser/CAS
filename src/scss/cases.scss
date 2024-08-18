@@ -1,0 +1,78 @@
+@import './common/variables.scss';
+@import './common/mixins.scss';
+
+.cases-section {
+	height: 100vh;
+	font-family: $font-family;
+	padding: 0 0 0 136px;
+	@include grid(grid-template-columns, max-content 8fr, 48px);
+}
+.cases-text-column {
+	padding-left: 19px;
+	padding-top: 113px;
+}
+.cases-header {
+	// padding-left: 19px;
+	margin-bottom: 125px;
+
+	h2 {
+		@include font(42px, 90%, $accent-text-color, 400);
+		letter-spacing: 0.01em;
+		margin: 0 0 15px;
+	}
+
+	span {
+		@include font(24px, 110%, $def-text-color, 400);
+		letter-spacing: 0.01em;
+	}
+}
+.cases-list {
+	@include grid(grid-template, repeat(4, auto) / min-content, 45px);
+	@include gPos(center, left);
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.cases-item {
+	@include font(30px, 90%, $main-second-color, 400);
+	cursor: pointer;
+	transform-origin: left;
+
+	span {
+		display: block;
+		transition: all 0.3s ease;
+	}
+
+	&:hover span {
+		color: $accent-hover-color;
+		transition: color 0.8s $gentle;
+	}
+	&.active span {
+		color: $accent-text-color;
+		font-size: 42px;
+	}
+}
+
+.achievments-wrapper {
+	padding-top: 39px;
+	border-top: 2px solid $def-text-color;
+}
+.achievments-list {
+	@include grid(grid-template, repeat(3, auto) / auto, 30px);
+	@include gPos(center, left);
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+
+	.achievments-item {
+		h3 {
+			@include font(36px, 90%, $def-text-color, 400);
+			letter-spacing: 0.01em;
+			margin: 0 0 9px;
+		}
+		span {
+			@include font(18px, 110%, $main-second-color, 400);
+			letter-spacing: 0.01em;
+		}
+	}
+}

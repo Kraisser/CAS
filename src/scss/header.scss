@@ -16,7 +16,7 @@ header {
 .desc-menu {
 	@include grid(grid-template-columns, min-content min-content, 78px);
 	@include gPos(center);
-	background-color: #fff;
+	background-color: $bg-color;
 }
 .menu-list {
 	@include grid(grid-template-columns, repeat(5, min-content), 57px);
@@ -29,7 +29,7 @@ header {
 .menu-list-item {
 	&:hover {
 		color: $accent-text-color;
-		transition: color 0.8s cubic-bezier(0.47, 0, 0.23, 1.38);
+		transition: color 0.8s $gentle;
 	}
 	&:last-child {
 		padding-right: 37px;
@@ -38,5 +38,5 @@ header {
 .menu-corner {
 	width: 57px;
 	height: 57px;
-	background: linear-gradient(135deg, #fff 50%, transparent 50%);
+	background: linear-gradient(135deg, $bg-color 50%, transparent 50%);
 }
