@@ -70,12 +70,13 @@
 					</div>
 					<nav class="desc-menu-wrapper">
 						<ul class="menu-list">
-							<li class="menu-list-item">home</li>
-							<li class="menu-list-item">cases</li>
-							<li class="menu-list-item">testimonials</li>
-							<li class="menu-list-item">prices</li>
-							<li class="menu-list-item">contacts</li>
+							<li class="menu-list-item"><a href="#home" class="active">home</a></li>
+							<li class="menu-list-item"><a href="#cases">cases</a></li>
+							<li class="menu-list-item"><a href="#testimonials">testimonials</a></li>
+							<li class="menu-list-item"><a href="#prices">prices</a></li>
+							<li class="menu-list-item"><a href="#contacts">contacts</a></li>
 						</ul>
+						<div class="desc-menu-dot" id="desc-menu-dot"></div>
 					</nav>
 				</div>
 				<div class="menu-corner"></div>
@@ -92,7 +93,7 @@
 				muted
 			></video> -->
 			<div class="content">
-				<section class="main-logo-section">
+				<section class="main-logo-section section-padding" id="home">
 					<div class="main-logo-wrapper">
 						<svg viewBox="0 0 645 74" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path
@@ -277,7 +278,7 @@
 						</div>
 					</div>
 				</section>
-				<section class="cases-section">
+				<section class="cases-section section-padding" id="cases">
 					<div class="cases-text-column">
 						<div class="cases-header">
 							<h2>Cases</h2>
@@ -309,7 +310,137 @@
 						</div>
 					</div>
 
-					<div class="cases-slider-column"></div>
+					<div class="cases-slider-column">
+						<div class="cases-slider">
+							<div class="swiper-wrapper cases-slide-wrapper">
+								<div class="swiper-slide">
+									<div class="cases-slide-item">
+										<img
+											class="slide-preview-image"
+											src="./assets/images/slider/2048-prev.jpg"
+											alt="2048"
+										/>
+										<div class="slide-gradient-overlay"></div>
+										<div class="slide-item-content">
+											<svg
+												width="178"
+												height="226"
+												viewBox="0 0 178 226"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="white"
+												class="slide-play-but"
+											>
+												<path
+													d="M174.454 106.175C179.182 109.208 179.182 116.792 174.454 119.825L10.6375 224.932C5.9097 227.966 1.52588e-05 224.174 1.52588e-05 218.107L0 7.89275C0 1.82594 5.9097 -1.96581 10.6375 1.0676L174.454 106.175Z"
+												/>
+											</svg>
+											<div class="slide-item-text">2048</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="cases-slide-item">
+										<img
+											class="slide-preview-image"
+											src="./assets/images/slider/klondike-prev.jpg"
+											alt="KLONDIKE"
+										/>
+										<div class="slide-gradient-overlay"></div>
+										<div class="slide-item-content">
+											<svg
+												width="178"
+												height="226"
+												viewBox="0 0 178 226"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="white"
+												class="slide-play-but"
+											>
+												<path
+													d="M174.454 106.175C179.182 109.208 179.182 116.792 174.454 119.825L10.6375 224.932C5.9097 227.966 1.52588e-05 224.174 1.52588e-05 218.107L0 7.89275C0 1.82594 5.9097 -1.96581 10.6375 1.0676L174.454 106.175Z"
+												/>
+											</svg>
+											<div class="slide-item-text">KLONDIKE</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="cases-slide-item">
+										<img
+											class="slide-preview-image"
+											src="./assets/images/slider/hotel-prev.jpg"
+											alt="GRAND HOTEL MANIA"
+										/>
+										<div class="slide-gradient-overlay"></div>
+										<div class="slide-item-content">
+											<svg
+												width="178"
+												height="226"
+												viewBox="0 0 178 226"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="white"
+												class="slide-play-but"
+											>
+												<path
+													d="M174.454 106.175C179.182 109.208 179.182 116.792 174.454 119.825L10.6375 224.932C5.9097 227.966 1.52588e-05 224.174 1.52588e-05 218.107L0 7.89275C0 1.82594 5.9097 -1.96581 10.6375 1.0676L174.454 106.175Z"
+												/>
+											</svg>
+											<div class="slide-item-text">GRAND HOTEL MANIA</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="cases-slide-item">
+										<img
+											class="slide-preview-image"
+											src="./assets/images/slider/domino-prev.jpg"
+											alt="DOMINO MASTER"
+										/>
+										<div class="slide-gradient-overlay"></div>
+										<div class="slide-item-content">
+											<svg
+												width="178"
+												height="226"
+												viewBox="0 0 178 226"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="white"
+												class="slide-play-but"
+											>
+												<path
+													d="M174.454 106.175C179.182 109.208 179.182 116.792 174.454 119.825L10.6375 224.932C5.9097 227.966 1.52588e-05 224.174 1.52588e-05 218.107L0 7.89275C0 1.82594 5.9097 -1.96581 10.6375 1.0676L174.454 106.175Z"
+												/>
+											</svg>
+											<div class="slide-item-text">DOMINO MASTER</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="cases-slide-item">
+										<img
+											class="slide-preview-image"
+											src="./assets/images/slider/charmbook-prev.jpg"
+											alt="CHARMBOOK"
+										/>
+										<div class="slide-gradient-overlay"></div>
+										<div class="slide-item-content">
+											<svg
+												width="178"
+												height="226"
+												viewBox="0 0 178 226"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="white"
+												class="slide-play-but"
+											>
+												<path
+													d="M174.454 106.175C179.182 109.208 179.182 116.792 174.454 119.825L10.6375 224.932C5.9097 227.966 1.52588e-05 224.174 1.52588e-05 218.107L0 7.89275C0 1.82594 5.9097 -1.96581 10.6375 1.0676L174.454 106.175Z"
+												/>
+											</svg>
+											<div class="slide-item-text">CHARMBOOK</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</section>
 			</div>
 		</main>
@@ -319,19 +450,53 @@
 				<div class="desc-messenger-wrapper">
 					<div class="desc-messenger-item">
 						<a href="viber://chat?number=%2B375298175236" target="_blank"
-							><img src="./assets/icons/viber.png" alt="viber"
+							><img src="./assets/icons/social/viber.png" alt="viber"
 						/></a>
 					</div>
 					<div class="desc-messenger-item">
 						<a href="https://t.me/anatoly_zol" target="_blank"
-							><img src="./assets/icons/telegram.png" alt="telegram"
+							><img src="./assets/icons/social/telegram.png" alt="telegram"
 						/></a>
 					</div>
 					<div class="desc-messenger-item">
 						<a href="https://wa.me/375298175236" target="_blank"
-							><img src="./assets/icons/whatsapp.png" alt="whatsapp"
+							><img src="./assets/icons/social/whatsapp.png" alt="whatsapp"
 						/></a>
 					</div>
+				</div>
+				<div class="desc-slider-controls hidden">
+					<svg
+						width="58"
+						height="20"
+						viewBox="0 0 58 20"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+						class="slide-arrow slide-arrow-prev"
+					>
+						<rect x="58" y="9" width="2" height="55" rx="1" transform="rotate(90 58 9)" />
+						<path
+							d="M1.53956 8.54587C0.703886 9.33511 0.703877 10.6647 1.53954 11.4539L9.92258 19.3713C10.2962 19.7242 10.8802 19.7242 11.2538 19.3713C11.6588 18.9888 11.6588 18.3444 11.2538 17.9619L4.36307 11.4539C3.52741 10.6647 3.52741 9.33511 4.36308 8.54586L11.2538 2.03794C11.6588 1.65541 11.6588 1.011 11.2538 0.628494C10.8802 0.275722 10.2962 0.275739 9.92269 0.628533L1.53956 8.54587Z"
+						/>
+					</svg>
+					<div class="slider-pages">
+						<div class="slider-pages-curr">1</div>
+						<div>of</div>
+						<div class="slider-pages-max">5</div>
+					</div>
+					<svg
+						width="58"
+						height="20"
+						viewBox="0 0 58 20"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+						class="slide-arrow slide-arrow-next"
+						fill="#101114"
+					>
+						<rect y="11" width="2" height="55" rx="0.999999" transform="rotate(-90 0 11)" />
+						<path
+							d="M56.4604 11.4541C57.2961 10.6649 57.2961 9.33533 56.4605 8.54608L48.0774 0.628654C47.7038 0.275804 47.1198 0.275814 46.7462 0.628679C46.3412 1.01122 46.3412 1.65561 46.7462 2.03814L53.6369 8.54609C54.4726 9.33534 54.4726 10.6649 53.6369 11.4541L46.7462 17.9621C46.3412 18.3446 46.3412 18.989 46.7462 19.3715C47.1198 19.7243 47.7038 19.7243 48.0773 19.3715L56.4604 11.4541Z"
+						/>
+					</svg>
 				</div>
 			</div>
 

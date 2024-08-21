@@ -9,10 +9,10 @@
 
 body {
 	position: relative;
+	font-family: $font-family;
 }
 main {
 	height: 100vh;
-	font-family: $font-family;
 }
 .overlay {
 	z-index: 100;
@@ -37,9 +37,12 @@ main {
 	position: relative;
 	max-width: 1920px;
 	height: 100%;
-	padding: 45px 48px 48px;
+	padding: 0 48px 0;
 }
-
+.section-padding {
+	padding-top: 45px;
+	padding-bottom: 48px;
+}
 .background-video {
 	position: absolute;
 	top: 45px;

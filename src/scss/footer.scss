@@ -8,21 +8,55 @@ footer {
 	position: fixed;
 	bottom: 48px;
 	right: 48px;
-	@include grid(grid-template-columns, repeat(2, min-content));
+	@include grid(grid-template-columns, min-content auto);
 	z-index: 10;
 }
 .desc-messenger-wrapper {
 	@include grid(grid-template-columns, repeat(3, min-content), 50px);
-	@include gPos(center);
+	@include gPos(center, space-between);
 	background-color: $bg-color;
+	width: 265px;
+	padding: 0 45px 0 30px;
 
-	padding: 0 41px 0 37px;
-
-	& .desc-messenger-item:first-child {
+	&.hidden {
+		display: none;
 	}
 }
 .footer-corner {
 	width: 54px;
 	height: 54px;
 	background: linear-gradient(to top left, $bg-color 50%, transparent 50%);
+}
+
+// slider controls
+.desc-slider-controls {
+	@include grid(grid-template-columns, auto 75px auto, 20px);
+	@include gPos(end, center);
+	background-color: $bg-color;
+	padding: 0 29px 10px 12px;
+	width: 265px;
+	opacity: 1;
+	transition: all 0.4s ease-out;
+
+	&.hidden {
+		display: none;
+		opacity: 0;
+	}
+	.slide-arrow {
+		cursor: pointer;
+		transition: fill 0.8s $gentle;
+		fill: $def-text-color;
+
+		&:hover {
+			fill: $accent-text-color;
+		}
+	}
+}
+.slider-pages {
+	@include grid(grid-template-columns, 1fr min-content 1fr, 9px);
+	justify-items: center;
+	@include font(18px, 132%, $def-text-color, 400);
+	.slider-pages-curr {
+		color: $accent-text-color;
+	}
 }
