@@ -54,3 +54,14 @@ main {
 	// @include size(100vw, 100vh);
 	object-fit: contain;
 }
+.section-header {
+	h2 {
+		@include font(42px, 90%, $accent-text-color, 400);
+		letter-spacing: 0.01em;
+	}
+
+	span {
+		@include font(24px, 110%, $def-text-color, 400);
+		letter-spacing: 0.01em;
+	}
+}

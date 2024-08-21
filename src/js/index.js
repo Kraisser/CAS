@@ -9,15 +9,17 @@ import 'swiper/scss/effect-fade';
 
 import '../scss/common/common.scss';
 
-import '../scss/welcome-logo.scss';
-import '../scss/cases.scss';
 import '../scss/header.scss';
 import '../scss/footer.scss';
+import '../scss/welcome-logo.scss';
+import '../scss/cases.scss';
+import '../scss/testimonials.scss';
 
 import smoothScroll from './modules/smooth-scroll';
 import activeLinksController from './modules/active-links-controller';
 import menuDotCtrl from './modules/menu-dot-anim';
 
+// Cases Slider
 new Swiper('.cases-slider', {
 	slidesPerView: 1,
 	effect: 'fade',
@@ -75,3 +77,13 @@ dotCallback();
 // Smoothscroll
 const smoothLinks = document.querySelectorAll('a[href^="#"]');
 smoothScroll(smoothLinks, [activeLinksControl, dotCallback]);
+
+//testimonials slider
+new Swiper('.tnails-slider-wrapper', {
+	slidesPerView: 2.5,
+	speed: 600,
+	spaceBetween: 32,
+	grabCursor: true,
+	initialSlide: 1,
+	// loop: true,
+});
