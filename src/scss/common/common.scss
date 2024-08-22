@@ -12,7 +12,7 @@ body {
 	font-family: $font-family;
 }
 main {
-	height: 100vh;
+	padding: 0 48px 0;
 }
 .overlay {
 	z-index: 100;
@@ -36,23 +36,23 @@ main {
 .content {
 	position: relative;
 	max-width: 1920px;
-	height: 100%;
-	padding: 0 48px 0;
+	background: url('../../assets/background/back.png') repeat center center;
 }
 .section-padding {
 	padding-top: 45px;
 	padding-bottom: 48px;
 }
-.background-video {
-	position: absolute;
+.video-wrapper {
+	position: fixed;
 	top: 45px;
-	left: 0px;
+	left: 48px;
 	bottom: 45px;
-	// right: 48px;
-	// bottom: 48px;
-	z-index: -1;
-	// @include size(100vw, 100vh);
-	object-fit: contain;
+	right: 48px;
+	z-index: -11;
+	.background-video {
+		object-fit: contain;
+		width: 100%;
+	}
 }
 .section-header {
 	h2 {

@@ -1,6 +1,5 @@
 export default function activeLinksController(navList = [], activeClass, callback) {
 	if (navList && activeClass) {
-		console.log(navList, activeClass);
 		return function (id) {
 			navList.forEach((linkList) => {
 				linkList.querySelectorAll(`a`).forEach((item) => item.classList.remove(activeClass));

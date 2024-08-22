@@ -6,7 +6,7 @@
 	font-family: $font-family;
 	padding: 45px 0 48px 136px;
 	@include grid(grid-template-columns, max-content 8fr, 48px);
-	background-color: pink;
+	// background-color: pink;
 }
 .cases-text-column {
 	padding-left: 19px;

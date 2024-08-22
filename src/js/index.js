@@ -14,6 +14,8 @@ import '../scss/footer.scss';
 import '../scss/welcome-logo.scss';
 import '../scss/cases.scss';
 import '../scss/testimonials.scss';
+import '../scss/prices.scss';
+import '../scss/contacts.scss';
 
 import smoothScroll from './modules/smooth-scroll';
 import activeLinksController from './modules/active-links-controller';

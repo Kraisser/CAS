@@ -1,0 +1,121 @@
+@import './common/variables.scss';
+@import './common/mixins.scss';
+
+.contact-section {
+	height: 100vh;
+}
+.contact-header {
+	padding-top: 75px;
+	// margin-bottom: 50px;
+
+	h2 {
+		margin: 0 0 15px;
+	}
+}
+
+.contact-wrapper {
+	max-width: 55%;
+	height: 100%;
+	@include grid(grid-template-rows, min-content 1fr min-content, 50px);
+	align-content: space-between;
+	background-color: $bg-color;
+	padding-left: 155px;
+	padding-right: 5vw;
+}
+.contact-form {
+	height: 100%;
+	display: grid;
+	grid-template-columns: [name-start message-start submit-start] 1fr [name-end email-start submit-end] 1fr [email-end message-end];
+	grid-template-rows:
+		[name-start email-start] 70px [name-end email-end message-start] 1fr
+		[message-end submit-start] auto [submit-end];
+	grid-gap: 25px 30px;
+	transition: filter 0.3s ease;
+
+	&.form-inactive {
+		filter: blur(3px);
+	}
+	.name-input-wrapper {
+		grid-area: name;
+	}
+	.email-input-wrapper {
+		grid-area: email;
+	}
+	.message-input-wrapper {
+		grid-area: message;
+	}
+	.submit-but-wrapper {
+		grid-area: submit;
+		justify-self: start;
+
+		button {
+			cursor: pointer;
+
+			span {
+				position: absolute;
+				z-index: 4;
+				@include font(28px, 90%, $main-text-color, 400);
+				letter-spacing: 0.01em;
+			}
+		}
+	}
+}
+
+.input-wrapper {
+	position: relative;
+
+	span {
+		@include font(20px, 90%, $def-text-color, 400);
+		position: absolute;
+		left: 27px;
+		top: 24px;
+		transition: all 1s $gentle;
+		cursor: text;
+	}
+}
+.contact-input {
+	position: relative;
+	border: solid 2px rgba(16, 17, 20, 0.4);
+	border-radius: 5px;
+	background-color: transparent;
+	transition: border-color 1s $gentle;
+	@include font(22px, 1.32em, $def-text-color, 400);
+	@include size(100%, 100%);
+	padding: 24px 27px 7px;
+	resize: none;
+
+	&.contact-input-wrong {
+		border: solid 1px #db6b6b;
+	}
+	&.contact-input-filled + span {
+		transform: translateY(-12px);
+		opacity: 0.4;
+		font-size: 13px;
+	}
+	&::placeholder {
+		color: transparent;
+		transition: color 1s $gentle;
+	}
+	&:focus-visible {
+		border-color: $def-text-color;
+		outline: none;
+
+		&::placeholder {
+			color: $def-text-color;
+		}
+		&.textarea::placeholder {
+			color: #6b6b6b;
+		}
+		& + span {
+			transform: translateY(-12px);
+			opacity: 0.57;
+			font-size: 14px;
+		}
+	}
+}
+.email-link-wrapper {
+	a {
+		@include font(16px, 90%, $def-text-color, 400);
+		letter-spacing: 0.01em;
+	}
+}

@@ -5,11 +5,12 @@
 	height: 100vh;
 	padding: 45px 0 125px;
 	background: url('../assets/background/back.png') repeat center center, $bg-second-color;
+	@include grid(grid-template-rows, min-content min-content min-content);
+	align-content: space-between;
 }
 .testimonials-header.section-header {
 	padding-left: 155px;
-	padding-top: 105px;
-	margin-bottom: 110px;
+	padding-top: 75px;
 
 	h2 {
 		margin: 0 0 15px;
@@ -83,4 +84,12 @@
 	@include font(17px, 1.2em, $main-text-color, 700);
 	font-family: $second-family;
 	opacity: 0.5;
+}
+
+// partners
+.tnails-partners-wrapper {
+	@include grid(grid-template-columns, repeat(auto-fit, minmax(130px, min-content)));
+	@include gPos(center, space-between);
+	width: 90%;
+	justify-self: center;
 }
