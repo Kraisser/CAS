@@ -3,7 +3,6 @@
 
 .main-logo-section {
 	height: 100vh;
-	// background: url('../assets/background/back.png') repeat rgba(16, 17, 20, 0.2);
 	@include grid(grid-template-columns, max-content);
 	@include gPos(end, end);
 }

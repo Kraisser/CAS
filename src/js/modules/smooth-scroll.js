@@ -1,4 +1,8 @@
-export default function smoothScroll(allAnchorLinks, callbacks) {
+export default function smoothScroll(currentId, allAnchorLinks, callbacks) {
+	if (currentId) {
+		navigate(currentId, callbacks);
+	}
+
 	if (allAnchorLinks) {
 		allAnchorLinks.forEach((item) => {
 			item.addEventListener('click', (e) => {
@@ -6,20 +10,26 @@ export default function smoothScroll(allAnchorLinks, callbacks) {
 
 				const id = item.getAttribute('href').slice(1);
 
-				const target = document.querySelector(`#${id}`);
-
-				console.log('callbacks: ', callbacks);
-				if (callbacks) {
-					callbacks.forEach((func) => func(id));
-				}
-
-				if (target) {
-					target.scrollIntoView({
-						behavior: 'smooth',
-						block: 'start',
-					});
-				}
+				navigate(id, callbacks);
 			});
 		});
+	}
+}
+
+function navigate(id, callbacks) {
+	console.log('id: ', id);
+	const target = document.querySelector(`#${id}`);
+
+	if (target) {
+		console.log('target: ', target);
+		console.log('scroll');
+		target.scrollIntoView({
+			behavior: 'smooth',
+			block: 'start',
+		});
+	}
+
+	if (callbacks) {
+		callbacks.forEach((func) => func(id));
 	}
 }

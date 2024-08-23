@@ -4,7 +4,6 @@
 .testimonials-section {
 	height: 100vh;
 	padding: 45px 0 125px;
-	background: url('../assets/background/back.png') repeat center center, $bg-second-color;
 	@include grid(grid-template-rows, min-content min-content min-content);
 	align-content: space-between;
 }

@@ -4,14 +4,14 @@
 .cases-section {
 	height: 100vh;
 	font-family: $font-family;
-	padding: 45px 0 48px 136px;
-	@include grid(grid-template-columns, max-content 8fr, 48px);
-	// background-color: pink;
+	@include grid(grid-template-columns, max-content 8fr);
+
+	.cases-text-column {
+		padding: 113px 48px 0 155px;
+		position: relative;
+	}
 }
-.cases-text-column {
-	padding-left: 19px;
-	padding-top: 113px;
-}
+
 .cases-header {
 	padding-bottom: 7vh;
 
@@ -72,8 +72,8 @@
 
 // slider
 .cases-slider-column {
-	overflow: hidden;
 	position: relative;
+	overflow: hidden;
 }
 .cases-slider {
 	height: 100%;
@@ -81,6 +81,8 @@
 .cases-slide-item {
 	position: relative;
 	height: 100%;
+	display: grid;
+	justify-content: center;
 
 	.slide-preview-image {
 		object-fit: contain;

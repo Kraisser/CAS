@@ -1,4 +1,4 @@
-export default function activeLinksController(navList = [], activeClass, callback) {
+export default function activeLinksController(navList = [], activeClass) {
 	if (navList && activeClass) {
 		return function (id) {
 			navList.forEach((linkList) => {
@@ -7,7 +7,6 @@ export default function activeLinksController(navList = [], activeClass, callbac
 
 				newActiveLinks.forEach((item) => item.classList.add(activeClass));
 			});
-			callback(id);
 		};
 	}
 }

@@ -1,6 +1,7 @@
 export default function menuDotCtrl(dot, wrapper) {
-	return () => {
-		const target = wrapper.querySelector(`.active`);
+	return (id) => {
+		const targetId = id === '' ? 'home' : id;
+		const target = wrapper.querySelector(`[href="#${targetId}"]`);
 		const wrapperX = wrapper.offsetLeft;
 		const targetX = target.offsetLeft;
 		const targetHalf = target.offsetWidth / 2;
