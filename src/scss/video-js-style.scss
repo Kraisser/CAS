@@ -5,50 +5,76 @@ $big-play-size: 3em;
 $big-but-font-size: 2em;
 $primary-foreground-color: #fff;
 
-.slide-video-wrapper {
-	width: 100%;
-	height: 100%;
+.vjs-video-wrapper {
+	height: auto;
 	transform: scale(0.8);
 	transition: all 0.2s ease;
+	padding: 7px;
+	border: solid 1px #afb0ab;
+	box-shadow: inset 0 0 2px 4px #242223, 0 0 2px 2px #474641;
+	border-radius: 57px;
+
 	&.opened {
 		transform: scale(1);
 	}
-}
-.vjs-modal-custom {
-	font-size: $vjs-common-font-size;
-	color: $primary-foreground-color;
 
-	.vjs-control-bar,
-	.vjs-big-play-button,
-	.vjs-menu-button .vjs-menu-content {
-		background-color: rgba($bg-color, 0.4);
-	}
-	.vjs-control:focus-visible {
-		outline: none;
-		border: 1px solid rgba($primary-foreground-color, 0.8);
-	}
-}
-.vjs-modal-custom .vjs-big-play-button {
-	line-height: $big-play-size;
-	height: $big-play-size;
-	width: $big-play-size;
-	border: none;
-	border-radius: 50%;
-
-	.vjs-icon-placeholder {
-		font-size: 2em;
-	}
-}
-
-@media (max-width: 768px) {
-	$vjs-common-font-size: 12px;
 	.vjs-modal-custom {
 		font-size: $vjs-common-font-size;
+		color: $main-text-color;
+		border-radius: 50px;
+		overflow: hidden;
+
+		.vjs-control-bar,
+		.vjs-big-play-button,
+		.vjs-menu-button .vjs-menu-content {
+			background-color: rgba($bg-second-color, 0.4);
+		}
+		.vjs-control:focus-visible {
+			outline: none;
+			border: 1px solid rgba($primary-foreground-color, 0.8);
+		}
 	}
 }
-@media (max-width: 500px) {
-	$vjs-common-font-size: 10px;
+
+.vjs-tnails-video-wrapper {
+	width: 340px;
+
 	.vjs-modal-custom {
-		font-size: $vjs-common-font-size;
+		.vjs-control-bar {
+			padding: 0 5%;
+			display: grid;
+			grid-template-columns: 1fr auto;
+		}
+		.vjs-progress-control {
+			width: 100%;
+		}
 	}
 }
+.vjs-slider-video-wrapper {
+	width: 80%;
+}
+
+// .vjs-modal-custom .vjs-big-play-button {
+// 	line-height: $big-play-size;
+// 	height: $big-play-size;
+// 	width: $big-play-size;
+// 	border: none;
+// 	border-radius: 50%;
+
+// 	.vjs-icon-placeholder {
+// 		font-size: 2em;
+// 	}
+// }
+
+// @media (max-width: 768px) {
+// 	$vjs-common-font-size: 12px;
+// 	.vjs-modal-custom {
+// 		font-size: $vjs-common-font-size;
+// 	}
+// }
+// @media (max-width: 500px) {
+// 	$vjs-common-font-size: 10px;
+// 	.vjs-modal-custom {
+// 		font-size: $vjs-common-font-size;
+// 	}
+// }

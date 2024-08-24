@@ -66,7 +66,9 @@
 			<div class="desc-wrapper">
 				<div class="desc-menu">
 					<div class="header-logo-wrapper">
-						<img src="./assets/logo/header-logo.png" alt="CAS" />
+						<a href="#home">
+							<img src="./assets/logo/header-logo.png" alt="CAS" />
+						</a>
 					</div>
 					<nav class="desc-menu-wrapper">
 						<ul class="menu-list">
@@ -85,6 +87,48 @@
 			<div class="top-border overlay"></div>
 		</header>
 		<main>
+			<div class="left-border overlay"></div>
+			<div class="right-border overlay"></div>
+			<!-- <div class="loader-wrapper">
+				<img src="./assets/background/circle-loader.png" alt="CAS" />
+				<div class="loader-left"></div>
+				<div class="loader-right"></div>
+				<svg class="svg">
+					<clipPath id="clip-left" clipPathUnits="objectBoundingBox">
+						<path
+							d="M0,1 V0 H1 L0.952,0.241 C0.936,0.238,0.92,0.236,0.904,0.236 C0.762,0.236,0.646,0.354,0.646,0.499 C0.646,0.626,0.733,0.731,0.849,0.757 L0.801,1 H0"
+						></path>
+					</clipPath>
+				</svg>
+				<svg class="svg">
+					<clipPath id="clip-right" clipPathUnits="objectBoundingBox">
+						<path
+							d="M1,0 V1 H0 L0.048,0.758 C0.065,0.761,0.082,0.763,0.1,0.763 C0.242,0.763,0.357,0.645,0.357,0.499 C0.357,0.372,0.268,0.265,0.151,0.241 L0.199,0 H1"
+						></path>
+					</clipPath>
+				</svg>
+			</div> -->
+			<div class="video-modal-overflow">
+				<svg
+					width="24"
+					height="24"
+					viewBox="0 0 24 24"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+					class="modal-close-icon"
+				>
+					<path
+						d="M24 2.18182L21.8182 0L12 9.81827L2.1818 1.80848e-05L0 2.18183L9.81819 12.0001L0.000180847 21.8182L2.18198 24L12 14.1819L21.818 24L23.9998 21.8182L14.1818 12.0001L24 2.18182Z"
+						fill="#D9D9D9"
+					/>
+					<path
+						d="M24 2.18182L21.8182 0L12 9.81827L2.1818 1.80848e-05L0 2.18183L9.81819 12.0001L0.000180847 21.8182L2.18198 24L12 14.1819L21.818 24L23.9998 21.8182L14.1818 12.0001L24 2.18182Z"
+						fill="#FC3F3F"
+					/>
+				</svg>
+				<div class="video-modal-wrapper"></div>
+				<div class="tnail-video-data"></div>
+			</div>
 			<div class="video-wrapper">
 				<video
 					class="background-video"
@@ -288,10 +332,11 @@
 						</div>
 						<div class="cases-list-wrapper">
 							<ul class="cases-list">
-								<li class="cases-item"><span>2D</span></li>
-								<li class="cases-item"><span>3D</span></li>
-								<li class="cases-item"><span>UGC</span></li>
-								<li class="cases-item"><span>PLAYABLES</span></li>
+								<li class="cases-item active" data-slide-to-index="0"><span>2D</span></li>
+								<li class="cases-item" data-slide-to-index="1"><span>3D</span></li>
+								<li class="cases-item" data-slide-to-index="2"><span>UGC</span></li>
+								<li class="cases-item" data-slide-to-index="3"><span>PLAYABLES</span></li>
+								<div class="cases-dot" id="cases-dot"></div>
 							</ul>
 						</div>
 						<div class="achievments-wrapper">
@@ -315,6 +360,35 @@
 					<div class="cases-slider-column">
 						<div class="cases-slider">
 							<div class="swiper-wrapper cases-slide-wrapper">
+								<div class="swiper-slide">
+									<div
+										class="cases-slide-item"
+										data-video-type="slider"
+										data-video-src="./assets/video/grand-hotel-mania/ghm_children_16x9.mp4"
+									>
+										<img
+											class="slide-preview-image"
+											src="./assets/images/slider/hotel-prev.jpg"
+											alt="GRAND HOTEL MANIA"
+										/>
+										<div class="slide-gradient-overlay"></div>
+										<div class="slide-item-content">
+											<svg
+												width="178"
+												height="226"
+												viewBox="0 0 178 226"
+												xmlns="http://www.w3.org/2000/svg"
+												fill="white"
+												class="slide-play-but"
+											>
+												<path
+													d="M174.454 106.175C179.182 109.208 179.182 116.792 174.454 119.825L10.6375 224.932C5.9097 227.966 1.52588e-05 224.174 1.52588e-05 218.107L0 7.89275C0 1.82594 5.9097 -1.96581 10.6375 1.0676L174.454 106.175Z"
+												/>
+											</svg>
+											<div class="slide-item-text">GRAND HOTEL MANIA</div>
+										</div>
+									</div>
+								</div>
 								<div class="swiper-slide">
 									<div class="cases-slide-item">
 										<img
@@ -369,8 +443,8 @@
 									<div class="cases-slide-item">
 										<img
 											class="slide-preview-image"
-											src="./assets/images/slider/hotel-prev.jpg"
-											alt="GRAND HOTEL MANIA"
+											src="./assets/images/slider/charmbook-prev.jpg"
+											alt="CHARMBOOK"
 										/>
 										<div class="slide-gradient-overlay"></div>
 										<div class="slide-item-content">
@@ -386,7 +460,7 @@
 													d="M174.454 106.175C179.182 109.208 179.182 116.792 174.454 119.825L10.6375 224.932C5.9097 227.966 1.52588e-05 224.174 1.52588e-05 218.107L0 7.89275C0 1.82594 5.9097 -1.96581 10.6375 1.0676L174.454 106.175Z"
 												/>
 											</svg>
-											<div class="slide-item-text">GRAND HOTEL MANIA</div>
+											<div class="slide-item-text">CHARMBOOK</div>
 										</div>
 									</div>
 								</div>
@@ -412,31 +486,6 @@
 												/>
 											</svg>
 											<div class="slide-item-text">DOMINO MASTER</div>
-										</div>
-									</div>
-								</div>
-								<div class="swiper-slide">
-									<div class="cases-slide-item">
-										<img
-											class="slide-preview-image"
-											src="./assets/images/slider/charmbook-prev.jpg"
-											alt="CHARMBOOK"
-										/>
-										<div class="slide-gradient-overlay"></div>
-										<div class="slide-item-content">
-											<svg
-												width="178"
-												height="226"
-												viewBox="0 0 178 226"
-												xmlns="http://www.w3.org/2000/svg"
-												fill="white"
-												class="slide-play-but"
-											>
-												<path
-													d="M174.454 106.175C179.182 109.208 179.182 116.792 174.454 119.825L10.6375 224.932C5.9097 227.966 1.52588e-05 224.174 1.52588e-05 218.107L0 7.89275C0 1.82594 5.9097 -1.96581 10.6375 1.0676L174.454 106.175Z"
-												/>
-											</svg>
-											<div class="slide-item-text">CHARMBOOK</div>
 										</div>
 									</div>
 								</div>
@@ -467,7 +516,11 @@
 									</div>
 									<div class="tnails-slide-footer">
 										<img src="./assets/partners/glera.png" alt="GLERA" />
-										<div class="tnails-video-review-but">
+										<div
+											class="tnails-video-review-but"
+											data-video-type="tnails"
+											data-video-src="assets/video/testimonials/simple-expedition-fhd-9x16.mp4"
+										>
 											<svg
 												width="22"
 												height="28"

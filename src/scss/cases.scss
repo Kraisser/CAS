@@ -25,11 +25,23 @@
 	list-style-type: none;
 	margin: 0;
 	padding: 0 0 7vh;
+	position: relative;
+
+	.cases-dot {
+		position: absolute;
+		left: -18px;
+		background-color: $accent-text-color;
+		border-radius: 50%;
+		width: 7px;
+		height: 7px;
+		position: absolute;
+		top: 0.5em;
+		transition: transform 0.6s ease-out;
+	}
 }
 .cases-item {
 	@include font(30px, 90%, $main-second-color, 400);
 	cursor: pointer;
-	transform-origin: left;
 
 	span {
 		display: block;

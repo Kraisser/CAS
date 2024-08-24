@@ -83,6 +83,7 @@
 	@include font(17px, 1.2em, $main-text-color, 700);
 	font-family: $second-family;
 	opacity: 0.5;
+	cursor: pointer;
 }
 
 // partners

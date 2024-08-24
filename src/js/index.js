@@ -16,11 +16,13 @@ import '../scss/cases.scss';
 import '../scss/testimonials.scss';
 import '../scss/prices.scss';
 import '../scss/contacts.scss';
+import '../scss/modal.scss';
 
 import './scripts/navigation';
+import './scripts/modal';
 
 // Cases Slider
-new Swiper('.cases-slider', {
+const casesSwiper = new Swiper('.cases-slider', {
 	slidesPerView: 1,
 	effect: 'fade',
 	speed: 600,
@@ -40,7 +42,36 @@ new Swiper('.cases-slider', {
 		type: 'fraction',
 	},
 	modules: [Navigation, Pagination, EffectFade],
-	loop: true,
+	// loop: true,
+});
+// Cases slider control
+const casesItem = document.querySelectorAll('.cases-item');
+const casesDot = document.querySelector('.cases-dot');
+
+function casesDotController(target) {
+	casesItem.forEach((item) => {
+		item.classList.remove('active');
+	});
+	target.classList.add('active');
+	const offsetTop = target.offsetTop;
+	casesDot.style.transform = `translateY(${offsetTop}px`;
+}
+
+casesItem.forEach((item) => {
+	item.addEventListener('click', (e) => {
+		const target = e.currentTarget;
+		const slideIndex = target.dataset.slideToIndex;
+		casesSwiper.slideTo(+slideIndex);
+
+		casesDotController(target);
+	});
+});
+
+casesSwiper.on('activeIndexChange', (e) => {
+	const target = document.querySelector(`[data-slide-to-index="${e.activeIndex}"`);
+	if (target) {
+		casesDotController(target);
+	}
 });
 
 //testimonials slider

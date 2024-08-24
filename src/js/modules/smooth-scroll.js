@@ -17,12 +17,9 @@ export default function smoothScroll(currentId, allAnchorLinks, callbacks) {
 }
 
 function navigate(id, callbacks) {
-	console.log('id: ', id);
 	const target = document.querySelector(`#${id}`);
 
 	if (target) {
-		console.log('target: ', target);
-		console.log('scroll');
 		target.scrollIntoView({
 			behavior: 'smooth',
 			block: 'start',
