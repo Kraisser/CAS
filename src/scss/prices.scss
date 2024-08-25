@@ -20,9 +20,10 @@
 
 .prices-wrapper {
 	padding-left: 155px;
-	@include grid(grid-template-columns, repeat(4, 368px), 28px);
+	// @include grid(grid-template-columns, repeat(4, 368px), 28px);
 }
 .prices-card {
+	max-width: 368px;
 	background-color: $bg-second-color;
 	padding: 110px 21px 19px;
 	position: relative;
@@ -172,5 +173,12 @@
 		z-index: 4;
 		text-decoration: none;
 		@include font(24px, 90%, $def-text-color, 400);
+	}
+}
+
+// Media
+@media (max-width: 1850px) {
+	.prices-wrapper {
+		padding: 0 28px;
 	}
 }

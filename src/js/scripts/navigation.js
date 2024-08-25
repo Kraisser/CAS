@@ -67,9 +67,8 @@ const smoothLinks = document.querySelectorAll('a[href^="#"]');
 window.addEventListener(
 	'load',
 	(e) => {
-		setTimeout(() => {
-			// smoothScroll(startVal, smoothLinks, navigationsCallbacks);
-		}, 1);
+		smoothScroll(startVal, smoothLinks, navigationsCallbacks);
+		setTimeout(() => {}, 1);
 	},
 	{once: true}
 );

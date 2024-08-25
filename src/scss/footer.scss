@@ -60,3 +60,10 @@ footer {
 		color: $accent-text-color;
 	}
 }
+
+// Media
+@media (max-width: 1200px) {
+	.desc-footer {
+		display: none;
+	}
+}

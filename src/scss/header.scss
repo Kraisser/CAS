@@ -60,3 +60,20 @@ header {
 	height: 57px;
 	background: linear-gradient(135deg, $bg-color 50%, transparent 50%);
 }
+
+// Media
+@media (max-width: 1200px) {
+	.desc-wrapper {
+		left: 25px;
+		top: 20px;
+		height: 45px;
+	}
+	.menu-corner {
+		display: none;
+	}
+}
+@media (max-width: 900px) {
+	.desc-menu {
+		grid-gap: 35px;
+	}
+}

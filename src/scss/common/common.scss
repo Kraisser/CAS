@@ -11,7 +11,7 @@ body {
 	position: relative;
 	font-family: $font-family;
 	// max-width: 1920px;
-	overflow: hidden;
+	// overflow: hidden;
 }
 main {
 	padding: 0 48px 0;
@@ -131,12 +131,14 @@ main {
 	right: 48px;
 	z-index: -11;
 	background-color: $bg-second-color;
-
-	.background-video {
-		object-fit: contain;
-		width: 100%;
-		transition: opacity 0.6s ease-out;
-	}
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.background-video {
+	object-fit: contain;
+	width: 100%;
+	transition: opacity 0.6s ease-out;
 }
 .section-header {
 	h2 {
@@ -147,5 +149,44 @@ main {
 	span {
 		@include font(24px, 110%, $def-text-color, 400);
 		letter-spacing: 0.01em;
+	}
+}
+
+// Media
+@media (max-width: 1900px) {
+	.background-video {
+		width: auto;
+	}
+}
+@media (max-width: 1200px) {
+	main {
+		padding: 0 25px 0;
+	}
+	.section-padding {
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+	.overlay {
+		&.top-border {
+			height: 20px;
+		}
+		&.bottom-border {
+			height: 20px;
+		}
+		&.left-border {
+			width: 25px;
+		}
+		&.right-border {
+			width: 25px;
+		}
+	}
+	.section-header {
+		h2 {
+			font-size: 36px;
+		}
+
+		span {
+			font-size: 18px;
+		}
 	}
 }

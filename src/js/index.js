@@ -3,7 +3,7 @@ import 'video.js/dist/video-js.css';
 
 import '../scss/video-js-style.scss';
 
-import Swiper, {Navigation, Pagination, EffectFade} from 'swiper';
+import Swiper, {Navigation, Pagination, EffectFade, FreeMode} from 'swiper';
 import 'swiper/scss';
 import 'swiper/scss/effect-fade';
 
@@ -25,6 +25,9 @@ import './scripts/modal';
 const casesSwiper = new Swiper('.cases-slider', {
 	slidesPerView: 1,
 	effect: 'fade',
+	fadeEffect: {
+		crossFade: true,
+	},
 	speed: 600,
 	navigation: {
 		nextEl: '.slide-arrow-next',
@@ -42,8 +45,8 @@ const casesSwiper = new Swiper('.cases-slider', {
 		type: 'fraction',
 	},
 	modules: [Navigation, Pagination, EffectFade],
-	// loop: true,
 });
+
 // Cases slider control
 const casesItem = document.querySelectorAll('.cases-item');
 const casesDot = document.querySelector('.cases-dot');
@@ -82,4 +85,19 @@ new Swiper('.tnails-slider-wrapper', {
 	grabCursor: true,
 	initialSlide: 1,
 	// loop: true,
+});
+
+// prices Slider
+const pricesSwiper = new Swiper('.prices-wrapper', {
+	slidesPerView: 'auto',
+	spaceBetween: 28,
+	speed: 600,
+	grabCursor: true,
+	enabled: true,
+	breakpoints: {
+		1700: {
+			enabled: false,
+		},
+	},
+	modules: [],
 });

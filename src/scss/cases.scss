@@ -4,27 +4,27 @@
 .cases-section {
 	height: 100vh;
 	font-family: $font-family;
-	@include grid(grid-template-columns, max-content 8fr);
-
-	.cases-text-column {
-		padding: 113px 48px 0 155px;
-		position: relative;
-	}
+	display: grid;
+	grid-template: [head-start slider-start] auto [head-end list-start] auto [list-end ach-start] auto [ach-end slider-end] / [head-start list-start ach-start] auto [head-end list-end ach-end slider-start] 8fr [slider-end];
+	grid-gap: 7vh 56px;
+	padding-left: 155px;
 }
 
 .cases-header {
-	padding-bottom: 7vh;
+	padding-top: 113px;
+	grid-area: head;
 
 	h2 {
 		margin: 0 0 15px;
 	}
 }
 .cases-list {
+	grid-area: list;
 	@include grid(grid-template, repeat(4, auto) / min-content, 3vh);
 	@include gPos(center, left);
 	list-style-type: none;
 	margin: 0;
-	padding: 0 0 7vh;
+	padding: 0;
 	position: relative;
 
 	.cases-dot {
@@ -45,26 +45,28 @@
 
 	span {
 		display: block;
-		transition: all 0.3s ease;
+		transition: transform 0.3s ease, color 0.8s $gentle;
+		transform-origin: left;
 	}
 
 	&:hover span {
 		color: $accent-hover-color;
-		transition: color 0.8s $gentle;
 	}
 	&.active span {
 		color: $accent-text-color;
-		font-size: 42px;
+		transform: scale(1.55);
 	}
 }
 
 .achievments-wrapper {
+	grid-area: ach;
+	align-self: end;
 	padding-top: 39px;
-	border-top: 2px solid $def-text-color;
+	padding-bottom: 12px;
+	border-top: 2px solid rgba(16, 17, 20, 0.3);
 }
 .achievments-list {
 	@include grid(grid-template, repeat(3, auto) / auto, 30px);
-	@include gPos(center, left);
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
@@ -83,7 +85,8 @@
 }
 
 // slider
-.cases-slider-column {
+.cases-slider-wrapper {
+	grid-area: slider;
 	position: relative;
 	overflow: hidden;
 	background-color: $bg-second-color;
@@ -99,10 +102,6 @@
 	align-items: center;
 
 	.slide-preview-image {
-		object-fit: contain;
-		object-position: center;
-		max-width: 100%;
-		height: auto;
 		transition: all 0.3s ease-out;
 	}
 	.slide-gradient-overlay {
@@ -163,5 +162,84 @@
 			transform: scale(0.66);
 			opacity: 0.6;
 		}
+	}
+}
+
+//Media
+@media (max-width: 1700px) {
+	.cases-section {
+		padding-left: 50px;
+	}
+	.cases-slide-item {
+		.slide-preview-image {
+			height: 100%;
+		}
+	}
+	.slide-item-content {
+		.slide-item-text {
+			font-size: 50px;
+		}
+	}
+}
+@media (max-width: 1500px) {
+	.cases-section {
+		grid-template-columns: [head-start list-start ach-start] min-content [head-end list-end ach-end slider-start] 8fr [slider-end];
+		grid-column-gap: 30px;
+	}
+}
+@media (max-width: 1200px) {
+	.cases-section {
+		grid-template: [head-start] auto [head-end list-start] 2em [list-end slider-start] 1fr [slider-end ach-start] auto [ach-end] / [head-start list-start slider-start ach-start] 1fr[head-end list-end slider-end ach-end];
+		grid-gap: 10px;
+		background-color: $bg-color;
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+	.cases-header {
+		padding-top: 45px;
+
+		h2 {
+			margin-bottom: 6px;
+		}
+	}
+	.cases-list {
+		width: 60%;
+		grid-template: auto / repeat(4, auto);
+		// grid-gap: 90px;
+		justify-content: space-between;
+	}
+	.cases-item {
+		font-size: 20px;
+	}
+	.cases-dot {
+		display: none;
+	}
+	.achievments-wrapper {
+		padding-top: 18px;
+		padding-bottom: 0;
+	}
+	.achievments-list {
+		grid-template: auto/ auto auto auto;
+		grid-gap: 10px 25px;
+		justify-content: space-around;
+
+		.achievments-item {
+			h3 {
+				font-size: 26px;
+				margin: 0 0 8px;
+			}
+			span {
+				font-size: 16px;
+			}
+		}
+		// .achievments-item:nth-child(1) {
+		// 	grid-area: 1/1/2/2;
+		// }
+		// .achievments-item:nth-child(2) {
+		// 	grid-area: 1/2/2/3;
+		// }
+		// .achievments-item:nth-child(3) {
+		// 	grid-area: 2/1/3/3;
+		// }
 	}
 }

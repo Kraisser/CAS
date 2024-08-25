@@ -8,23 +8,104 @@
 }
 
 .main-logo-wrapper {
-	@include grid(grid-template, 70px 70px auto / min-content);
+	@include grid(grid-template, auto auto / 1fr, 18px);
 	justify-items: end;
 	padding: 77px 7vw 77px 0;
 
-	svg {
-		// width: 100%;
-		height: 100%;
-	}
-
 	.logo-description-wrapper {
+		max-width: 616px;
 		justify-self: start;
+		span {
+			@include font(42px, 90%, $accent-text-color);
+		}
 	}
 }
 
-.logo-description-wrapper {
-	max-width: 616px;
-	span {
-		@include font(42px, 90%, $accent-text-color);
+.main-svg-logo-wrapper {
+	display: grid;
+	grid-template:
+		[creative-start] 70px [creative-end anatoli-start studio-start] 70px [anatoli-end studio-end] /
+		[creative-start anatoli-start] 1fr [anatoli-end studio-start] 1fr [creative-end
+		studio-end];
+	grid-gap: 8px;
+
+	svg {
+		height: 70px;
+	}
+
+	svg:nth-child(1) {
+		grid-area: creative;
+		width: 640px;
+		justify-self: end;
+	}
+	svg:nth-child(2) {
+		grid-area: anatoli;
+		width: 100%;
+	}
+	svg:nth-child(3) {
+		grid-area: studio;
+		width: 100%;
+	}
+}
+
+// Media
+@media (max-width: 1300px) {
+	.main-logo-section {
+		grid-template-columns: 1fr;
+		justify-content: start;
+	}
+	.main-logo-wrapper {
+		padding: 0 50px 77px;
+		justify-items: start;
+
+		.logo-description-wrapper {
+			span {
+				font-size: 30px;
+			}
+		}
+	}
+	.main-svg-logo-wrapper {
+		grid-template:
+			[creative-start] 70px [creative-end anatoli-start] 70px [anatoli-end studio-start] 70px [studio-end] /
+			[creative-start anatoli-start studio-start] auto [creative-end anatoli-end
+			studio-end];
+		grid-gap: 11px;
+		justify-content: start;
+
+		svg:nth-child(1),
+		svg:nth-child(2),
+		svg:nth-child(3) {
+			width: auto;
+			justify-self: start;
+		}
+	}
+}
+@media (max-width: 1200px) {
+	.main-logo-wrapper {
+		padding: 0 50px 50px;
+	}
+}
+@media (max-width: 800px) {
+	.main-svg-logo-wrapper {
+		grid-template:
+			[creative-start] auto [creative-end anatoli-start] auto [anatoli-end studio-start] auto [studio-end] /
+			[creative-start anatoli-start studio-start] auto [creative-end anatoli-end
+			studio-end];
+
+		svg {
+			height: 50px;
+		}
+	}
+
+	.main-logo-wrapper {
+		justify-items: start;
+
+		.logo-description-wrapper {
+			max-width: 400px;
+
+			span {
+				font-size: 22px;
+			}
+		}
 	}
 }
