@@ -63,6 +63,12 @@ navigationsCallbacks.forEach((func) => func(startVal)); //Nav init
 const smoothLinks = document.querySelectorAll('a[href^="#"]');
 // smoothScroll(startVal, smoothLinks, navigationsCallbacks);
 
-window.addEventListener('load', () => {
-	smoothScroll(startVal, smoothLinks, navigationsCallbacks);
-});
+window.addEventListener(
+	'load',
+	(e) => {
+		setTimeout(() => {
+			smoothScroll(startVal, smoothLinks, navigationsCallbacks);
+		}, 1);
+	},
+	{once: true}
+);
