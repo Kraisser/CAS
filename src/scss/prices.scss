@@ -44,7 +44,32 @@
 		clip-path: polygon(0 10%, 8% 0, 100% 0, 100% 100%, 0 100%);
 	}
 	&.right-bot-corner {
+		border: none;
 		clip-path: polygon(100% 0, 100% 90%, 92% 100%, 0 100%, 0 0);
+
+		&:before {
+			clip-path: polygon(100% 0, 100% 90%, 92% 100%, 0 100%, 0 0);
+			content: '';
+			position: absolute;
+			left: -1px;
+			top: -1px;
+			bottom: -1px;
+			right: -1px;
+			background-color: #4a4a4a;
+			z-index: -1;
+		}
+		&:after {
+			clip-path: polygon(100% 0, 100% 90%, 92% 100%, 0 100%, 0 0);
+			display: block;
+			content: '';
+			position: absolute;
+			left: 1px;
+			top: 1px;
+			bottom: 1px;
+			right: 1px;
+			background-color: $bg-second-color;
+			z-index: -1;
+		}
 	}
 }
 

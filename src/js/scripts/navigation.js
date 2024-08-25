@@ -56,8 +56,9 @@ const dotCallback = menuDotCtrl(dot, navWrapper);
 // Class controller
 const activeLinksControl = activeLinksController(navSelectorList, 'active');
 
+//Nav init
 const navigationsCallbacks = [activeLinksControl, dotCallback, pagesNavSwitch, switchingBack];
-navigationsCallbacks.forEach((func) => func(startVal)); //Nav init
+navigationsCallbacks.forEach((func) => func(startVal));
 
 // Smoothscroll
 const smoothLinks = document.querySelectorAll('a[href^="#"]');
@@ -67,7 +68,7 @@ window.addEventListener(
 	'load',
 	(e) => {
 		setTimeout(() => {
-			smoothScroll(startVal, smoothLinks, navigationsCallbacks);
+			// smoothScroll(startVal, smoothLinks, navigationsCallbacks);
 		}, 1);
 	},
 	{once: true}

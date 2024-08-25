@@ -6,7 +6,7 @@ footer {
 }
 .desc-footer {
 	position: fixed;
-	bottom: 48px;
+	bottom: 47px;
 	right: 48px;
 	@include grid(grid-template-columns, min-content auto);
 	z-index: 10;
