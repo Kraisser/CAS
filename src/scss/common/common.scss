@@ -11,7 +11,7 @@ body {
 	position: relative;
 	font-family: $font-family;
 	// max-width: 1920px;
-	// overflow: hidden;
+	overflow: hidden;
 }
 main {
 	padding: 0 48px 0;
@@ -172,8 +172,6 @@ main {
 		padding: 0 25px 0;
 	}
 	.section-padding {
-		// padding-top: 75px;
-		// padding-bottom: 35px;
 		padding: 75px 30px 35px;
 	}
 	.overlay {
@@ -212,5 +210,22 @@ main {
 		span {
 			font-size: 18px;
 		}
+	}
+}
+@media (max-width: 768px) {
+	main {
+		padding: 0;
+	}
+	.section-padding {
+		padding: 75px 30px 35px;
+	}
+	.overlay {
+		display: none;
+	}
+	.video-wrapper {
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
 	}
 }

@@ -6,11 +6,12 @@ import burger from '../modules/burger-menu';
 
 // Burger
 const burgerBut = document.querySelector('.burger-icon');
-burger('', burgerBut);
+const mobileMenuWrapper = document.querySelector('.mobile-menu-overlay');
+burger(mobileMenuWrapper, burgerBut);
 
 const navSelectorList = [
 	document.querySelector('.menu-list'),
-	// document.querySelector('.main-burger-menu'),
+	document.querySelector('.mobile-menu-list'),
 ];
 
 const messengerWrapper = document.querySelector('.desc-messenger-wrapper');
@@ -57,7 +58,11 @@ const startVal = 'home';
 // DotController
 const dot = document.querySelector('#desc-menu-dot');
 const navWrapper = document.querySelector('.desc-menu-wrapper');
-const dotCallback = menuDotCtrl(dot, navWrapper);
+const dascDotCallback = menuDotCtrl(dot, navWrapper);
+
+const mobileDot = document.querySelector('#mobile-menu-dot');
+const mobileNavWrapper = document.querySelector('.mobile-menu-list');
+const mobileDotCallback = menuDotCtrl(mobileDot, mobileNavWrapper, true);
 
 // Class controller
 const activeLinksControl = activeLinksController(navSelectorList, 'active');
@@ -71,7 +76,14 @@ const activeLinksControl = activeLinksController(navSelectorList, 'active');
 // });
 
 //Nav init
-const navigationsCallbacks = [activeLinksControl, dotCallback, pagesNavSwitch, switchingBack];
+const navigationsCallbacks = [
+	activeLinksControl,
+	dascDotCallback,
+	mobileDotCallback,
+	pagesNavSwitch,
+	switchingBack,
+];
+
 navigationsCallbacks.forEach((func) => func(startVal));
 
 // Smoothscroll
