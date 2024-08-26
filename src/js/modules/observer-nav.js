@@ -1,4 +1,4 @@
-export default function navScroll(observedEntriesSelector, callback) {
+export default function observerNav(observedEntriesSelector, callback) {
 	const observer = new IntersectionObserver(
 		(entries) => {
 			entries.forEach((entry) => {
@@ -8,7 +8,7 @@ export default function navScroll(observedEntriesSelector, callback) {
 			});
 		},
 		{
-			threshold: 0.4,
+			threshold: 0.1,
 		}
 	);
 

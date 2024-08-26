@@ -1,0 +1,94 @@
+@import './common/variables.scss';
+
+.burger-icon {
+	display: none;
+	height: 32px;
+	width: 38px;
+	position: relative;
+	cursor: pointer;
+
+	&.burger-active .burger-icon-line:nth-child(1) {
+		animation: normal 0.5s ease-in-out burger-icon-line-1-open forwards;
+	}
+	&.burger-active .burger-icon-line:nth-child(3) {
+		animation: normal 0.5s ease-in-out burger-icon-line-2-open forwards;
+	}
+	&.burger-closed .burger-icon-line:nth-child(1) {
+		animation: normal 0.5s ease-in-out burger-icon-line-1-close forwards;
+	}
+	&.burger-closed .burger-icon-line:nth-child(3) {
+		animation: normal 0.5s ease-in-out burger-icon-line-2-close forwards;
+	}
+
+	&.burger-active {
+		.burger-icon-line {
+			&:nth-child(2) {
+				opacity: 0;
+			}
+		}
+	}
+}
+
+.burger-icon-line {
+	height: 4px;
+	width: 30px;
+	background-color: $accent-text-color;
+	position: absolute;
+
+	&:nth-child(1) {
+		top: 4px;
+	}
+	&:nth-child(2) {
+		transition: all 0.5s ease-out;
+		width: 20px;
+		bottom: 14px;
+		right: 4px;
+	}
+	&:nth-child(3) {
+		bottom: 4px;
+	}
+}
+
+/* Animation */
+@keyframes burger-icon-line-1-open {
+	from {
+		transform: none;
+	}
+	to {
+		transform: translateY(10px) rotate(45deg);
+	}
+}
+@keyframes burger-icon-line-2-open {
+	from {
+		transform: none;
+	}
+	to {
+		transform: translateY(-10px) rotate(-45deg);
+	}
+}
+
+@keyframes burger-icon-line-1-close {
+	from {
+		transform: translateY(10px) rotate(45deg);
+	}
+	to {
+		transform: none;
+	}
+}
+@keyframes burger-icon-line-2-close {
+	from {
+		transform: translateY(-10px) rotate(-45deg);
+	}
+	to {
+		transform: none;
+	}
+}
+
+// Media
+@media (max-width: 768px) {
+	.burger-icon {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+}

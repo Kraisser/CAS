@@ -118,3 +118,19 @@
 		letter-spacing: 0.01em;
 	}
 }
+
+// Media
+@media (max-width: 1700px) {
+	.contact-wrapper {
+		max-width: 70%;
+	}
+}
+@media (max-width: 1200px) {
+	.contact-wrapper {
+		max-width: 100%;
+		padding: 0;
+	}
+	.contact-header {
+		padding: 0;
+	}
+}

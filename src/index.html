@@ -70,6 +70,7 @@
 							<img src="./assets/logo/header-logo.png" alt="CAS" />
 						</a>
 					</div>
+
 					<nav class="desc-menu-wrapper">
 						<ul class="menu-list">
 							<li class="menu-list-item"><a href="#home">home</a></li>
@@ -80,6 +81,12 @@
 						</ul>
 						<div class="desc-menu-dot" id="desc-menu-dot"></div>
 					</nav>
+
+					<div class="burger-icon">
+						<span class="burger-icon-line"></span>
+						<span class="burger-icon-line"></span>
+						<span class="burger-icon-line"></span>
+					</div>
 				</div>
 				<div class="menu-corner"></div>
 			</div>
@@ -171,7 +178,6 @@
 					</div>
 				</section>
 				<section class="cases-section section-padding" id="cases">
-					<!-- <div class="cases-text-column"> -->
 					<div class="cases-header section-header">
 						<h2>Cases</h2>
 						<span>What we are proud of</span>
@@ -183,6 +189,40 @@
 						<li class="cases-item" data-slide-to-index="3"><span>PLAYABLES</span></li>
 						<div class="cases-dot" id="cases-dot"></div>
 					</ul>
+					<div class="cases-slider-controls">
+						<svg
+							width="58"
+							height="20"
+							viewBox="0 0 58 20"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+							class="cases-slide-arrow cases-slide-arrow-prev"
+						>
+							<rect x="58" y="9" width="2" height="55" rx="1" transform="rotate(90 58 9)" />
+							<path
+								d="M1.53956 8.54587C0.703886 9.33511 0.703877 10.6647 1.53954 11.4539L9.92258 19.3713C10.2962 19.7242 10.8802 19.7242 11.2538 19.3713C11.6588 18.9888 11.6588 18.3444 11.2538 17.9619L4.36307 11.4539C3.52741 10.6647 3.52741 9.33511 4.36308 8.54586L11.2538 2.03794C11.6588 1.65541 11.6588 1.011 11.2538 0.628494C10.8802 0.275722 10.2962 0.275739 9.92269 0.628533L1.53956 8.54587Z"
+							/>
+						</svg>
+						<div class="cases-slider-pages">
+							<div class="cases-slider-pages-curr">1</div>
+							<div>of</div>
+							<div class="cases-slider-pages-max">5</div>
+						</div>
+						<svg
+							width="58"
+							height="20"
+							viewBox="0 0 58 20"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+							class="cases-slide-arrow cases-slide-arrow-next"
+							fill="#101114"
+						>
+							<rect y="11" width="2" height="55" rx="0.999999" transform="rotate(-90 0 11)" />
+							<path
+								d="M56.4604 11.4541C57.2961 10.6649 57.2961 9.33533 56.4605 8.54608L48.0774 0.628654C47.7038 0.275804 47.1198 0.275814 46.7462 0.628679C46.3412 1.01122 46.3412 1.65561 46.7462 2.03814L53.6369 8.54609C54.4726 9.33534 54.4726 10.6649 53.6369 11.4541L46.7462 17.9621C46.3412 18.3446 46.3412 18.989 46.7462 19.3715C47.1198 19.7243 47.7038 19.7243 48.0773 19.3715L56.4604 11.4541Z"
+							/>
+						</svg>
+					</div>
 					<div class="achievments-wrapper">
 						<ul class="achievments-list">
 							<li class="achievments-item">
@@ -199,7 +239,6 @@
 							</li>
 						</ul>
 					</div>
-					<!-- </div> -->
 
 					<div class="cases-slider-wrapper">
 						<div class="cases-slider">
@@ -343,148 +382,152 @@
 						<span>What our clients say about us</span>
 					</div>
 					<div class="tnails-slider-wrapper">
-						<div class="swiper-wrapper">
-							<div class="swiper-slide tnails-slide-item">
-								<div class="tnails-slide-item-content">
-									<div class="tnails-slide-header">
-										<img src="./assets/tnails-faces/john-williams.jpg" alt="John Williams" />
+						<div class="tnails-slides-wrapper">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide tnails-slide-item">
+									<div class="tnails-slide-item-content">
+										<div class="tnails-slide-header">
+											<img src="./assets/tnails-faces/john-williams.jpg" alt="John Williams" />
 
-										<div class="tnail-name-pos">
-											<h5>John Williams</h5>
-											<span>Lead designer</span>
+											<div class="tnail-name-pos">
+												<h5>John Williams</h5>
+												<span>Lead designer</span>
+											</div>
+											<div class="tnail-review">
+												OHHHH Thanks god !!!! Finally there is someone making it for me to use on my
+												projects. Love ya.
+											</div>
 										</div>
-										<div class="tnail-review">
-											OHHHH Thanks god !!!! Finally there is someone making it for me to use on my
-											projects. Love ya.
-										</div>
-									</div>
-									<div class="tnails-slide-footer">
-										<img src="./assets/partners/glera.png" alt="GLERA" />
-										<div
-											class="tnails-video-review-but"
-											data-video-type="tnails"
-											data-video-src="assets/video/testimonials/simple-expedition-fhd-9x16.mp4"
-										>
-											<svg
-												width="22"
-												height="28"
-												viewBox="0 0 22 28"
-												fill="none"
-												xmlns="http://www.w3.org/2000/svg"
+										<div class="tnails-slide-footer">
+											<img src="./assets/partners/glera.png" alt="GLERA" />
+											<div
+												class="tnails-video-review-but"
+												data-video-type="tnails"
+												data-video-src="assets/video/testimonials/simple-expedition-fhd-9x16.mp4"
 											>
-												<path
-													d="M21.5618 13.1544C22.1461 13.5302 22.1461 14.4698 21.5618 14.8456L1.31474 27.8677C0.730412 28.2435 1.90735e-06 27.7738 1.90735e-06 27.0221L0 0.977861C0 0.226223 0.730412 -0.243549 1.31474 0.132269L21.5618 13.1544Z"
-													fill="white"
-												/>
-											</svg>
-											<span>Watch video</span>
+												<svg
+													width="22"
+													height="28"
+													viewBox="0 0 22 28"
+													fill="none"
+													xmlns="http://www.w3.org/2000/svg"
+												>
+													<path
+														d="M21.5618 13.1544C22.1461 13.5302 22.1461 14.4698 21.5618 14.8456L1.31474 27.8677C0.730412 28.2435 1.90735e-06 27.7738 1.90735e-06 27.0221L0 0.977861C0 0.226223 0.730412 -0.243549 1.31474 0.132269L21.5618 13.1544Z"
+														fill="white"
+													/>
+												</svg>
+												<span>Watch video</span>
+											</div>
 										</div>
 									</div>
 								</div>
-							</div>
-							<div class="swiper-slide tnails-slide-item">
-								<div class="tnails-slide-item-content">
-									<div class="tnails-slide-header">
-										<img src="./assets/tnails-faces/john-williams.jpg" alt="John Williams" />
+								<div class="swiper-slide tnails-slide-item">
+									<div class="tnails-slide-item-content">
+										<div class="tnails-slide-header">
+											<img src="./assets/tnails-faces/john-williams.jpg" alt="John Williams" />
 
-										<div class="tnail-name-pos">
-											<h5>John Williams</h5>
-											<span>Lead designer</span>
+											<div class="tnail-name-pos">
+												<h5>John Williams</h5>
+												<span>Lead designer</span>
+											</div>
+											<div class="tnail-review">
+												OHHHH Thanks god !!!! Finally there is someone making it for me to use on my
+												projects. Love ya.
+											</div>
 										</div>
-										<div class="tnail-review">
-											OHHHH Thanks god !!!! Finally there is someone making it for me to use on my
-											projects. Love ya.
-										</div>
-									</div>
-									<div class="tnails-slide-footer">
-										<img src="./assets/partners/glera.png" alt="GLERA" />
-										<div class="tnails-video-review-but">
-											<svg
-												width="22"
-												height="28"
-												viewBox="0 0 22 28"
-												fill="none"
-												xmlns="http://www.w3.org/2000/svg"
-											>
-												<path
-													d="M21.5618 13.1544C22.1461 13.5302 22.1461 14.4698 21.5618 14.8456L1.31474 27.8677C0.730412 28.2435 1.90735e-06 27.7738 1.90735e-06 27.0221L0 0.977861C0 0.226223 0.730412 -0.243549 1.31474 0.132269L21.5618 13.1544Z"
-													fill="white"
-												/>
-											</svg>
-											<span>Watch video</span>
+										<div class="tnails-slide-footer">
+											<img src="./assets/partners/glera.png" alt="GLERA" />
+											<div class="tnails-video-review-but">
+												<svg
+													width="22"
+													height="28"
+													viewBox="0 0 22 28"
+													fill="none"
+													xmlns="http://www.w3.org/2000/svg"
+												>
+													<path
+														d="M21.5618 13.1544C22.1461 13.5302 22.1461 14.4698 21.5618 14.8456L1.31474 27.8677C0.730412 28.2435 1.90735e-06 27.7738 1.90735e-06 27.0221L0 0.977861C0 0.226223 0.730412 -0.243549 1.31474 0.132269L21.5618 13.1544Z"
+														fill="white"
+													/>
+												</svg>
+												<span>Watch video</span>
+											</div>
 										</div>
 									</div>
 								</div>
-							</div>
-							<div class="swiper-slide tnails-slide-item">
-								<div class="tnails-slide-item-content">
-									<div class="tnails-slide-header">
-										<img src="./assets/tnails-faces/john-williams.jpg" alt="John Williams" />
+								<div class="swiper-slide tnails-slide-item">
+									<div class="tnails-slide-item-content">
+										<div class="tnails-slide-header">
+											<img src="./assets/tnails-faces/john-williams.jpg" alt="John Williams" />
 
-										<div class="tnail-name-pos">
-											<h5>John Williams</h5>
-											<span>Lead designer</span>
+											<div class="tnail-name-pos">
+												<h5>John Williams</h5>
+												<span>Lead designer</span>
+											</div>
+											<div class="tnail-review">
+												OHHHH Thanks god !!!! Finally there is someone making it for me to use on my
+												projects. Love ya.
+											</div>
 										</div>
-										<div class="tnail-review">
-											OHHHH Thanks god !!!! Finally there is someone making it for me to use on my
-											projects. Love ya.
-										</div>
-									</div>
-									<div class="tnails-slide-footer">
-										<img src="./assets/partners/glera.png" alt="GLERA" />
-										<div class="tnails-video-review-but">
-											<svg
-												width="22"
-												height="28"
-												viewBox="0 0 22 28"
-												fill="none"
-												xmlns="http://www.w3.org/2000/svg"
-											>
-												<path
-													d="M21.5618 13.1544C22.1461 13.5302 22.1461 14.4698 21.5618 14.8456L1.31474 27.8677C0.730412 28.2435 1.90735e-06 27.7738 1.90735e-06 27.0221L0 0.977861C0 0.226223 0.730412 -0.243549 1.31474 0.132269L21.5618 13.1544Z"
-													fill="white"
-												/>
-											</svg>
-											<span>Watch video</span>
+										<div class="tnails-slide-footer">
+											<img src="./assets/partners/glera.png" alt="GLERA" />
+											<div class="tnails-video-review-but">
+												<svg
+													width="22"
+													height="28"
+													viewBox="0 0 22 28"
+													fill="none"
+													xmlns="http://www.w3.org/2000/svg"
+												>
+													<path
+														d="M21.5618 13.1544C22.1461 13.5302 22.1461 14.4698 21.5618 14.8456L1.31474 27.8677C0.730412 28.2435 1.90735e-06 27.7738 1.90735e-06 27.0221L0 0.977861C0 0.226223 0.730412 -0.243549 1.31474 0.132269L21.5618 13.1544Z"
+														fill="white"
+													/>
+												</svg>
+												<span>Watch video</span>
+											</div>
 										</div>
 									</div>
 								</div>
-							</div>
-							<div class="swiper-slide tnails-slide-item">
-								<div class="tnails-slide-item-content">
-									<div class="tnails-slide-header">
-										<img src="./assets/tnails-faces/john-williams.jpg" alt="John Williams" />
+								<div class="swiper-slide tnails-slide-item">
+									<div class="tnails-slide-item-content">
+										<div class="tnails-slide-header">
+											<img src="./assets/tnails-faces/john-williams.jpg" alt="John Williams" />
 
-										<div class="tnail-name-pos">
-											<h5>John Williams</h5>
-											<span>Lead designer</span>
+											<div class="tnail-name-pos">
+												<h5>John Williams</h5>
+												<span>Lead designer</span>
+											</div>
+											<div class="tnail-review">
+												OHHHH Thanks god !!!! Finally there is someone making it for me to use on my
+												projects. Love ya.
+											</div>
 										</div>
-										<div class="tnail-review">
-											OHHHH Thanks god !!!! Finally there is someone making it for me to use on my
-											projects. Love ya.
-										</div>
-									</div>
-									<div class="tnails-slide-footer">
-										<img src="./assets/partners/glera.png" alt="GLERA" />
-										<div class="tnails-video-review-but">
-											<svg
-												width="22"
-												height="28"
-												viewBox="0 0 22 28"
-												fill="none"
-												xmlns="http://www.w3.org/2000/svg"
-											>
-												<path
-													d="M21.5618 13.1544C22.1461 13.5302 22.1461 14.4698 21.5618 14.8456L1.31474 27.8677C0.730412 28.2435 1.90735e-06 27.7738 1.90735e-06 27.0221L0 0.977861C0 0.226223 0.730412 -0.243549 1.31474 0.132269L21.5618 13.1544Z"
-													fill="white"
-												/>
-											</svg>
-											<span>Watch video</span>
+										<div class="tnails-slide-footer">
+											<img src="./assets/partners/glera.png" alt="GLERA" />
+											<div class="tnails-video-review-but">
+												<svg
+													width="22"
+													height="28"
+													viewBox="0 0 22 28"
+													fill="none"
+													xmlns="http://www.w3.org/2000/svg"
+												>
+													<path
+														d="M21.5618 13.1544C22.1461 13.5302 22.1461 14.4698 21.5618 14.8456L1.31474 27.8677C0.730412 28.2435 1.90735e-06 27.7738 1.90735e-06 27.0221L0 0.977861C0 0.226223 0.730412 -0.243549 1.31474 0.132269L21.5618 13.1544Z"
+														fill="white"
+													/>
+												</svg>
+												<span>Watch video</span>
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
+
+						<div class="tnails-slider-dots"></div>
 					</div>
 					<div class="tnails-partners-wrapper">
 						<img src="./assets/partners/popcore.png" alt="popcore" class="partners-img" />
@@ -502,88 +545,92 @@
 						<span>*The final price depends on the volume and complexity of the project.</span>
 					</div>
 					<div class="prices-wrapper">
-						<div class="swiper-wrapper">
-							<div class="swiper-slide prices-card prices-first-card left-top-corner">
-								<div class="card-head">2D</div>
-								<div class="card-main-text">
-									<h5>Video Ads</h5>
-									<span>Idea generation → Video animation</span>
+						<div class="prices-slider-wrapper">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide prices-card prices-first-card left-top-corner">
+									<div class="card-head">2D</div>
+									<div class="card-main-text">
+										<h5>Video Ads</h5>
+										<span>Idea generation → Video animation</span>
+									</div>
+									<div class="card-price">
+										<div class="price-value">4500$</div>
+										<div class="price-per-video-value">from 450$ per video</div>
+									</div>
+									<div class="card-list">
+										<ul>
+											<li>10 videos in 4 formats</li>
+											<li>script generation</li>
+											<li>art director + lead motion designer</li>
+											<li>personal manager</li>
+										</ul>
+									</div>
+									<button class="card-button black-but"><a href="#contacts">contact us</a></button>
 								</div>
-								<div class="card-price">
-									<div class="price-value">4500$</div>
-									<div class="price-per-video-value">from 450$ per video</div>
+								<div class="swiper-slide prices-card">
+									<div class="card-head">3D</div>
+									<div class="card-main-text">
+										<h5>Video Ads</h5>
+										<span>Idea generation → Video animation</span>
+									</div>
+									<div class="card-price">
+										<div class="price-value">6000$</div>
+										<div class="price-per-video-value">from 450$ per video</div>
+									</div>
+									<div class="card-list">
+										<ul>
+											<li>5 videos in 4 formats</li>
+											<li>script generation</li>
+											<li>art director + lead motion designer</li>
+											<li>personal manager</li>
+										</ul>
+									</div>
+									<button class="card-button"><a href="#contacts">contact us</a></button>
 								</div>
-								<div class="card-list">
-									<ul>
-										<li>10 videos in 4 formats</li>
-										<li>script generation</li>
-										<li>art director + lead motion designer</li>
-										<li>personal manager</li>
-									</ul>
+								<div class="swiper-slide prices-card">
+									<div class="card-head">UGC</div>
+									<div class="card-main-text">
+										<h5>Video Ads</h5>
+										<span>Idea generation → Video animation</span>
+									</div>
+									<div class="card-price">
+										<div class="price-value">5500$</div>
+										<div class="price-per-video-value">from 450$ per video</div>
+									</div>
+									<div class="card-list">
+										<ul>
+											<li>10 videos in 4 formats</li>
+											<li>script generation</li>
+											<li>art director + lead motion designer</li>
+											<li>personal manager</li>
+										</ul>
+									</div>
+									<button class="card-button"><a href="#contacts">contact us</a></button>
 								</div>
-								<button class="card-button black-but"><a href="#contacts">contact us</a></button>
-							</div>
-							<div class="swiper-slide prices-card">
-								<div class="card-head">3D</div>
-								<div class="card-main-text">
-									<h5>Video Ads</h5>
-									<span>Idea generation → Video animation</span>
+								<div class="swiper-slide prices-card right-bot-corner">
+									<div class="card-head">PLB</div>
+									<div class="card-main-text">
+										<h5>Playable Ad</h5>
+										<span>Idea generation → Video animation</span>
+									</div>
+									<div class="card-price">
+										<div class="price-value">9500$</div>
+										<div class="price-per-video-value">from 450$ per video</div>
+									</div>
+									<div class="card-list">
+										<ul>
+											<li>1 Playable</li>
+											<li>script generation</li>
+											<li>art director + lead motion designer</li>
+											<li>personal manager</li>
+										</ul>
+									</div>
+									<button class="card-button"><a href="#contacts">contact us</a></button>
 								</div>
-								<div class="card-price">
-									<div class="price-value">6000$</div>
-									<div class="price-per-video-value">from 450$ per video</div>
-								</div>
-								<div class="card-list">
-									<ul>
-										<li>5 videos in 4 formats</li>
-										<li>script generation</li>
-										<li>art director + lead motion designer</li>
-										<li>personal manager</li>
-									</ul>
-								</div>
-								<button class="card-button"><a href="#contacts">contact us</a></button>
-							</div>
-							<div class="swiper-slide prices-card">
-								<div class="card-head">UGC</div>
-								<div class="card-main-text">
-									<h5>Video Ads</h5>
-									<span>Idea generation → Video animation</span>
-								</div>
-								<div class="card-price">
-									<div class="price-value">5500$</div>
-									<div class="price-per-video-value">from 450$ per video</div>
-								</div>
-								<div class="card-list">
-									<ul>
-										<li>10 videos in 4 formats</li>
-										<li>script generation</li>
-										<li>art director + lead motion designer</li>
-										<li>personal manager</li>
-									</ul>
-								</div>
-								<button class="card-button"><a href="#contacts">contact us</a></button>
-							</div>
-							<div class="swiper-slide prices-card right-bot-corner">
-								<div class="card-head">PLB</div>
-								<div class="card-main-text">
-									<h5>Playable Ad</h5>
-									<span>Idea generation → Video animation</span>
-								</div>
-								<div class="card-price">
-									<div class="price-value">9500$</div>
-									<div class="price-per-video-value">from 450$ per video</div>
-								</div>
-								<div class="card-list">
-									<ul>
-										<li>1 Playable</li>
-										<li>script generation</li>
-										<li>art director + lead motion designer</li>
-										<li>personal manager</li>
-									</ul>
-								</div>
-								<button class="card-button"><a href="#contacts">contact us</a></button>
 							</div>
 						</div>
+
+						<div class="prices-slider-dots"></div>
 					</div>
 				</section>
 				<section class="contact-section section-padding" id="contacts">

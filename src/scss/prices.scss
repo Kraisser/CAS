@@ -22,6 +22,22 @@
 	padding-left: 155px;
 	// @include grid(grid-template-columns, repeat(4, 368px), 28px);
 }
+.prices-slider-dots {
+	display: none;
+
+	.prices-slider-bullet {
+		width: 10px;
+		height: 10px;
+		background-color: $bg-color;
+		border-radius: 50%;
+		opacity: 0.19;
+		transition: all 0.6s ease-out;
+	}
+	.prices-slider-bullet-active {
+		background-color: $accent-text-color;
+		opacity: 1;
+	}
+}
 .prices-card {
 	max-width: 368px;
 	background-color: $bg-second-color;
@@ -180,5 +196,21 @@
 @media (max-width: 1850px) {
 	.prices-wrapper {
 		padding: 0 28px;
+	}
+}
+@media (max-width: 1200px) {
+	.prices-wrapper {
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+	.prices-header {
+		padding: 0;
+	}
+	.prices-slider-dots {
+		display: flex;
+		justify-content: center;
+		gap: 15px;
 	}
 }

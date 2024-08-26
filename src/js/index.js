@@ -9,6 +9,7 @@ import 'swiper/scss/effect-fade';
 
 import '../scss/common/common.scss';
 
+import '../scss/burger-menu.scss';
 import '../scss/header.scss';
 import '../scss/footer.scss';
 import '../scss/welcome-logo.scss';
@@ -30,19 +31,38 @@ const casesSwiper = new Swiper('.cases-slider', {
 	},
 	speed: 600,
 	navigation: {
-		nextEl: '.slide-arrow-next',
-		prevEl: '.slide-arrow-prev',
+		nextEl: '.cases-slide-arrow-next',
+		prevEl: '.cases-slide-arrow-prev',
 	},
 	pagination: {
-		el: '.slider-pages',
+		el: '.cases-slider-pages',
 		renderFraction: function (currentClass, totalClass) {
 			return `<div class="${currentClass}"></div>
 						<div>of</div>
 						<div class="${totalClass}"></div>`;
 		},
-		totalClass: 'slider-pages-max',
-		currentClass: 'slider-pages-curr',
+		totalClass: 'cases-slider-pages-max',
+		currentClass: 'cases-slider-pages-curr',
 		type: 'fraction',
+	},
+	breakpoints: {
+		1200: {
+			navigation: {
+				nextEl: '.slide-arrow-next',
+				prevEl: '.slide-arrow-prev',
+			},
+			pagination: {
+				el: '.slider-pages',
+				renderFraction: function (currentClass, totalClass) {
+					return `<div class="${currentClass}"></div>
+						<div>of</div>
+						<div class="${totalClass}"></div>`;
+				},
+				totalClass: 'slider-pages-max',
+				currentClass: 'slider-pages-curr',
+				type: 'fraction',
+			},
+		},
 	},
 	modules: [Navigation, Pagination, EffectFade],
 });
@@ -78,26 +98,45 @@ casesSwiper.on('activeIndexChange', (e) => {
 });
 
 //testimonials slider
-new Swiper('.tnails-slider-wrapper', {
-	slidesPerView: 2.5,
+new Swiper('.tnails-slides-wrapper', {
+	slidesPerView: 'auto',
 	speed: 600,
 	spaceBetween: 32,
 	grabCursor: true,
-	initialSlide: 1,
-	// loop: true,
+	initialSlide: 0,
+	pagination: {
+		el: '.tnails-slider-dots',
+		type: 'bullets',
+		bulletClass: 'tnails-slider-bullet',
+		bulletActiveClass: 'tnails-slider-bullet-active',
+		clickable: true,
+	},
+	breakpoints: {
+		1200: {
+			initialSlide: 1,
+		},
+	},
+	modules: [Pagination],
 });
 
 // prices Slider
-const pricesSwiper = new Swiper('.prices-wrapper', {
+const pricesSwiper = new Swiper('.prices-slider-wrapper', {
 	slidesPerView: 'auto',
 	spaceBetween: 28,
 	speed: 600,
 	grabCursor: true,
 	enabled: true,
+	pagination: {
+		el: '.prices-slider-dots',
+		type: 'bullets',
+		bulletClass: 'prices-slider-bullet',
+		bulletActiveClass: 'prices-slider-bullet-active',
+		clickable: true,
+	},
 	breakpoints: {
 		1700: {
 			enabled: false,
 		},
 	},
-	modules: [],
+	modules: [Pagination],
 });

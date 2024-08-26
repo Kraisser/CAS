@@ -114,8 +114,6 @@ function setupTnailVideo(videojsModule) {
 		autoplay: true,
 		preload: 'auto',
 		controlBar: {
-			playToggle: false,
-			volumePanel: false,
 			remainingTimeDisplay: false,
 			pictureInPictureToggle: false,
 		},

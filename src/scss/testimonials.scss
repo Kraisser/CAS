@@ -7,7 +7,7 @@
 	@include grid(grid-template-rows, min-content min-content min-content);
 	align-content: space-between;
 }
-.testimonials-header.section-header {
+.testimonials-header {
 	padding-left: 155px;
 	padding-top: 75px;
 
@@ -23,6 +23,23 @@
 .tnails-slider-wrapper {
 	overflow: hidden;
 	padding: 0 155px;
+	position: relative;
+}
+.tnails-slider-dots {
+	display: none;
+
+	.tnails-slider-bullet {
+		width: 10px;
+		height: 10px;
+		background-color: $bg-color;
+		border-radius: 50%;
+		opacity: 0.19;
+		transition: all 0.6s ease-out;
+	}
+	.tnails-slider-bullet-active {
+		background-color: $accent-text-color;
+		opacity: 1;
+	}
 }
 .tnails-slide-item {
 	position: relative;
@@ -88,8 +105,53 @@
 
 // partners
 .tnails-partners-wrapper {
-	@include grid(grid-template-columns, repeat(auto-fit, minmax(130px, min-content)));
-	@include gPos(center, space-between);
-	width: 90%;
-	justify-self: center;
+	display: flex;
+	width: 100%;
+	padding: 0 155px;
+	gap: 10px 94px;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+// Media
+@media (max-width: 1200px) {
+	// .testimonials-section {
+	// 	padding: 0;
+	// }
+	.testimonials-section {
+		padding: 85px 30px 60px;
+	}
+	.testimonials-header {
+		padding: 0;
+	}
+	.tnails-partners-wrapper {
+		gap: 5px 10px;
+		padding: 0 30px;
+	}
+	.tnails-slider-wrapper {
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		justify-content: center;
+	}
+	.tnails-slider-dots {
+		display: flex;
+		justify-content: center;
+		gap: 15px;
+
+		.tnails-slider-bullet {
+			width: 15px;
+			height: 15px;
+		}
+	}
+}
+@media (max-width: 900px) {
+	.tnails-slide-item {
+		width: 100%;
+	}
+	.tnails-slide-item-content {
+		padding: 40px 38px 40px 27px;
+	}
 }

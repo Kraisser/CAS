@@ -1,6 +1,12 @@
 import smoothScroll from '../modules/smooth-scroll';
 import activeLinksController from '../modules/active-links-controller';
 import menuDotCtrl from '../modules/menu-dot-anim';
+import observerNav from '../modules/observer-nav';
+import burger from '../modules/burger-menu';
+
+// Burger
+const burgerBut = document.querySelector('.burger-icon');
+burger('', burgerBut);
 
 const navSelectorList = [
 	document.querySelector('.menu-list'),
@@ -55,6 +61,14 @@ const dotCallback = menuDotCtrl(dot, navWrapper);
 
 // Class controller
 const activeLinksControl = activeLinksController(navSelectorList, 'active');
+
+// Observer
+// const observedTargetsId = document.querySelectorAll('.menu-list a');
+
+// observedTargetsId.forEach((item) => {
+// 	const id = item.getAttribute('href').slice(1);
+// 	observerNav(id, switchingBack);
+// });
 
 //Nav init
 const navigationsCallbacks = [activeLinksControl, dotCallback, pagesNavSwitch, switchingBack];

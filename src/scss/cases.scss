@@ -57,7 +57,32 @@
 		transform: scale(1.55);
 	}
 }
+.cases-slider-controls {
+	display: none;
+	grid-area: ctrl;
+	padding: 10px 7px;
+	width: 240px;
+	opacity: 1;
+	transition: all 0.4s ease-out;
 
+	.cases-slide-arrow {
+		cursor: pointer;
+		transition: fill 0.8s $gentle;
+		fill: $def-text-color;
+
+		&:hover {
+			fill: $accent-text-color;
+		}
+	}
+}
+.cases-slider-pages {
+	@include grid(grid-template-columns, 1fr min-content 1fr, 9px);
+	justify-items: center;
+	@include font(18px, 132%, $def-text-color, 400);
+	.cases-slider-pages-curr {
+		color: $accent-text-color;
+	}
+}
 .achievments-wrapper {
 	grid-area: ach;
 	align-self: end;
@@ -189,14 +214,11 @@
 }
 @media (max-width: 1200px) {
 	.cases-section {
-		grid-template: [head-start] auto [head-end list-start] 2em [list-end slider-start] 1fr [slider-end ach-start] auto [ach-end] / [head-start list-start slider-start ach-start] 1fr[head-end list-end slider-end ach-end];
+		grid-template: [head-start] auto [head-end list-start] 2em [list-end slider-start] 1fr [slider-end ctrl-start] auto [ctrl-end ach-start] auto [ach-end] / [head-start list-start slider-start ctrl-start ach-start] 1fr[head-end list-end slider-end ctrl-end ach-end];
 		grid-gap: 10px;
-		background-color: $bg-color;
-		padding-left: 30px;
-		padding-right: 30px;
 	}
 	.cases-header {
-		padding-top: 45px;
+		padding-top: 0;
 
 		h2 {
 			margin-bottom: 6px;
@@ -213,6 +235,10 @@
 	}
 	.cases-dot {
 		display: none;
+	}
+	.cases-slider-controls {
+		@include grid(grid-template-columns, auto 75px auto);
+		justify-content: space-between;
 	}
 	.achievments-wrapper {
 		padding-top: 18px;

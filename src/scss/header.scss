@@ -69,11 +69,34 @@ header {
 		height: 45px;
 	}
 	.menu-corner {
-		display: none;
+		height: 45px;
 	}
 }
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
 	.desc-menu {
 		grid-gap: 35px;
+	}
+	.menu-list {
+		grid-gap: 15px;
+	}
+}
+@media (max-width: 768px) {
+	.desc-wrapper {
+		left: 14px;
+		top: 12px;
+		right: 14px;
+		height: 45px;
+	}
+	.desc-menu-wrapper {
+		display: none;
+	}
+	.desc-menu {
+		background-color: transparent;
+	}
+	.desc-menu-dot {
+		display: none;
+	}
+	.menu-corner {
+		display: none;
 	}
 }

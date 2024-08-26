@@ -158,13 +158,23 @@ main {
 		width: auto;
 	}
 }
+@media (max-width: 1700px) {
+	.content {
+		&.contacts-active {
+			&:before {
+				transform: translateX(-30%);
+			}
+		}
+	}
+}
 @media (max-width: 1200px) {
 	main {
 		padding: 0 25px 0;
 	}
 	.section-padding {
-		padding-top: 20px;
-		padding-bottom: 20px;
+		// padding-top: 75px;
+		// padding-bottom: 35px;
+		padding: 75px 30px 35px;
 	}
 	.overlay {
 		&.top-border {
@@ -179,6 +189,20 @@ main {
 		&.right-border {
 			width: 25px;
 		}
+	}
+	.content {
+		&.cases-active,
+		&.contacts-active {
+			&:before {
+				transform: translateX(0);
+			}
+		}
+	}
+	.video-wrapper {
+		top: 20px;
+		bottom: 20px;
+		left: 25px;
+		right: 25px;
 	}
 	.section-header {
 		h2 {
