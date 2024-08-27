@@ -8,7 +8,6 @@ export default function menuDotCtrl(dot, wrapper, mobile) {
 			const targetHeight = target.offsetHeight;
 			const dotHeight = dot.offsetHeight;
 			const dotY = targetY - targetHeight / 2 + dotHeight / 2;
-			console.log('dotY: ', dotY);
 			dot.style.transform = `translateY(${dotY}px)`;
 			return;
 		}

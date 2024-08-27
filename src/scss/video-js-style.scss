@@ -38,13 +38,14 @@ $primary-foreground-color: #fff;
 
 .vjs-tnails-video-wrapper {
 	width: 340px;
+	margin-bottom: 45px;
 
 	.vjs-modal-custom {
 		.vjs-control-bar {
 			padding: 0 5%;
 		}
-		.vjs-progress-control {
-			width: 100%;
+		.vjs-control {
+			width: 3em;
 		}
 	}
 }
@@ -52,27 +53,30 @@ $primary-foreground-color: #fff;
 	width: 80%;
 }
 
-// .vjs-modal-custom .vjs-big-play-button {
-// 	line-height: $big-play-size;
-// 	height: $big-play-size;
-// 	width: $big-play-size;
-// 	border: none;
-// 	border-radius: 50%;
+.vjs-modal-custom .vjs-big-play-button {
+	line-height: $big-play-size;
+	height: $big-play-size;
+	width: $big-play-size;
+	border: none;
+	border-radius: 50%;
 
-// 	.vjs-icon-placeholder {
-// 		font-size: 2em;
-// 	}
-// }
+	.vjs-icon-placeholder {
+		font-size: 2em;
+	}
+}
 
-// @media (max-width: 768px) {
-// 	$vjs-common-font-size: 12px;
-// 	.vjs-modal-custom {
-// 		font-size: $vjs-common-font-size;
-// 	}
-// }
-// @media (max-width: 500px) {
-// 	$vjs-common-font-size: 10px;
-// 	.vjs-modal-custom {
-// 		font-size: $vjs-common-font-size;
-// 	}
-// }
+@media (max-width: 768px) {
+	$vjs-common-font-size: 12px;
+	.vjs-modal-custom {
+		font-size: $vjs-common-font-size;
+	}
+	.vjs-tnails-video-wrapper {
+		margin-bottom: 25px;
+	}
+}
+@media (max-width: 500px) {
+	$vjs-common-font-size: 10px;
+	.vjs-modal-custom {
+		font-size: $vjs-common-font-size;
+	}
+}

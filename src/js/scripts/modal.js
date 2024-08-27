@@ -2,7 +2,7 @@ import loadingSpinner from '../../assets/icons/video-loader.svg';
 
 import {disablePageScroll, enablePageScroll} from 'scroll-lock';
 
-const tnailVideoTrigger = document.querySelectorAll('.tnails-video-review-but');
+const tnailVideoTrigger = document.querySelectorAll('.tnails-slide-item-content');
 const sliderVideoTrigger = document.querySelectorAll('.cases-slide-item');
 const modalOverflow = document.querySelector('.video-modal-overflow');
 const modalWrapper = document.querySelector('.video-modal-wrapper');
@@ -65,12 +65,14 @@ function toggleModal(target, opened) {
 // function selectVideoSetup(videojsModule, target, ) {}
 
 function setupVideo(videojsModule, target) {
-	console.log('target: ', target);
 	const targetType = target.dataset.videoType;
 	const videoSrc = target.dataset.videoSrc;
 	if (targetType === 'tnails') {
 		modalOverflow.classList.add('tnails-video-mod');
-		videoInsert(videoSrc, 'vjs-tnails-video-wrapper');
+		console.log('target: ', target);
+		const tnailData = getTnailData(target);
+		const tnailEl = createTnailEl(tnailData);
+		videoInsert(videoSrc, 'vjs-tnails-video-wrapper', tnailEl);
 		return setupTnailVideo(videojsModule);
 	} else if (targetType === 'slider') {
 		modalOverflow.classList.remove('tnails-video-mod');
@@ -92,16 +94,19 @@ function loadVideojs() {
 		});
 }
 
-function videoInsert(videoPath, vjsClass) {
+function videoInsert(videoPath, vjsClass, additEl) {
 	modalWrapper.innerHTML = `
-	<div class="vjs-video-wrapper ${vjsClass}">
-		<video class="vjs-modal-custom video-js" id="video-js-modal">
-			<source
-				src="${videoPath}"
-				type="video/mp4"
-			/>
-			<p>Your browser does not support HTML5 video</p>
-		</video>
+	<div>
+		<div class="vjs-video-wrapper ${vjsClass}">
+			<video class="vjs-modal-custom video-js" id="video-js-modal">
+				<source
+					src="${videoPath}"
+					type="video/mp4"
+				/>
+				<p>Your browser does not support HTML5 video</p>
+			</video>
+		</div>
+		${additEl ? additEl : ''}
 	</div>
 	`;
 }
@@ -141,4 +146,29 @@ function setupSliderVideo(videojsModule) {
 	});
 
 	return activePlayer;
+}
+
+function getTnailData(wrapper) {
+	return {
+		faceSrc: wrapper.querySelector('.tnails-slide-header img').src,
+		name: wrapper.querySelector('.tnails-slide-header h5').innerHTML,
+		pos: wrapper.querySelector('.tnails-slide-header span').innerHTML,
+		companySrc: wrapper.querySelector('.tnails-slide-footer img').src,
+		imgAlt: wrapper.querySelector('.tnails-slide-footer img').alt,
+	};
+}
+
+function createTnailEl(data) {
+	return `
+	<div class="tnails-video-wrapper">
+		<div class="tnails-video-header">
+			<img src="${data.faceSrc}" alt="${data.imgAlt}">
+			<div class="tnails-video-name-pos">
+				<h5>${data.name}</h5>
+				<span>${data.pos}</span>
+			</div>
+		</div>
+		<img class="tnails-video-company-img" src="${data.companySrc}" alt="${data.imgAlt}">
+	</div>
+	`;
 }

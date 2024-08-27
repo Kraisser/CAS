@@ -23,9 +23,6 @@
 		opacity: 1;
 		visibility: visible;
 	}
-	&.tnails-video-mod {
-		@include grid(grid-template-rows, 1fr min-content, 45px);
-	}
 }
 
 .video-modal-wrapper {
@@ -49,8 +46,60 @@
 	@include font($size: 18px, $color: $main-text-color);
 }
 
+// tnails data
+.tnails-video-wrapper {
+	@include grid(grid-template-rows, auto auto);
+	width: 340px;
+	height: 145px;
+}
+.tnails-video-header {
+	@include grid(grid-template-columns, min-content auto);
+	justify-content: space-between;
+
+	img {
+		width: 86px;
+		height: 86px;
+	}
+}
+.tnails-video-name-pos {
+	font-family: $second-family;
+
+	h5 {
+		@include font(32px, auto, $main-text-color, 700);
+		margin: 0 0 6px;
+	}
+	span {
+		@include font(17px, auto, $main-text-color, 700);
+		opacity: 0.5;
+	}
+}
+.tnails-video-company-img {
+	justify-self: center;
+}
+
 @media (max-width: 768px) {
 	.video-modal-overflow {
 		padding: 5%;
+	}
+	.tnails-video-wrapper {
+		width: 260px;
+	}
+	.tnails-video-header {
+		img {
+			width: 70px;
+			height: 70px;
+		}
+	}
+	.tnails-video-name-pos {
+		h5 {
+			font-size: 26px;
+			margin: 0 0 5px;
+		}
+		span {
+			font-size: 13px;
+		}
+	}
+	.tnails-video-company-img {
+		justify-self: start;
 	}
 }
