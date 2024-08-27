@@ -109,3 +109,24 @@
 		}
 	}
 }
+@media (max-width: 600px) {
+	.main-logo-wrapper {
+		padding: 0 14px 37px 0;
+	}
+	.main-svg-logo-wrapper {
+		svg {
+			height: 33px;
+		}
+	}
+	.main-logo-wrapper {
+		justify-items: start;
+
+		.logo-description-wrapper {
+			max-width: 400px;
+
+			span {
+				font-size: 22px;
+			}
+		}
+	}
+}

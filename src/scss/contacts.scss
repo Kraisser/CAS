@@ -68,6 +68,7 @@
 		position: absolute;
 		left: 27px;
 		top: 24px;
+		opacity: 0.4;
 		transition: all 1s $gentle;
 		cursor: text;
 	}
@@ -107,7 +108,6 @@
 		}
 		& + span {
 			transform: translateY(-12px);
-			opacity: 0.57;
 			font-size: 14px;
 		}
 	}
@@ -132,5 +132,19 @@
 	}
 	.contact-header {
 		padding: 0;
+	}
+}
+@media (max-width: 768px) {
+	.contact-form {
+		grid-template-columns: [name-start email-start message-start submit-start] 1fr [name-end email-end message-end submit-end];
+		grid-template-rows:
+			[name-start] 70px [name-end email-start] 70px [ email-end message-start] 1fr
+			[message-end submit-start] auto [submit-end];
+		grid-gap: 16px;
+	}
+	.email-link-wrapper {
+		a {
+			font-size: 14px;
+		}
 	}
 }

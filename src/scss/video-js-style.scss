@@ -65,10 +65,19 @@ $primary-foreground-color: #fff;
 	}
 }
 
+@media (max-width: 1200px) {
+	.vjs-slider-video-wrapper {
+		width: 100%;
+	}
+}
 @media (max-width: 768px) {
 	$vjs-common-font-size: 12px;
 	.vjs-modal-custom {
 		font-size: $vjs-common-font-size;
+	}
+	.vjs-slider-video-wrapper {
+		width: 90%;
+		height: 750px;
 	}
 	.vjs-tnails-video-wrapper {
 		margin-bottom: 25px;

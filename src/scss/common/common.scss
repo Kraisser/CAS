@@ -217,7 +217,7 @@ main {
 		padding: 0;
 	}
 	.section-padding {
-		padding: 75px 30px 35px;
+		padding: 82px 30px 35px;
 	}
 	.overlay {
 		display: none;
@@ -227,5 +227,14 @@ main {
 		bottom: 0;
 		left: 0;
 		right: 0;
+	}
+	.section-header {
+		h2 {
+			font-size: 32px;
+		}
+
+		span {
+			font-size: 16px;
+		}
 	}
 }

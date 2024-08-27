@@ -155,3 +155,57 @@
 		padding: 40px 38px 40px 27px;
 	}
 }
+@media (max-width: 768px) {
+	.testimonials-section {
+		padding: 85px 30px 5px;
+		grid-gap: 50px;
+	}
+	.tnails-slide-item {
+		height: auto;
+	}
+	.tnails-slide-item-content {
+		height: auto;
+		padding: 40px 27px;
+		grid-gap: 25px;
+	}
+	.tnails-slide-header {
+		grid-gap: 10px 28px;
+
+		img {
+			width: 70px;
+			height: 70px;
+		}
+		.tnail-name-pos {
+			h5 {
+				font-size: 26px;
+			}
+			span {
+				font-size: 13px;
+			}
+		}
+	}
+	.tnail-review {
+		font-size: 20px;
+	}
+	.tnails-slide-footer {
+		img {
+			width: 90px;
+		}
+	}
+	.tnails-slider-dots {
+		gap: 10px;
+
+		.tnails-slider-bullet {
+			width: 10px;
+			height: 10px;
+		}
+	}
+	.tnails-partners-wrapper {
+		padding: 0 0 10px;
+
+		img {
+			width: 100px;
+			height: 54px;
+		}
+	}
+}

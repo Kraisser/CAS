@@ -67,9 +67,9 @@ function toggleModal(target, opened) {
 function setupVideo(videojsModule, target) {
 	const targetType = target.dataset.videoType;
 	const videoSrc = target.dataset.videoSrc;
+
 	if (targetType === 'tnails') {
 		modalOverflow.classList.add('tnails-video-mod');
-		console.log('target: ', target);
 		const tnailData = getTnailData(target);
 		const tnailEl = createTnailEl(tnailData);
 		videoInsert(videoSrc, 'vjs-tnails-video-wrapper', tnailEl);
@@ -96,7 +96,6 @@ function loadVideojs() {
 
 function videoInsert(videoPath, vjsClass, additEl) {
 	modalWrapper.innerHTML = `
-	<div>
 		<div class="vjs-video-wrapper ${vjsClass}">
 			<video class="vjs-modal-custom video-js" id="video-js-modal">
 				<source
@@ -106,8 +105,7 @@ function videoInsert(videoPath, vjsClass, additEl) {
 				<p>Your browser does not support HTML5 video</p>
 			</video>
 		</div>
-		${additEl ? additEl : ''}
-	</div>
+	${additEl ? additEl : ''}
 	`;
 }
 
@@ -140,7 +138,8 @@ function setupSliderVideo(videojsModule) {
 		controlBar: {
 			pictureInPictureToggle: false,
 		},
-		fluid: true,
+		fill: window.innerWidth < 768,
+		fluid: window.innerWidth > 768,
 		disablePictureInPicture: true,
 		notSupportedMessage: 'There was an error uploading the video, please try again later',
 	});

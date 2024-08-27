@@ -26,10 +26,9 @@
 }
 
 .video-modal-wrapper {
-	display: flex;
-	justify-content: center;
-	align-items: center;
 	flex-grow: 1;
+	display: grid;
+	justify-items: center;
 
 	&.tnails-video-mod {
 		@include grid(grid-template-rows, 1fr min-content, 45px);
@@ -80,6 +79,10 @@
 @media (max-width: 768px) {
 	.video-modal-overflow {
 		padding: 5%;
+	}
+	.modal-close-icon {
+		right: 7%;
+		top: 7%;
 	}
 	.tnails-video-wrapper {
 		width: 260px;
