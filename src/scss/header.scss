@@ -160,3 +160,10 @@ header {
 		align-items: center;
 	}
 }
+
+@media (max-width: 370px) {
+	.desc-wrapper {
+		left: 15px;
+		right: 15px;
+	}
+}

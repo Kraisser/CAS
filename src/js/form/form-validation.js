@@ -1,11 +1,13 @@
 import debounce from '../modules/debounce';
 
-const fetchURL = 'https://formspree.io/f/mqkvkajy';
+const fetchURL = '';
 
 const form = document.querySelector('#contact-form');
 const inputs = document.querySelectorAll('#contact-form .contact-input');
-const sendMessageWrapper = document.querySelector('#contact-send-message');
-const sendMessageText = document.querySelector('#contact-send-message .form-send-result-message');
+const sendMessageWrapper = document.querySelector('#form-send-result-wrapper');
+const sendMessageText = document.querySelector(
+	'#form-send-result-wrapper .form-send-result-message'
+);
 
 inputs.forEach((item) => {
 	item.addEventListener('change', () => checkEmptyValue(item));
@@ -122,25 +124,5 @@ form.addEventListener('submit', (e) => {
 			.catch((error) => {
 				sendAnswerMessage(false, error.code);
 			});
-
-		// try {
-		// 	const requestTestPhp = fetch('./php/mailer/send-example.php', {
-		// 		method: 'POST',
-		// 		body: data,
-		// 		headers: {
-		// 			Accept: 'application/json',
-		// 		},
-		// 	});
-
-		// 	requestTestPhp
-		// 		.then((response) => {
-		// 			console.log(response.ok);
-		// 		})
-		// 		.catch((error) => {
-		// 			console.log(error);
-		// 		});
-		// } catch (error) {
-		// 	console.log(error);
-		// }
 	}
 });

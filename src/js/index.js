@@ -21,6 +21,7 @@ import '../scss/modal.scss';
 
 import './scripts/navigation';
 import './scripts/modal';
+import './form/form-validation';
 
 // Cases Slider
 const casesSwiper = new Swiper('.cases-slider', {
