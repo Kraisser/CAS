@@ -198,6 +198,7 @@
 		padding: 0 28px;
 	}
 }
+
 @media (max-width: 1200px) {
 	.prices-wrapper {
 		padding: 0;
@@ -212,5 +213,71 @@
 		display: flex;
 		justify-content: center;
 		gap: 15px;
+	}
+}
+
+@media (max-width: 768px) {
+	.card-head {
+		font-size: 88px;
+	}
+	.prices-card {
+		max-width: 320px;
+		padding: 90px 20px 15px;
+	}
+	.card-main-text {
+		h5 {
+			font-size: 36px;
+		}
+		span {
+			font-size: 16px;
+		}
+	}
+	.card-price {
+		.price-value {
+			font-size: 36px;
+		}
+		.price-per-video-value {
+			font-size: 18px;
+		}
+	}
+	.card-list {
+		font-size: 16px;
+	}
+}
+
+@media (max-width: 500px) {
+	.prices-card {
+		max-width: 280px;
+	}
+	.card-main-text {
+		h5 {
+			font-size: 31px;
+		}
+		span {
+			font-size: 9px;
+		}
+	}
+	.card-price {
+		.price-value {
+			font-size: 31px;
+		}
+		.price-per-video-value {
+			font-size: 13px;
+		}
+	}
+	.card-list {
+		font-size: 12px;
+	}
+	.card-button {
+		width: 215px;
+		height: 45px;
+
+		&.black-but:before,
+		&:before,
+		&:after {
+			width: 100%;
+			height: 100%;
+			background-size: 100% 100%;
+		}
 	}
 }
