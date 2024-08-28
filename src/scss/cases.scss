@@ -45,7 +45,7 @@
 
 	span {
 		display: block;
-		transition: transform 0.3s ease, color 0.8s $gentle;
+		transition: transform 0.3s ease, color 0.8s $gentle, font-size 0.3s ease;
 		transform-origin: left;
 	}
 
@@ -232,6 +232,22 @@
 	}
 	.cases-item {
 		font-size: 20px;
+
+		&.active {
+			span {
+				transform: none;
+				font-size: 30px;
+			}
+		}
+	}
+	.cases-slide-item {
+		display: block;
+
+		.slide-preview-image {
+			height: 100%;
+			width: 100%;
+			object-fit: cover;
+		}
 	}
 	.cases-dot {
 		display: none;
@@ -270,6 +286,12 @@
 	}
 	.cases-item {
 		font-size: 16px;
+
+		&.active {
+			span {
+				font-size: 22px;
+			}
+		}
 	}
 	.cases-slider-controls {
 		padding: 5px 7px 10px;
@@ -299,6 +321,7 @@
 }
 @media (max-width: 450px) {
 	.cases-list {
-		
+		grid-gap: 0;
+		justify-content: space-between;
 	}
 }
