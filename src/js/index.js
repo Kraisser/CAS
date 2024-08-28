@@ -47,7 +47,7 @@ const casesSwiper = new Swiper('.cases-slider', {
 		type: 'fraction',
 	},
 	breakpoints: {
-		1200: {
+		768: {
 			navigation: {
 				nextEl: '.slide-arrow-next',
 				prevEl: '.slide-arrow-prev',

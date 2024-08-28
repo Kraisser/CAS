@@ -64,6 +64,13 @@ footer {
 // Media
 @media (max-width: 1200px) {
 	.desc-footer {
+		bottom: 20px;
+		right: 25px;
+		height: 45px;
+	}
+}
+@media (max-width: 768px) {
+	.desc-footer {
 		display: none;
 	}
 }
