@@ -2,7 +2,6 @@
 @import './common/mixins.scss';
 
 .main-logo-section {
-	height: 100vh;
 	@include grid(grid-template-columns, max-content);
 	@include gPos(end, end);
 }

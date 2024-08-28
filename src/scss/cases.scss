@@ -2,7 +2,6 @@
 @import './common/mixins.scss';
 
 .cases-section {
-	height: 100vh;
 	font-family: $font-family;
 	display: grid;
 	grid-template: [head-start slider-start] auto [head-end list-start] auto [list-end ach-start] auto [ach-end slider-end] / [head-start list-start ach-start] auto [head-end list-end ach-end slider-start] 8fr [slider-end];

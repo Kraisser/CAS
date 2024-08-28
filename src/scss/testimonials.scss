@@ -2,7 +2,7 @@
 @import './common/mixins.scss';
 
 .testimonials-section {
-	height: 100vh;
+	// height: 100vh;
 	padding: 45px 0 125px;
 	@include grid(grid-template-rows, min-content min-content min-content);
 	align-content: space-between;

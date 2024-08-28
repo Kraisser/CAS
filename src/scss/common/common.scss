@@ -10,7 +10,6 @@
 body {
 	position: relative;
 	font-family: $font-family;
-	// max-width: 1920px;
 	overflow: hidden;
 }
 main {
@@ -118,10 +117,12 @@ main {
 		}
 	}
 }
-.section-padding {
+.default-section {
 	padding-top: 45px;
 	padding-bottom: 48px;
 	position: relative;
+	height: 100vh;
+	height: 100dvh;
 }
 .video-wrapper {
 	position: fixed;
@@ -171,7 +172,7 @@ main {
 	main {
 		padding: 0 25px 0;
 	}
-	.section-padding {
+	.default-section {
 		padding: 75px 30px 35px;
 	}
 	.overlay {
@@ -216,7 +217,7 @@ main {
 	main {
 		padding: 0;
 	}
-	.section-padding {
+	.default-section {
 		padding: 82px 30px 35px;
 	}
 	.overlay {
@@ -239,7 +240,7 @@ main {
 	}
 }
 @media (max-width: 370px) {
-	.section-padding {
+	.default-section {
 		padding: 82px 15px 35px;
 	}
 }
