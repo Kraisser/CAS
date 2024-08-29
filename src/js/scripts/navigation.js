@@ -89,9 +89,9 @@ const navigationsCallbacks = [
 // Swipe Controller
 const swipeSettings = {
 	minTime: 150,
-	maxTime: 600,
-	minMove: 60,
-	maxMove: 400,
+	maxTime: 1000,
+	minMove: 30,
+	maxMove: 800,
 };
 
 function pageDown() {
