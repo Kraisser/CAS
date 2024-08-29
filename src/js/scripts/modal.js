@@ -11,7 +11,9 @@ const modalCloseIcon = modalOverflow.querySelector('.modal-close-icon');
 let activePlayer;
 
 tnailVideoTrigger.forEach((item) => {
-	item.addEventListener('click', () => toggleModal(item, true));
+	if (item.dataset.videoSrc) {
+		item.addEventListener('click', () => toggleModal(item, true));
+	}
 });
 sliderVideoTrigger.forEach((item) => {
 	item.addEventListener('click', () => toggleModal(item, true));

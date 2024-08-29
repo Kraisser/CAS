@@ -3,6 +3,7 @@ import activeLinksController from '../modules/active-links-controller';
 import menuDotCtrl from '../modules/menu-dot-anim';
 import observerNav from '../modules/observer-nav';
 import burger from '../modules/burger-menu';
+import swipeController from '../modules/swipe-controller';
 
 // Burger
 const burgerBut = document.querySelector('.burger-icon');
@@ -13,6 +14,11 @@ const navSelectorList = [
 	document.querySelector('.menu-list'),
 	document.querySelector('.mobile-menu-list'),
 ];
+
+const smoothLinks = document.querySelectorAll('a[href^="#"]');
+const linkList = ['home', 'cases', 'testimonials', 'prices', 'contacts'];
+const startVal = 0;
+let currPage = 0;
 
 const messengerWrapper = document.querySelector('.desc-messenger-wrapper');
 const sliderCtrlWrapper = document.querySelector('.desc-slider-controls');
@@ -53,8 +59,6 @@ const switchingBack = (id) => {
 
 const pagesNavSwitch = switchingFooter(messengerWrapper, sliderCtrlWrapper);
 
-const startVal = 'home';
-
 // DotController
 const dot = document.querySelector('#desc-menu-dot');
 const navWrapper = document.querySelector('.desc-menu-wrapper');
@@ -67,13 +71,10 @@ const mobileDotCallback = menuDotCtrl(mobileDot, mobileNavWrapper, true);
 // Class controller
 const activeLinksControl = activeLinksController(navSelectorList, 'active');
 
-// Observer
-// const observedTargetsId = document.querySelectorAll('.menu-list a');
-
-// observedTargetsId.forEach((item) => {
-// 	const id = item.getAttribute('href').slice(1);
-// 	observerNav(id, switchingBack);
-// });
+function setLinkIndex(id) {
+	currPage = linkList.indexOf(id);
+	// console.log('currPage: ', currPage, id);
+}
 
 //Nav init
 const navigationsCallbacks = [
@@ -82,19 +83,50 @@ const navigationsCallbacks = [
 	mobileDotCallback,
 	pagesNavSwitch,
 	switchingBack,
+	setLinkIndex,
 ];
 
-navigationsCallbacks.forEach((func) => func(startVal));
+// Swipe Controller
+const swipeSettings = {
+	minTime: 150,
+	maxTime: 600,
+	minMove: 60,
+	maxMove: 400,
+};
 
-// Smoothscroll
-const smoothLinks = document.querySelectorAll('a[href^="#"]');
-// smoothScroll(startVal, smoothLinks, navigationsCallbacks);
+function pageDown() {
+	if (currPage < linkList.length - 1) {
+		currPage++;
+	} else {
+		return;
+	}
+
+	smoothScroll(linkList[currPage], smoothLinks, navigationsCallbacks);
+}
+
+function pageUp() {
+	if (currPage > 0) {
+		currPage--;
+	} else {
+		return;
+	}
+
+	smoothScroll(linkList[currPage], smoothLinks, navigationsCallbacks);
+}
+
+const swipeCallbacks = {
+	toTop: pageDown,
+	toBot: pageUp,
+};
+
+swipeController(swipeSettings, swipeCallbacks);
 
 window.addEventListener(
 	'load',
 	(e) => {
-		smoothScroll(startVal, smoothLinks, navigationsCallbacks);
-		setTimeout(() => {}, 1);
+		setTimeout(() => {
+			smoothScroll(linkList[startVal], smoothLinks, navigationsCallbacks);
+		}, 1);
 	},
 	{once: true}
 );

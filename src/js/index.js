@@ -23,6 +23,8 @@ import './scripts/navigation';
 import './scripts/modal';
 import './form/form-validation';
 
+import './modules/swipe-controller';
+
 // Cases Slider
 const casesSwiper = new Swiper('.cases-slider', {
 	slidesPerView: 1,

@@ -286,6 +286,7 @@
 		padding-left: 30px;
 		grid-template: [head-start] auto [head-end list-start] 2em [list-end slider-start] 1fr [slider-end ctrl-start] auto [ctrl-end ach-start] auto [ach-end] / [head-start list-start slider-start ctrl-start ach-start] 1fr[head-end list-end slider-end ctrl-end ach-end];
 		grid-gap: 20px;
+		padding-bottom: 30px;
 	}
 	.cases-list {
 		width: auto;
