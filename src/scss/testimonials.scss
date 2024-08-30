@@ -115,10 +115,14 @@
 }
 
 // Media
+
+@media (max-width: 1500px) {
+	.tnails-partners-wrapper {
+		padding: 0 30px;
+	}
+}
+
 @media (max-width: 1200px) {
-	// .testimonials-section {
-	// 	padding: 0;
-	// }
 	.testimonials-section {
 		padding: 85px 30px 60px;
 	}
@@ -147,6 +151,7 @@
 		}
 	}
 }
+
 @media (max-width: 900px) {
 	.tnails-slide-item {
 		width: 100%;
@@ -155,6 +160,7 @@
 		padding: 40px 38px 40px 27px;
 	}
 }
+
 @media (max-width: 768px) {
 	.testimonials-section {
 		padding: 85px 30px 5px;
@@ -209,6 +215,7 @@
 		}
 	}
 }
+
 @media (max-width: 370px) {
 	.testimonials-section {
 		padding: 85px 15px 5px;
