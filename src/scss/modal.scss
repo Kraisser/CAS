@@ -52,12 +52,13 @@
 	height: 145px;
 }
 .tnails-video-header {
-	@include grid(grid-template-columns, min-content auto);
+	@include grid(grid-template-columns, min-content auto, 36px);
 	justify-content: space-between;
 
 	img {
 		width: 86px;
 		height: 86px;
+		border-radius: 50%;
 	}
 }
 .tnails-video-name-pos {

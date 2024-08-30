@@ -150,16 +150,21 @@ function setupSliderVideo(videojsModule) {
 }
 
 function getTnailData(wrapper) {
+	const img = wrapper.querySelector('.tnails-slide-footer img');
+
 	return {
 		faceSrc: wrapper.querySelector('.tnails-slide-header img').src,
 		name: wrapper.querySelector('.tnails-slide-header h5').innerHTML,
 		pos: wrapper.querySelector('.tnails-slide-header span').innerHTML,
-		companySrc: wrapper.querySelector('.tnails-slide-footer img').src,
-		imgAlt: wrapper.querySelector('.tnails-slide-footer img').alt,
+		img,
 	};
 }
 
 function createTnailEl(data) {
+	const companyImg = data.img
+		? `<img class="tnails-video-company-img" src="${data.img.src}" alt="${data.img.alt}">`
+		: null;
+
 	return `
 	<div class="tnails-video-wrapper">
 		<div class="tnails-video-header">
@@ -169,7 +174,7 @@ function createTnailEl(data) {
 				<span>${data.pos}</span>
 			</div>
 		</div>
-		<img class="tnails-video-company-img" src="${data.companySrc}" alt="${data.imgAlt}">
+		${companyImg}	
 	</div>
 	`;
 }

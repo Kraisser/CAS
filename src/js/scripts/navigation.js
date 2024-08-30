@@ -5,6 +5,8 @@ import observerNav from '../modules/observer-nav';
 import burger from '../modules/burger-menu';
 import swipeController from '../modules/swipe-controller';
 
+import debounce from '../modules/debounce';
+
 // Burger
 const burgerBut = document.querySelector('.burger-icon');
 const mobileMenuWrapper = document.querySelector('.mobile-menu-overlay');
@@ -17,7 +19,6 @@ const navSelectorList = [
 
 const smoothLinks = document.querySelectorAll('a[href^="#"]');
 const linkList = ['home', 'cases', 'testimonials', 'prices', 'contacts'];
-const startVal = 0;
 let currPage = 0;
 
 const messengerWrapper = document.querySelector('.desc-messenger-wrapper');
@@ -125,8 +126,16 @@ window.addEventListener(
 	'load',
 	(e) => {
 		setTimeout(() => {
-			smoothScroll(linkList[startVal], smoothLinks, navigationsCallbacks);
+			smoothScroll(linkList[currPage], smoothLinks, navigationsCallbacks);
 		}, 1);
 	},
 	{once: true}
 );
+
+const debounceScroll = debounce(() => {
+	smoothScroll(linkList[currPage], smoothLinks, navigationsCallbacks);
+}, 250);
+
+window.addEventListener('resize', () => {
+	debounceScroll();
+});
