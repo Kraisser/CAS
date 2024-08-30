@@ -211,7 +211,16 @@
 @media (max-width: 1500px) {
 	.cases-section {
 		grid-template-columns: [head-start list-start ach-start] min-content [head-end list-end ach-end slider-start] 8fr [slider-end];
-		grid-column-gap: 30px;
+		grid-gap: 15px 20px;
+	}
+	.cases-header {
+		padding-top: 67px;
+	}
+	.achievments-wrapper {
+		padding-top: 20px;
+	}
+	.achievments-list {
+		grid-gap: 15px;
 	}
 }
 @media (max-width: 1200px) {

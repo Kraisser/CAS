@@ -228,11 +228,15 @@
 
 		img {
 			width: 100px;
-			height: 54px;
+			height: auto;
 		}
 	}
 }
-
+@media (max-width: 500px) {
+	.testimonials-section {
+		grid-gap: 10px;
+	}
+}
 @media (max-width: 370px) {
 	.testimonials-section {
 		padding: 85px 15px 5px;
