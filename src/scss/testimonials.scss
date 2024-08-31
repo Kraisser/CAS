@@ -111,6 +111,9 @@
 	@include grid(grid-template-columns, auto auto);
 	justify-content: space-between;
 }
+.tnails-slide-footer-company {
+	@include font(20px, 1.2em, $main-text-color, 700);
+}
 .tnails-video-review-but {
 	@include grid(grid-template-columns, min-content auto, 18px);
 	@include gPos(center);
