@@ -1,17 +1,27 @@
-export default function swipeController(settings, callbackObj) {
-	const body = document.querySelector('body');
+export default function swipeController(settings, swipeForbidEls, callbackObj) {
 	const touch = {};
 
-	body.addEventListener('touchstart', (e) => touchHandle(e, 'start'));
-	body.addEventListener('touchend', touchHandle);
+	document.body.addEventListener('touchstart', (e) => touchHandle(e, 'start'));
+	document.body.addEventListener('touchend', touchHandle);
 
 	function touchHandle(e, pos) {
+		swipeForbidEls.forEach((item) => {
+			if (e.target === item) {
+				touch.forbid = true;
+				return;
+			}
+		});
+
 		const target = e.changedTouches[0];
 		if (pos === 'start') {
+			touch.forbid = false;
 			touch.sTime = e.timeStamp;
 			touch.sX = target.clientX;
 			touch.sY = target.clientY;
 		} else {
+			if (touch.forbid) {
+				return;
+			}
 			const eData = {
 				eTime: e.timeStamp,
 				eX: target.clientX,

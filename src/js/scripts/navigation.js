@@ -120,7 +120,9 @@ const swipeCallbacks = {
 	toBot: pageUp,
 };
 
-swipeController(swipeSettings, swipeCallbacks);
+const swipeForbidEl = [...document.querySelectorAll('.tnail-review')];
+
+swipeController(swipeSettings, swipeForbidEl, swipeCallbacks);
 
 window.addEventListener(
 	'load',
