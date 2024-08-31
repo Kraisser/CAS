@@ -63,7 +63,7 @@ const pagesNavSwitch = switchingFooter(messengerWrapper, sliderCtrlWrapper);
 // DotController
 const dot = document.querySelector('#desc-menu-dot');
 const navWrapper = document.querySelector('.desc-menu-wrapper');
-const dascDotCallback = menuDotCtrl(dot, navWrapper);
+const descDotCallback = menuDotCtrl(dot, navWrapper);
 
 const mobileDot = document.querySelector('#mobile-menu-dot');
 const mobileNavWrapper = document.querySelector('.mobile-menu-list');
@@ -80,7 +80,7 @@ function setLinkIndex(id) {
 //Nav init
 const navigationsCallbacks = [
 	activeLinksControl,
-	dascDotCallback,
+	descDotCallback,
 	mobileDotCallback,
 	pagesNavSwitch,
 	switchingBack,
@@ -96,22 +96,20 @@ const swipeSettings = {
 };
 
 function pageDown() {
-	if (currPage < linkList.length - 1) {
-		currPage++;
-	} else {
+	if (currPage >= linkList.length - 1) {
 		return;
 	}
 
+	currPage++;
 	smoothScroll(linkList[currPage], smoothLinks, navigationsCallbacks);
 }
 
 function pageUp() {
-	if (currPage > 0) {
-		currPage--;
-	} else {
+	if (currPage <= 0) {
 		return;
 	}
 
+	currPage--;
 	smoothScroll(linkList[currPage], smoothLinks, navigationsCallbacks);
 }
 

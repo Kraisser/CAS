@@ -5,7 +5,7 @@
 	font-family: $font-family;
 	display: grid;
 	grid-template: [head-start slider-start] auto [head-end list-start] auto [list-end ach-start] auto [ach-end slider-end] / [head-start list-start ach-start] auto [head-end list-end ach-end slider-start] 8fr [slider-end];
-	grid-gap: 7vh 56px;
+	grid-gap: 5vh 56px;
 	padding-left: 155px;
 }
 .cases-header {
@@ -124,10 +124,9 @@
 	position: relative;
 	height: 100%;
 	display: grid;
-	justify-content: center;
-	align-items: center;
+	grid-template-columns: 1fr;
 
-	.slide-preview-image {
+	.vjs-cases-wrapper {
 		transition: all 0.3s ease-out;
 	}
 	.slide-gradient-overlay {
@@ -141,8 +140,26 @@
 		background: linear-gradient(to bottom, transparent 0, $def-text-color 85%);
 	}
 
+	.custom-slider-error {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&.video-active {
+		.slide-item-content,
+		.slide-gradient-overlay {
+			animation: normal 0.6s ease-out sliderContentHide forwards;
+		}
+
+		&:hover {
+			.vjs-cases-wrapper {
+				transform: none;
+			}
+		}
+	}
 	&:hover {
-		.slide-preview-image {
+		.vjs-cases-wrapper {
 			transform: scale(1.5);
 		}
 		.slide-gradient-overlay {
@@ -189,6 +206,17 @@
 			transform: scale(0.66);
 			opacity: 0.6;
 		}
+	}
+}
+// Video
+.vjs-cases-wrapper {
+	width: 100%;
+	height: 100%;
+
+	video {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
 	}
 }
 
@@ -253,10 +281,6 @@
 		}
 	}
 
-	.cases-slider-wrapper {
-		max-width: 80%;
-		justify-self: center;
-	}
 	.cases-slide-item {
 		display: block;
 
@@ -287,6 +311,22 @@
 			span {
 				font-size: 16px;
 			}
+		}
+	}
+	// Video
+	.vjs-cases-custom {
+		.vjs-control-bar {
+			// height: 50px;
+			max-width: none;
+		}
+		.vjs-control-bar,
+		.vjs-big-play-button,
+		.vjs-menu-button .vjs-menu-content {
+			background-color: rgba($bg-second-color, 0.4);
+		}
+		.vjs-control:focus-visible {
+			outline: none;
+			// border: 1px solid rgba($primary-foreground-color, 0.8);
 		}
 	}
 }
@@ -365,5 +405,22 @@
 @media (max-width: 370px) {
 	.cases-section {
 		padding-left: 15px;
+	}
+}
+
+// Animation
+@keyframes sliderContentHide {
+	from {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.5;
+	}
+	99% {
+		opacity: 0;
+	}
+	to {
+		visibility: hidden;
+		opacity: 0;
 	}
 }
