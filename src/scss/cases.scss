@@ -339,6 +339,16 @@
 		.slide-item-text {
 			font-size: 32px;
 		}
+		.slide-play-but {
+			opacity: 0.8;
+		}
+
+		&:hover {
+			.slide-play-but {
+				transform: scale(0.5);
+				opacity: 0.8;
+			}
+		}
 	}
 }
 @media (max-width: 450px) {

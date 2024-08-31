@@ -3,7 +3,7 @@ import loadingSpinner from '../../assets/icons/video-loader.svg';
 import {disablePageScroll, enablePageScroll} from 'scroll-lock';
 
 const tnailVideoTrigger = document.querySelectorAll('.tnails-slide-item-content');
-const sliderVideoTrigger = document.querySelectorAll('.cases-slide-item');
+// const sliderVideoTrigger = document.querySelectorAll('.cases-slide-item');
 const modalOverflow = document.querySelector('.video-modal-overflow');
 const modalWrapper = document.querySelector('.video-modal-wrapper');
 const modalCloseIcon = modalOverflow.querySelector('.modal-close-icon');
@@ -12,59 +12,57 @@ let activePlayer;
 
 tnailVideoTrigger.forEach((item) => {
 	if (item.dataset.videoSrc) {
-		item.addEventListener('click', () => toggleModal(item, true));
+		item.addEventListener('click', () => openModal(item));
 	}
 });
-sliderVideoTrigger.forEach((item) => {
-	item.addEventListener('click', () => toggleModal(item, true));
-});
+// sliderVideoTrigger.forEach((item) => {
+// 	item.addEventListener('click', () => toggleModal(item, true));
+// });
 
-modalCloseIcon.addEventListener('click', (e) => toggleModal(e, false));
+modalCloseIcon.addEventListener('click', (e) => closeModal(e));
 modalOverflow.addEventListener('click', (e) => {
 	if (e.target === modalOverflow) {
-		toggleModal(e, false);
+		closeModal(e);
 	}
 });
 
-function toggleModal(target, opened) {
-	if (opened) {
-		modalOverflow.classList.add('video-modal-opened');
-		disablePageScroll(modalWrapper);
-		loadVideojs()
-			.then((videojs) => (activePlayer = setupVideo(videojs, target)))
-			.then(() => {
-				modalWrapper.querySelector('.vjs-video-wrapper').classList.add('opened');
-				modalWrapper.addEventListener(
-					'transitionend',
-					() => {
-						activePlayer.play();
-					},
-					{once: true}
-				);
-			})
-			.catch((errorMessage) => {
-				modalWrapper.innerHTML = `<div class="custom-error-modal">${errorMessage}</div>`;
-				modalWrapper.addEventListener('click', (e) => toggleModal(e, false));
-			});
-	} else {
-		if (activePlayer) {
-			activePlayer.dispose();
-		}
-
-		modalOverflow.classList.remove('video-modal-opened');
-		enablePageScroll(modalWrapper);
-
-		modalOverflow.addEventListener(
-			'transitionend',
-			() => {
-				modalWrapper.innerHTML = loadingSpinner;
-			},
-			{once: true}
-		);
-	}
+function openModal(target) {
+	modalOverflow.classList.add('video-modal-opened');
+	disablePageScroll(modalWrapper);
+	loadVideojs()
+		.then((videojs) => (activePlayer = setupVideo(videojs, target)))
+		.then(() => {
+			modalWrapper.querySelector('.vjs-video-wrapper').classList.add('opened');
+			modalWrapper.addEventListener(
+				'transitionend',
+				() => {
+					activePlayer.play();
+				},
+				{once: true}
+			);
+		})
+		.catch((errorMessage) => {
+			modalWrapper.innerHTML = `<div class="custom-error-modal">${errorMessage}</div>`;
+			modalWrapper.addEventListener('click', (e) => closeModal(e));
+		});
 }
 
-// function selectVideoSetup(videojsModule, target, ) {}
+function closeModal(e) {
+	if (activePlayer) {
+		activePlayer.dispose();
+	}
+
+	modalOverflow.classList.remove('video-modal-opened');
+	enablePageScroll(modalWrapper);
+
+	modalOverflow.addEventListener(
+		'transitionend',
+		() => {
+			modalWrapper.innerHTML = loadingSpinner;
+		},
+		{once: true}
+	);
+}
 
 function setupVideo(videojsModule, target) {
 	const targetType = target.dataset.videoType;
@@ -77,9 +75,9 @@ function setupVideo(videojsModule, target) {
 		videoInsert(videoSrc, 'vjs-tnails-video-wrapper', tnailEl);
 		return setupTnailVideo(videojsModule);
 	} else if (targetType === 'slider') {
-		modalOverflow.classList.remove('tnails-video-mod');
-		videoInsert(videoSrc, 'vjs-slider-video-wrapper');
-		return setupSliderVideo(videojsModule);
+		// modalOverflow.classList.remove('tnails-video-mod');
+		// videoInsert(videoSrc, 'vjs-slider-video-wrapper');
+		// return setupSliderVideo(videojsModule);
 	}
 }
 
