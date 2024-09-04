@@ -184,8 +184,7 @@
 		justify-self: center;
 		align-self: center;
 		transition: all 0.4s ease-out;
-		transform: scale(0.5);
-		opacity: 0;
+		opacity: 0.8;
 		cursor: pointer;
 	}
 
@@ -199,8 +198,7 @@
 
 	&:hover {
 		.slide-play-but {
-			transform: scale(1);
-			opacity: 0.8;
+			transform: scale(2.5);
 		}
 		.slide-item-text {
 			transform: scale(0.66);
@@ -378,16 +376,6 @@
 	.slide-item-content {
 		.slide-item-text {
 			font-size: 32px;
-		}
-		.slide-play-but {
-			opacity: 0.8;
-		}
-
-		&:hover {
-			.slide-play-but {
-				transform: scale(0.5);
-				opacity: 0.8;
-			}
 		}
 	}
 }
