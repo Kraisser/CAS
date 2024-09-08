@@ -49,9 +49,9 @@ new Swiper('.tnails-slides-wrapper', {
 });
 
 // prices Slider
-const pricesSwiper = new Swiper('.prices-slider-wrapper', {
+const pricesSwiper = new Swiper('.prices-wrapper', {
 	slidesPerView: 'auto',
-	spaceBetween: 28,
+	spaceBetween: 22,
 	speed: 600,
 	grabCursor: true,
 	enabled: true,
@@ -63,6 +63,9 @@ const pricesSwiper = new Swiper('.prices-slider-wrapper', {
 		clickable: true,
 	},
 	breakpoints: {
+		768: {
+			spaceBetween: 28,
+		},
 		1700: {
 			enabled: false,
 		},

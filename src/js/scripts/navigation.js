@@ -122,15 +122,15 @@ const swipeForbidEl = [...document.querySelectorAll('.tnail-review')];
 
 swipeController(swipeSettings, swipeForbidEl, swipeCallbacks);
 
-window.addEventListener(
-	'load',
-	(e) => {
-		setTimeout(() => {
-			smoothScroll(linkList[currPage], smoothLinks, navigationsCallbacks);
-		}, 1);
-	},
-	{once: true}
-);
+// window.addEventListener(
+// 	'load',
+// 	(e) => {
+// 		setTimeout(() => {
+// 			smoothScroll(linkList[currPage], smoothLinks, navigationsCallbacks);
+// 		}, 1);
+// 	},
+// 	{once: true}
+// );
 
 const debounceScroll = debounce(() => {
 	smoothScroll(linkList[currPage], smoothLinks, navigationsCallbacks);
