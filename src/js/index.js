@@ -42,7 +42,7 @@ new Swiper('.tnails-slides-wrapper', {
 	},
 	breakpoints: {
 		1200: {
-			initialSlide: 1,
+			initialSlide: 0,
 		},
 	},
 	modules: [Pagination],
