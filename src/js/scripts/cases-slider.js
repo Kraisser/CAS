@@ -94,7 +94,7 @@ function startVideo(item) {
 			activePlayer.play();
 
 			casesSwiper.once(
-				'slideChangeTransitionEnd',
+				'slideChange',
 				() => {
 					stopVideo(item);
 				},

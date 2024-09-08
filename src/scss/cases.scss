@@ -234,6 +234,7 @@
 		}
 	}
 }
+
 @media (max-width: 1500px) {
 	.cases-section {
 		grid-template-columns: [head-start list-start ach-start] min-content [head-end list-end ach-end slider-start] 8fr [slider-end];
@@ -249,6 +250,7 @@
 		grid-gap: 15px;
 	}
 }
+
 @media (max-width: 1200px) {
 	.cases-section {
 		grid-template: [head-start] auto [head-end list-start] 2em [list-end slider-start] 1fr [slider-end ach-start] auto [ach-end] / [head-start list-start slider-start ach-start] 1fr[head-end list-end slider-end ach-end];
@@ -328,6 +330,7 @@
 		}
 	}
 }
+
 @media (max-width: 768px) {
 	.cases-section {
 		padding-left: 30px;
@@ -379,6 +382,7 @@
 		}
 	}
 }
+
 @media (max-width: 450px) {
 	.cases-list {
 		grid-gap: 0;
@@ -390,9 +394,20 @@
 		}
 	}
 }
+
 @media (max-width: 370px) {
 	.cases-section {
 		padding-left: 15px;
+	}
+}
+
+// Media Height
+@media (max-height: 850px) {
+	.cases-section {
+		grid-gap: 15px 56px;
+	}
+	.achievments-wrapper {
+		padding-top: 10px;
 	}
 }
 
