@@ -19,7 +19,7 @@ const navSelectorList = [
 
 const smoothLinks = document.querySelectorAll('a[href^="#"]');
 const linkList = ['home', 'cases', 'testimonials', 'prices', 'contacts'];
-let currPage = 0;
+let currPage = 1;
 
 const messengerWrapper = document.querySelector('.desc-messenger-wrapper');
 const sliderCtrlWrapper = document.querySelector('.desc-slider-controls');
@@ -122,15 +122,15 @@ const swipeForbidEl = [...document.querySelectorAll('.tnail-review')];
 
 swipeController(swipeSettings, swipeForbidEl, swipeCallbacks);
 
-// window.addEventListener(
-// 	'load',
-// 	(e) => {
-// 		setTimeout(() => {
-// 			smoothScroll(linkList[currPage], smoothLinks, navigationsCallbacks);
-// 		}, 1);
-// 	},
-// 	{once: true}
-// );
+window.addEventListener(
+	'load',
+	(e) => {
+		setTimeout(() => {
+			smoothScroll(linkList[currPage], smoothLinks, navigationsCallbacks);
+		}, 1);
+	},
+	{once: true}
+);
 
 const debounceScroll = debounce(() => {
 	smoothScroll(linkList[currPage], smoothLinks, navigationsCallbacks);
