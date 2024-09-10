@@ -165,7 +165,7 @@
 			<div class="video-wrapper">
 				<video
 					class="background-video"
-					src="./assets/video/Anatoly-Studio-Shworeel_16x9.mp4"
+					src="./assets/video/showreels/showreel_full_compr.mp4"
 					autoplay
 					loop
 					muted
@@ -209,10 +209,27 @@
 						<span>What we are proud of</span>
 					</div>
 					<ul class="cases-list">
-						<li class="cases-item active"><span>Showreel</span></li>
-						<li class="cases-item"><span>2D</span></li>
-						<li class="cases-item"><span>3D</span></li>
-						<li class="cases-item"><span>UGC</span></li>
+						<li
+							class="cases-item active"
+							data-video-src="./assets/video/showreels/showreel_full_compr.mp4"
+						>
+							<span>Showreel</span>
+						</li>
+						<li
+							class="cases-item"
+							data-video-src="./assets/video/showreels/showreel_full_compr.mp4"
+						>
+							<span>2D</span>
+						</li>
+						<li class="cases-item" data-video-src="./assets/video/showreels/showreel_3d_compr.mp4">
+							<span>3D</span>
+						</li>
+						<li
+							class="cases-item"
+							data-video-src="./assets/video/showreels/showreel_full_compr.mp4"
+						>
+							<span>UGC</span>
+						</li>
 						<li class="cases-item"><span>PLAYABLES</span></li>
 						<div class="cases-dot" id="cases-dot"></div>
 					</ul>
@@ -271,11 +288,7 @@
 						<div class="cases-slider">
 							<div class="swiper-wrapper cases-slide-wrapper">
 								<div class="swiper-slide">
-									<div
-										class="cases-slide-item"
-										data-video-type="slider"
-										data-video-src="./assets/video/grand-hotel-mania/ghm_children_16x9.mp4"
-									>
+									<div class="cases-slide-item">
 										<div class="vjs-cases-wrapper">
 											<video class="vjs-cases-custom video-js">
 												<source

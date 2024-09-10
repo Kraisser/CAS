@@ -1,5 +1,5 @@
 import 'normalize.css';
-import 'video.js/dist/video-js.css';
+import 'video.js/dist/video-js.min.css';
 
 import '../scss/video-js-style.scss';
 

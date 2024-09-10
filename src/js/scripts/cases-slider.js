@@ -61,77 +61,78 @@ function casesDotController(target) {
 casesItem.forEach((item) => {
 	item.addEventListener('click', (e) => {
 		const target = e.currentTarget;
-		// const slideIndex = target.dataset.slideToIndex;
-		// casesSwiper.slideTo(+slideIndex);
 
 		casesDotController(target);
 	});
 });
 
-// casesSwiper.on('activeIndexChange', (e) => {
-// 	const target = document.querySelector(`[data-slide-to-index="${e.activeIndex}"`);
-// 	if (target) {
-// 		casesDotController(target);
-// 	}
-// });
-
 // Cases Video
 const sliderVideoTrigger = document.querySelectorAll('.cases-slide-item');
+
+let videoJsModule;
 let activePlayer;
 
 sliderVideoTrigger.forEach((item) => {
-	item.addEventListener('click', () => startVideo(item), {once: true});
+	const defaultVideoSrc = item.querySelector('.vjs-cases-custom.video-js').currentSrc;
+	item.dataset.defaultVideoSrc = defaultVideoSrc;
+
+	item.addEventListener('click', () => {
+		startVideo(item);
+	});
 });
 
 function startVideo(item) {
+	if (activePlayer && !activePlayer.isDisposed()) {
+		return;
+	}
+
 	const videoEl = item.querySelector('.vjs-cases-custom');
 
 	item.classList.add('video-active');
 
 	loadVideojs()
-		.then((videojs) => (activePlayer = setupSliderVideo(videojs, videoEl)))
-		.then(() => {
+		.then((videojsModule) => {
+			setActivePlayer(videojsModule, videoEl);
 			activePlayer.play();
-
-			casesSwiper.once(
-				'slideChange',
-				() => {
-					stopVideo(item);
-				},
-				{once: true}
-			);
 		})
 		.catch((errorMessage) => {
 			console.log('errorMessage: ', errorMessage);
 			item.innerHTML = `<div class="custom-slider-error">${errorMessage}</div>`;
-			// item.addEventListener('click', (e) => stopVideo(e, item));
 		});
 }
 
+casesSwiper.on('slideChange', (e) => {
+	const currSlide =
+		casesSwiper.slides[casesSwiper.previousIndex].querySelector('.cases-slide-item');
+
+	stopVideo(currSlide);
+});
+
 function stopVideo(item) {
 	item.classList.remove('video-active');
-	item.addEventListener('click', () => startVideo(item), {once: true});
 
-	if (activePlayer) {
+	if (activePlayer && !activePlayer.isDisposed()) {
 		activePlayer.dispose();
 	}
 }
 
-function loadVideojs() {
-	return import('video.js')
-		.then(({default: videojs}) => {
-			return videojs;
-		})
-		.catch((error) => {
-			const errorMessage = 'Unable to load videoPlayer. ' + error.message;
-			console.log(error);
-
-			throw new Error(errorMessage);
-		});
+async function loadVideojs() {
+	try {
+		if (videoJsModule) {
+			return videoJsModule;
+		}
+		const videojs = await import('video.js');
+		videoJsModule = videojs.default;
+		return videoJsModule;
+	} catch (error) {
+		const errorMessage = 'Unable to load videoPlayer. ' + error.message;
+		console.log(error);
+		throw new Error(errorMessage);
+	}
 }
 
-function setupSliderVideo(videojsModule, videoEl) {
-	const activePlayer = videojsModule(videoEl, {
+function setActivePlayer(videojsModule, videoEl) {
+	activePlayer = videojsModule(videoEl, {
 		controls: true,
 		autoplay: true,
 		preload: 'auto',
@@ -143,6 +144,46 @@ function setupSliderVideo(videojsModule, videoEl) {
 		disablePictureInPicture: true,
 		notSupportedMessage: 'There was an error uploading the video, please try again later',
 	});
+}
 
-	return activePlayer;
+// showreel videos
+const shwTriggers = document.querySelectorAll('.cases-item');
+let currShw;
+
+shwTriggers.forEach((item) => {
+	item.addEventListener('click', (e) => {
+		const shwSrc = e.currentTarget.dataset.videoSrc;
+
+		if (!shwSrc || shwSrc === currShw) {
+			return;
+		}
+
+		currShw = shwSrc;
+
+		const currSlide =
+			casesSwiper.slides[casesSwiper.activeIndex].querySelector('.cases-slide-item');
+
+		const defVideoWrapper = currSlide.querySelector('.vjs-cases-wrapper');
+		const defVidSrc = currSlide.dataset.defaultVideoSrc;
+
+		stopVideo(currSlide);
+		changeVideo(defVideoWrapper, shwSrc);
+		startVideo(currSlide);
+
+		casesSwiper.once('slideChangeTransitionEnd', () => {
+			currShw = null;
+			changeVideo(defVideoWrapper, defVidSrc);
+		});
+	});
+});
+
+function changeVideo(wrapper, src) {
+	wrapper.innerHTML = `
+			<video class="vjs-cases-custom video-js">
+				<source
+					src="${src}"
+					type="video/mp4"
+				/>
+				<p>Your browser does not support HTML5 video</p>
+			</video>`;
 }
