@@ -19,7 +19,7 @@ const navSelectorList = [
 
 const smoothLinks = document.querySelectorAll('a[href^="#"]');
 const linkList = ['home', 'cases', 'testimonials', 'prices', 'contacts'];
-let currPage = 1;
+let currPage = 0;
 
 const messengerWrapper = document.querySelector('.desc-messenger-wrapper');
 const sliderCtrlWrapper = document.querySelector('.desc-slider-controls');
@@ -40,19 +40,19 @@ const switchingFooter = (messengerWrapper, sliderCtrlWrapper) => {
 
 const switchingBack = (id) => {
 	if (id === 'home') {
-		backgroundVideo.style.opacity = 1;
+		backgroundVideo.classList.remove('hidden');
 		backgroundWrapper.classList.remove('cases-active');
 		backgroundWrapper.classList.remove('contacts-active');
 	} else if (id === 'cases') {
-		backgroundVideo.style.opacity = 0;
+		backgroundVideo.classList.add('hidden');
 		backgroundWrapper.classList.add('cases-active');
 		backgroundWrapper.classList.remove('contacts-active');
 	} else if (id === 'contacts') {
-		backgroundVideo.style.opacity = 1;
+		backgroundVideo.classList.remove('hidden');
 		backgroundWrapper.classList.add('contacts-active');
 		backgroundWrapper.classList.remove('cases-active');
 	} else {
-		backgroundVideo.style.opacity = 0;
+		backgroundVideo.classList.add('hidden');
 		backgroundWrapper.classList.remove('cases-active');
 		backgroundWrapper.classList.remove('contacts-active');
 	}
@@ -74,7 +74,6 @@ const activeLinksControl = activeLinksController(navSelectorList, 'active');
 
 function setLinkIndex(id) {
 	currPage = linkList.indexOf(id);
-	// console.log('currPage: ', currPage, id);
 }
 
 //Nav init
