@@ -108,7 +108,7 @@
 }
 
 .tnails-slide-footer {
-	@include grid(grid-template-columns, auto auto);
+	@include grid(grid-template-columns, auto auto, 15px);
 	justify-content: space-between;
 }
 .tnails-slide-footer-company {
