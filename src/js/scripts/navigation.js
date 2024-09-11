@@ -122,6 +122,18 @@ const swipeForbidEl = [...document.querySelectorAll('.tnail-review')];
 
 swipeController(swipeSettings, swipeForbidEl, swipeCallbacks);
 
+// Mouse wheel controller
+function wheelHandler(e) {
+	const wheelDelta = e.wheelDelta;
+	if (wheelDelta < 0) {
+		pageDown();
+	} else {
+		pageUp();
+	}
+	console.log(e);
+}
+
+// event listeners
 window.addEventListener(
 	'load',
 	(e) => {
@@ -139,3 +151,9 @@ const debounceScroll = debounce(() => {
 window.addEventListener('resize', () => {
 	debounceScroll();
 });
+
+const debounceWheel = debounce((e) => {
+	wheelHandler(e);
+}, 150);
+
+window.addEventListener('mousewheel', debounceWheel);
