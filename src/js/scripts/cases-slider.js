@@ -1,5 +1,11 @@
 import Swiper, {Navigation, Pagination, EffectFade} from 'swiper';
 
+// Flags variables
+let videoJsModule;
+let activePlayer;
+let currShw;
+let plbActive;
+
 // Cases Slider
 const casesSwiper = new Swiper('.cases-slider', {
 	slidesPerView: 1,
@@ -8,6 +14,7 @@ const casesSwiper = new Swiper('.cases-slider', {
 		crossFade: true,
 	},
 	speed: 600,
+	allowTouchMove: false,
 	navigation: {
 		nextEl: '.cases-slide-arrow-next',
 		prevEl: '.cases-slide-arrow-prev',
@@ -69,9 +76,6 @@ casesItem.forEach((item) => {
 // Cases Video
 const sliderVideoTrigger = document.querySelectorAll('.cases-slide-item');
 
-let videoJsModule;
-let activePlayer;
-
 sliderVideoTrigger.forEach((item) => {
 	const defaultVideoSrc = item.querySelector('.vjs-cases-custom.video-js').currentSrc;
 	item.dataset.defaultVideoSrc = defaultVideoSrc;
@@ -82,7 +86,7 @@ sliderVideoTrigger.forEach((item) => {
 });
 
 function startVideo(item) {
-	if (activePlayer && !activePlayer.isDisposed()) {
+	if ((activePlayer && !activePlayer.isDisposed()) || plbActive) {
 		return;
 	}
 
@@ -101,12 +105,36 @@ function startVideo(item) {
 		});
 }
 
-casesSwiper.on('slideChange', (e) => {
+function slideDefault() {
 	const currSlide =
 		casesSwiper.slides[casesSwiper.previousIndex].querySelector('.cases-slide-item');
+	const defVideoWrapper = currSlide.querySelector('.vjs-cases-wrapper');
+	const defVidSrc = currSlide.dataset.defaultVideoSrc;
 
 	stopVideo(currSlide);
-});
+
+	if (currShw) {
+		changeVideo(defVideoWrapper, defVidSrc);
+		currShw = null;
+	}
+
+	plbRemove(currSlide);
+}
+
+function plbRemove(currSlide) {
+	if (plbActive) {
+		const plbWrapper = currSlide.querySelector('.plb-wrapper');
+		currSlide.classList.remove('plb-active');
+
+		if (plbWrapper) {
+			plbWrapper.remove();
+		}
+
+		plbActive = false;
+	}
+}
+
+casesSwiper.on('slideChange', slideDefault);
 
 function stopVideo(item) {
 	item.classList.remove('video-active');
@@ -148,42 +176,83 @@ function setActivePlayer(videojsModule, videoEl) {
 
 // showreel videos
 const shwTriggers = document.querySelectorAll('.cases-item');
-let currShw;
 
 shwTriggers.forEach((item) => {
-	item.addEventListener('click', (e) => {
-		const shwSrc = e.currentTarget.dataset.videoSrc;
-
-		if (!shwSrc || shwSrc === currShw) {
-			return;
-		}
-
-		currShw = shwSrc;
-
-		const currSlide =
-			casesSwiper.slides[casesSwiper.activeIndex].querySelector('.cases-slide-item');
-
-		const defVideoWrapper = currSlide.querySelector('.vjs-cases-wrapper');
-		const defVidSrc = currSlide.dataset.defaultVideoSrc;
-
-		stopVideo(currSlide);
-		changeVideo(defVideoWrapper, shwSrc);
-		startVideo(currSlide);
-
-		casesSwiper.once('slideChangeTransitionEnd', () => {
-			currShw = null;
-			changeVideo(defVideoWrapper, defVidSrc);
-		});
-	});
+	item.addEventListener('click', initShowreel);
 });
+
+function initShowreel(e) {
+	const shwSrc = e.currentTarget.dataset.videoSrc;
+
+	if (!shwSrc || shwSrc === currShw) {
+		return;
+	}
+
+	currShw = shwSrc;
+
+	const currSlide = casesSwiper.slides[casesSwiper.activeIndex].querySelector('.cases-slide-item');
+	const defVideoWrapper = currSlide.querySelector('.vjs-cases-wrapper');
+
+	plbRemove(currSlide);
+	stopVideo(currSlide);
+	changeVideo(defVideoWrapper, shwSrc);
+	startVideo(currSlide);
+}
 
 function changeVideo(wrapper, src) {
 	wrapper.innerHTML = `
-			<video class="vjs-cases-custom video-js">
-				<source
-					src="${src}"
-					type="video/mp4"
-				/>
-				<p>Your browser does not support HTML5 video</p>
-			</video>`;
+		<video class="vjs-cases-custom video-js">
+			<source
+				src="${src}"
+				type="video/mp4"
+			/>
+			<p>Your browser does not support HTML5 video</p>
+		</video>`;
+}
+
+// Playable ads
+const plbTrigger = document.querySelector('#playable-trigger');
+
+plbTrigger.addEventListener('click', plbInit);
+
+function plbInit() {
+	if (plbActive) {
+		return;
+	}
+
+	plbActive = true;
+
+	const currSlide = casesSwiper.slides[casesSwiper.activeIndex].querySelector('.cases-slide-item');
+	const defVideoWrapper = currSlide.querySelector('.vjs-cases-wrapper');
+	const defVidSrc = currSlide.dataset.defaultVideoSrc;
+
+	currSlide.classList.add('plb-active');
+
+	currShw = null;
+
+	stopVideo(currSlide);
+	changeVideo(defVideoWrapper, defVidSrc);
+
+	currSlide.insertAdjacentHTML(
+		'afterbegin',
+		`
+		<div class="plb-wrapper">
+			<a class="plb-icon" href="./playables/last-hero.html" target="_blank" rel="noopener noreferrer">
+				<img src="../../assets/plb-posters/last-hero.png" alt="lastHero">
+			</a>
+			<a class="plb-icon" href="/playables/last-hero.html" target="_blank" rel="noopener noreferrer">
+				<img src="../../assets/plb-posters/last-hero.png" alt="lastHero">
+			</a>
+			<a class="plb-icon" href="/playables/last-hero.html" target="_blank" rel="noopener noreferrer">
+				<img src="../../assets/plb-posters/last-hero.png" alt="lastHero">
+			</a>
+			<a class="plb-icon" href="/playables/last-hero.html" target="_blank" rel="noopener noreferrer">
+				<img src="../../assets/plb-posters/last-hero.png" alt="lastHero">
+			</a>
+			<a class="plb-icon" href="/playables/last-hero.html" target="_blank" rel="noopener noreferrer">
+				<img src="../../assets/plb-posters/last-hero.png" alt="lastHero">
+			</a>
+		</div>
+		`
+	);
 }

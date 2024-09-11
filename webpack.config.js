@@ -107,6 +107,14 @@ module.exports = {
 					from: path.resolve(__dirname, 'src/assets/video'),
 					to: path.resolve(__dirname, 'build/assets/video'),
 				},
+				{
+					from: path.resolve(__dirname, 'src/assets/plb-posters'),
+					to: path.resolve(__dirname, 'build/assets/plb-posters'),
+				},
+				{
+					from: path.resolve(__dirname, 'src/playables'),
+					to: path.resolve(__dirname, 'build/playables'),
+				},
 			],
 		}),
 		// new BundleAnalyzerPlugin(),
