@@ -105,6 +105,7 @@ main {
 		background-color: $bg-color;
 		transform: translateX(-100%);
 		transition: all 0.6s ease-out;
+		will-change: transform;
 	}
 	&.cases-active {
 		&:before {

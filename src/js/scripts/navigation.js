@@ -122,20 +122,24 @@ const swipeForbidEl = [...document.querySelectorAll('.tnail-review')];
 swipeController(swipeSettings, swipeForbidEl, swipeCallbacks);
 
 // Mouse wheel controller
-function wheelHandler(e) {
+function wheelHandler(e, forbidEls) {
 	const wheelDelta = e.wheelDelta;
+
+	if (forbidEls.includes(e.target) && e.target.clientHeight !== e.target.scrollHeight) {
+		return;
+	}
+
 	if (wheelDelta < 0) {
 		pageDown();
 	} else {
 		pageUp();
 	}
-	console.log(e);
 }
 
 // event listeners
 window.addEventListener(
 	'load',
-	(e) => {
+	() => {
 		setTimeout(() => {
 			smoothScroll(linkList[currPage], smoothLinks, navigationsCallbacks);
 		}, 1);
@@ -152,7 +156,7 @@ window.addEventListener('resize', () => {
 });
 
 const debounceWheel = debounce((e) => {
-	wheelHandler(e);
+	wheelHandler(e, swipeForbidEl);
 }, 150);
 
 window.addEventListener('mousewheel', debounceWheel);
