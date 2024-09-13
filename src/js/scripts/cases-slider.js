@@ -1,5 +1,8 @@
 import Swiper, {Navigation, Pagination, EffectFade} from 'swiper';
 
+// plb Posters
+import lastHeroPoster from '../../assets/plb-posters/last-hero.png';
+
 // Flags variables
 let videoJsModule;
 let activePlayer;
@@ -237,20 +240,20 @@ function plbInit() {
 		'afterbegin',
 		`
 		<div class="plb-wrapper">
-			<a class="plb-icon" href="./playables/last-hero.html" target="_blank" rel="noopener noreferrer">
-				<img src="../../assets/plb-posters/last-hero.png" alt="lastHero">
+			<a class="plb-icon" href="../../playables/last-hero.html" target="_blank" rel="noopener noreferrer">
+				<img src="${lastHeroPoster}" alt="lastHero">
 			</a>
-			<a class="plb-icon" href="/playables/last-hero.html" target="_blank" rel="noopener noreferrer">
-				<img src="../../assets/plb-posters/last-hero.png" alt="lastHero">
+			<a class="plb-icon" href="../../playables/last-hero.html" target="_blank" rel="noopener noreferrer">
+				<img src="${lastHeroPoster}" alt="lastHero">
 			</a>
-			<a class="plb-icon" href="/playables/last-hero.html" target="_blank" rel="noopener noreferrer">
-				<img src="../../assets/plb-posters/last-hero.png" alt="lastHero">
+			<a class="plb-icon" href="../../playables/last-hero.html" target="_blank" rel="noopener noreferrer">
+				<img src="${lastHeroPoster}" alt="lastHero">
 			</a>
-			<a class="plb-icon" href="/playables/last-hero.html" target="_blank" rel="noopener noreferrer">
-				<img src="../../assets/plb-posters/last-hero.png" alt="lastHero">
+			<a class="plb-icon" href="../../playables/last-hero.html" target="_blank" rel="noopener noreferrer">
+				<img src="${lastHeroPoster}" alt="lastHero">
 			</a>
-			<a class="plb-icon" href="/playables/last-hero.html" target="_blank" rel="noopener noreferrer">
-				<img src="../../assets/plb-posters/last-hero.png" alt="lastHero">
+			<a class="plb-icon" href="../../playables/last-hero.html" target="_blank" rel="noopener noreferrer">
+				<img src="${lastHeroPoster}" alt="lastHero">
 			</a>
 		</div>
 		`
