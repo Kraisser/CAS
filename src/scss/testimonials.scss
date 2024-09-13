@@ -87,7 +87,7 @@
 		grid-area: review;
 		font-family: $second-family;
 		@include font(20px, 1.2em, $main-text-color, 700);
-		max-height: 5em;
+		max-height: 3.6em;
 		overflow-y: auto;
 		scrollbar-color: $accent-text-color transparent;
 		scrollbar-width: thin;
@@ -196,7 +196,7 @@
 	.tnails-slide-item-content {
 		height: 100%;
 		padding: 40px 27px;
-		grid-gap: 25px;
+		grid-gap: 5px;
 	}
 	.tnails-slide-header {
 		grid-gap: 10px 28px;
@@ -261,7 +261,12 @@
 }
 
 // Media Height
-@media (max-height: 800px) {
+@media (max-height: 850px) and (min-width: 1500px) {
+	.tnails-partners-wrapper {
+		padding: 0 30px;
+	}
+}
+@media (max-height: 800px) and (min-width: 768px) {
 	.tnails-slide-item-content {
 		padding: 30px 40px;
 	}
