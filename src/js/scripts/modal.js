@@ -2,22 +2,42 @@ import loadingSpinner from '../../assets/icons/video-loader.svg';
 
 import {disablePageScroll, enablePageScroll} from 'scroll-lock';
 
-const tnailVideoTrigger = document.querySelectorAll('.tnails-slide-item-content');
-// const sliderVideoTrigger = document.querySelectorAll('.cases-slide-item');
 const modalOverflow = document.querySelector('.video-modal-overflow');
 const modalWrapper = document.querySelector('.video-modal-wrapper');
 const modalCloseIcon = modalOverflow.querySelector('.modal-close-icon');
+
+const tnailVideoTrigger = document.querySelectorAll('.tnails-slide-item-content');
+
+const tnailPlayElement = `
+<div class="tnails-video-review-but">
+	<svg
+		width="22"
+		height="28"
+		viewBox="0 0 22 28"
+		fill="none"
+		xmlns="http://www.w3.org/2000/svg"
+	>
+		<path
+			d="M21.5618 13.1544C22.1461 13.5302 22.1461 14.4698 21.5618 14.8456L1.31474 27.8677C0.730412 28.2435 1.90735e-06 27.7738 1.90735e-06 27.0221L0 0.977861C0 0.226223 0.730412 -0.243549 1.31474 0.132269L21.5618 13.1544Z"
+			fill="white"
+		/>
+	</svg>
+	<span>Watch video</span>
+</div>`;
 
 let activePlayer;
 
 tnailVideoTrigger.forEach((item) => {
 	if (item.dataset.videoSrc) {
+		const itemFooter = item.querySelector('.tnails-slide-footer');
+
+		if (itemFooter) {
+			itemFooter.insertAdjacentHTML('beforeend', tnailPlayElement);
+		}
+
 		item.addEventListener('click', () => openModal(item));
 	}
 });
-// sliderVideoTrigger.forEach((item) => {
-// 	item.addEventListener('click', () => toggleModal(item, true));
-// });
 
 modalCloseIcon.addEventListener('click', (e) => closeModal(e));
 modalOverflow.addEventListener('click', (e) => {
@@ -75,9 +95,7 @@ function setupVideo(videojsModule, target) {
 		videoInsert(videoSrc, 'vjs-tnails-video-wrapper', tnailEl);
 		return setupTnailVideo(videojsModule);
 	} else if (targetType === 'slider') {
-		// modalOverflow.classList.remove('tnails-video-mod');
-		// videoInsert(videoSrc, 'vjs-slider-video-wrapper');
-		// return setupSliderVideo(videojsModule);
+		return;
 	}
 }
 
@@ -121,25 +139,6 @@ function setupTnailVideo(videojsModule) {
 			pictureInPictureToggle: false,
 		},
 		fluid: true,
-		disablePictureInPicture: true,
-		notSupportedMessage: 'There was an error uploading the video, please try again later',
-	});
-
-	return activePlayer;
-}
-
-function setupSliderVideo(videojsModule) {
-	const activePlayer = videojsModule('video-js-modal', {
-		width: modalWrapper.clientWidth,
-		height: modalWrapper.clientHeight,
-		controls: true,
-		autoplay: true,
-		preload: 'auto',
-		controlBar: {
-			pictureInPictureToggle: false,
-		},
-		fill: window.innerWidth < 768,
-		fluid: window.innerWidth > 768,
 		disablePictureInPicture: true,
 		notSupportedMessage: 'There was an error uploading the video, please try again later',
 	});
