@@ -244,15 +244,19 @@ function plbInit() {
 		<div class="plb-wrapper">
 			<a class="plb-icon" href="./playables/last-hero.html" target="_blank" rel="noopener noreferrer">
 				<img src="${lastHeroPoster}" alt="lastHero">
+				<div class="plb-text"><span>Last Hero</span></div>
 			</a>
 			<a class="plb-icon" href="./playables/car_out.html" target="_blank" rel="noopener noreferrer">
 				<img src="${carOutPoster}" alt="Car Out">
+				<div class="plb-text"><span>Car Out</span></div>
 			</a>
 			<a class="plb-icon" href="./playables/shop_expanse.html" target="_blank" rel="noopener noreferrer">
 				<img src="${shopExpancePoster}" alt="Shop Expanse">
+				<div class="plb-text"><span>Shop Expanse</span></div>
 			</a>
 			<a class="plb-icon" href="./playables/last-hero.html" target="_blank" rel="noopener noreferrer">
 				<img src="${lastHeroPoster}" alt="lastHero">
+				<div class="plb-text"><span>Last Hero</span></div>
 			</a>
 		</div>
 		`

@@ -249,6 +249,7 @@
 		cursor: pointer;
 		transition: all 0.3s ease-out;
 		padding: 2px;
+		position: relative;
 
 		img {
 			width: 100%;
@@ -262,6 +263,23 @@
 		&:hover:active {
 			transform: scale(0.9);
 		}
+	}
+
+	.plb-text {
+		position: absolute;
+		left: 2px;
+		top: 2px;
+		width: calc(100% - 4px);
+		height: calc(100% - 4px);
+		background: linear-gradient(to bottom, transparent 0, $bg-second-color 100%);
+		z-index: 3;
+		@include font(18px, 1.2em, $main-text-color);
+		display: grid;
+		justify-items: center;
+		align-items: end;
+		padding-bottom: 15px;
+		text-align: center;
+		clip-path: polygon(0 10%, 8% 0, 100% 0, 100% 100%, 0 100%);
 	}
 }
 
