@@ -1,7 +1,9 @@
 import Swiper, {Navigation, Pagination, EffectFade} from 'swiper';
 
 // plb Posters
-import lastHeroPoster from '../../assets/plb-posters/last-hero.png';
+import lastHeroPoster from '../../assets/plb-posters/last_hero.webp';
+import shopExpancePoster from '../../assets/plb-posters/shop_expanse.webp';
+import carOutPoster from '../../assets/plb-posters/car_out.webp';
 
 // Flags variables
 let videoJsModule;
@@ -243,11 +245,11 @@ function plbInit() {
 			<a class="plb-icon" href="./playables/last-hero.html" target="_blank" rel="noopener noreferrer">
 				<img src="${lastHeroPoster}" alt="lastHero">
 			</a>
-			<a class="plb-icon" href="./playables/last-hero.html" target="_blank" rel="noopener noreferrer">
-				<img src="${lastHeroPoster}" alt="lastHero">
+			<a class="plb-icon" href="./playables/car_out.html" target="_blank" rel="noopener noreferrer">
+				<img src="${carOutPoster}" alt="Car Out">
 			</a>
-			<a class="plb-icon" href="./playables/last-hero.html" target="_blank" rel="noopener noreferrer">
-				<img src="${lastHeroPoster}" alt="lastHero">
+			<a class="plb-icon" href="./playables/shop_expanse.html" target="_blank" rel="noopener noreferrer">
+				<img src="${shopExpancePoster}" alt="Shop Expanse">
 			</a>
 			<a class="plb-icon" href="./playables/last-hero.html" target="_blank" rel="noopener noreferrer">
 				<img src="${lastHeroPoster}" alt="lastHero">
