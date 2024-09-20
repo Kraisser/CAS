@@ -254,9 +254,6 @@ function plbInit() {
 			<a class="plb-icon" href="./playables/last-hero.html" target="_blank" rel="noopener noreferrer">
 				<img src="${lastHeroPoster}" alt="lastHero">
 			</a>
-			<a class="plb-icon" href="./playables/last-hero.html" target="_blank" rel="noopener noreferrer">
-				<img src="${lastHeroPoster}" alt="lastHero">
-			</a>
 		</div>
 		`
 	);
