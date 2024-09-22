@@ -19,7 +19,7 @@ const navSelectorList = [
 
 const smoothLinks = document.querySelectorAll('a[href^="#"]');
 const linkList = ['home', 'cases', 'testimonials', 'prices', 'contacts'];
-let currPage = 0;
+let currPage = 2;
 
 const messengerWrapper = document.querySelector('.desc-messenger-wrapper');
 const sliderCtrlWrapper = document.querySelector('.desc-slider-controls');

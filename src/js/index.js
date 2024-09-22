@@ -3,7 +3,7 @@ import 'video.js/dist/video-js.min.css';
 
 import '../scss/video-js-style.scss';
 
-import Swiper, {Pagination} from 'swiper';
+import Swiper, {Pagination, Navigation} from 'swiper';
 import 'swiper/scss';
 import 'swiper/scss/effect-fade';
 
@@ -32,7 +32,7 @@ new Swiper('.tnails-slides-wrapper', {
 	speed: 600,
 	spaceBetween: 32,
 	grabCursor: true,
-	initialSlide: 0,
+	// initialSlide: 3,
 	pagination: {
 		el: '.tnails-slider-dots',
 		type: 'bullets',
@@ -40,12 +40,16 @@ new Swiper('.tnails-slides-wrapper', {
 		bulletActiveClass: 'tnails-slider-bullet-active',
 		clickable: true,
 	},
+	navigation: {
+		nextEl: '#tnail-slide-next',
+		prevEl: '#tnail-slide-prev',
+	},
 	breakpoints: {
 		1200: {
 			initialSlide: 0,
 		},
 	},
-	modules: [Pagination],
+	modules: [Pagination, Navigation],
 });
 
 // prices Slider

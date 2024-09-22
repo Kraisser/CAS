@@ -21,8 +21,55 @@
 // tnails slider
 .tnails-slider-wrapper {
 	overflow: hidden;
-	padding: 0 30px;
+	padding: 0 60px;
 	position: relative;
+
+	.tnails-nav-but {
+		display: flex;
+		align-items: center;
+		width: 7%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		z-index: 3;
+		@include font(32px, 1em, $main-text-color);
+		cursor: pointer;
+
+		svg {
+			opacity: 0;
+			transition: all 0.3s ease-out;
+		}
+	}
+	.tnails-nav-prev {
+		left: -3px;
+		background: linear-gradient(90deg, $bg-second-color 10%, transparent 100%);
+		justify-content: flex-start;
+		padding-left: 30px;
+	}
+	.tnails-nav-next {
+		right: -3px;
+		background: linear-gradient(270deg, $bg-second-color 10%, transparent 100%);
+		justify-content: flex-end;
+		padding-right: 30px;
+
+		svg {
+			transform: rotate(180deg);
+		}
+	}
+
+	&:hover {
+		.tnails-nav-but {
+			svg {
+				opacity: 0.7;
+			}
+
+			&:hover {
+				svg {
+					opacity: 1;
+				}
+			}
+		}
+	}
 }
 .tnails-slider-dots {
 	display: none;
@@ -163,6 +210,10 @@
 		flex-direction: column;
 		gap: 20px;
 		justify-content: center;
+
+		.tnails-nav-but {
+			display: none;
+		}
 	}
 	.tnails-slider-dots {
 		display: flex;
