@@ -4,6 +4,7 @@ import Swiper, {Navigation, Pagination, EffectFade} from 'swiper';
 import lastHeroPoster from '../../assets/plb-posters/last_hero.webp';
 import shopExpancePoster from '../../assets/plb-posters/shop_expanse.webp';
 import carOutPoster from '../../assets/plb-posters/car_out.webp';
+import zombieRailsPorster from '../../assets/plb-posters/zombie_rails.webp';
 
 // Flags variables
 let videoJsModule;
@@ -254,9 +255,9 @@ function plbInit() {
 				<img src="${shopExpancePoster}" alt="Shop Expanse">
 				<div class="plb-text"><span>Shop Expanse</span></div>
 			</a>
-			<a class="plb-icon" href="./playables/last-hero.html" target="_blank" rel="noopener noreferrer">
-				<img src="${lastHeroPoster}" alt="lastHero">
-				<div class="plb-text"><span>Last Hero</span></div>
+			<a class="plb-icon" href="./playables/zombie_rails.html" target="_blank" rel="noopener noreferrer">
+				<img src="${zombieRailsPorster}" alt="Zombie Rails">
+				<div class="plb-text"><span>Zombie Rails</span></div>
 			</a>
 		</div>
 		`
