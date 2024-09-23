@@ -21,44 +21,47 @@ const smoothLinks = document.querySelectorAll('a[href^="#"]');
 const linkList = ['home', 'cases', 'testimonials', 'prices', 'contacts'];
 let currPage = 0;
 
-const messengerWrapper = document.querySelector('.desc-messenger-wrapper');
-const sliderCtrlWrapper = document.querySelector('.desc-slider-controls');
 const backgroundWrapper = document.querySelector(`.content`);
 const backgroundVideo = document.querySelector('.background-video');
 
-const switchingFooter = (messengerWrapper, sliderCtrlWrapper) => {
-	return (id) => {
-		if (id === 'cases') {
+const messengerWrapper = document.querySelector('.desc-messenger-wrapper');
+const sliderCtrlWrapper = document.querySelector('.desc-slider-controls');
+
+const tnailsNavShadows = document.querySelectorAll('.tnails-nav-but');
+
+const pagesNavSwitch = (id) => {
+	messengerWrapper.classList.remove('hidden');
+	sliderCtrlWrapper.classList.add('hidden');
+	tnailsNavShadows.forEach((item) => item.classList.remove('tnails-nav-visible'));
+
+	switch (id) {
+		case 'home':
+			backgroundVideo.classList.remove('hidden');
+			backgroundWrapper.classList.remove('cases-active', 'contacts-active');
+			break;
+		case 'cases':
+			backgroundVideo.classList.add('hidden');
+			backgroundWrapper.classList.add('cases-active');
+			backgroundWrapper.classList.remove('contacts-active');
 			messengerWrapper.classList.add('hidden');
 			sliderCtrlWrapper.classList.remove('hidden');
-		} else {
-			messengerWrapper.classList.remove('hidden');
-			sliderCtrlWrapper.classList.add('hidden');
-		}
-	};
-};
-
-const switchingBack = (id) => {
-	if (id === 'home') {
-		backgroundVideo.classList.remove('hidden');
-		backgroundWrapper.classList.remove('cases-active');
-		backgroundWrapper.classList.remove('contacts-active');
-	} else if (id === 'cases') {
-		backgroundVideo.classList.add('hidden');
-		backgroundWrapper.classList.add('cases-active');
-		backgroundWrapper.classList.remove('contacts-active');
-	} else if (id === 'contacts') {
-		backgroundVideo.classList.remove('hidden');
-		backgroundWrapper.classList.add('contacts-active');
-		backgroundWrapper.classList.remove('cases-active');
-	} else {
-		backgroundVideo.classList.add('hidden');
-		backgroundWrapper.classList.remove('cases-active');
-		backgroundWrapper.classList.remove('contacts-active');
+			break;
+		case 'testimonials':
+			tnailsNavShadows.forEach((item) => item.classList.add('tnails-nav-visible'));
+			backgroundVideo.classList.add('hidden');
+			backgroundWrapper.classList.remove('cases-active', 'contacts-active');
+			break;
+		case 'contacts':
+			backgroundVideo.classList.remove('hidden');
+			backgroundWrapper.classList.add('contacts-active');
+			backgroundWrapper.classList.remove('cases-active');
+			break;
+		default:
+			backgroundVideo.classList.add('hidden');
+			backgroundWrapper.classList.remove('cases-active', 'contacts-active');
+			break;
 	}
 };
-
-const pagesNavSwitch = switchingFooter(messengerWrapper, sliderCtrlWrapper);
 
 // DotController
 const dot = document.querySelector('#desc-menu-dot');
@@ -82,7 +85,6 @@ const navigationsCallbacks = [
 	descDotCallback,
 	mobileDotCallback,
 	pagesNavSwitch,
-	switchingBack,
 	setLinkIndex,
 ];
 
@@ -123,13 +125,11 @@ swipeController(swipeSettings, swipeForbidEl, swipeCallbacks);
 
 // Mouse wheel controller
 function wheelHandler(e, forbidEls) {
-	const wheelDelta = e.wheelDelta;
-
 	if (forbidEls.includes(e.target) && e.target.clientHeight !== e.target.scrollHeight) {
 		return;
 	}
 
-	if (wheelDelta < 0) {
+	if (e.wheelDelta < 0) {
 		pageDown();
 	} else {
 		pageUp();
