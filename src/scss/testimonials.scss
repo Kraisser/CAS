@@ -32,8 +32,14 @@
 		position: absolute;
 		top: 0;
 		z-index: 3;
-		@include font(32px, 1em, $main-text-color);
 		cursor: pointer;
+		transition: opacity 0s ease-out 0s;
+		opacity: 0;
+
+		&.tnails-nav-visible {
+			opacity: 1;
+			transition: opacity 0.2s ease-out 0.7s;
+		}
 
 		svg {
 			opacity: 0;
