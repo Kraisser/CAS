@@ -2,9 +2,9 @@ import Swiper, {Navigation, Pagination, EffectFade} from 'swiper';
 
 // plb Posters
 import lastHeroPoster from '../../assets/plb-posters/last_hero.webp';
-import shopExpancePoster from '../../assets/plb-posters/shop_expanse.webp';
 import carOutPoster from '../../assets/plb-posters/car_out.webp';
-import zombieRailsPorster from '../../assets/plb-posters/zombie_rails.webp';
+import springValleyPoster from '../../assets/plb-posters/spring_valley.webp';
+import heroAdventurePoster from '../../assets/plb-posters/hero_adventure.webp';
 
 // Flags variables
 let videoJsModule;
@@ -243,22 +243,27 @@ function plbInit() {
 		'afterbegin',
 		`
 		<div class="plb-wrapper">
+
 			<a class="plb-icon" href="./playables/last-hero.html" target="_blank" rel="noopener noreferrer">
 				<img src="${lastHeroPoster}" alt="lastHero">
 				<div class="plb-text"><span>Last Hero</span></div>
 			</a>
+
 			<a class="plb-icon" href="./playables/car_out.html" target="_blank" rel="noopener noreferrer">
 				<img src="${carOutPoster}" alt="Car Out">
 				<div class="plb-text"><span>Car Out</span></div>
 			</a>
-			<a class="plb-icon" href="./playables/shop_expanse.html" target="_blank" rel="noopener noreferrer">
-				<img src="${shopExpancePoster}" alt="Shop Expanse">
-				<div class="plb-text"><span>Shop Expanse</span></div>
+
+			<a class="plb-icon" href="./playables/hero_adventure.html" target="_blank" rel="noopener noreferrer">
+				<img src="${heroAdventurePoster}" alt="Hero Adventure">
+				<div class="plb-text"><span>Hero Adventure</span></div>
 			</a>
-			<a class="plb-icon" href="./playables/zombie_rails.html" target="_blank" rel="noopener noreferrer">
-				<img src="${zombieRailsPorster}" alt="Zombie Rails">
-				<div class="plb-text"><span>Zombie Rails</span></div>
+
+			<a class="plb-icon" href="./playables/spring_valley.html" target="_blank" rel="noopener noreferrer">
+				<img src="${springValleyPoster}" alt="Spring Valley">
+				<div class="plb-text"><span>Spring Valley</span></div>
 			</a>
+			
 		</div>
 		`
 	);
