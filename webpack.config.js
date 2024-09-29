@@ -108,10 +108,6 @@ module.exports = {
 					to: path.resolve(__dirname, 'build/assets/video/review'),
 				},
 				{
-					from: path.resolve(__dirname, 'src/assets/video/showreels'),
-					to: path.resolve(__dirname, 'build/assets/video/showreels'),
-				},
-				{
 					from: path.resolve(__dirname, 'src/playables'),
 					to: path.resolve(__dirname, 'build/playables'),
 				},

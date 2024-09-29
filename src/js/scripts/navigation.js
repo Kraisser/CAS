@@ -19,19 +19,23 @@ const navSelectorList = [
 
 const smoothLinks = document.querySelectorAll('a[href^="#"]');
 const linkList = ['home', 'cases', 'testimonials', 'prices', 'contacts'];
-let currPage = 0;
+let currPage = 1;
 
 const backgroundWrapper = document.querySelector(`.content`);
 const backgroundVideo = document.querySelector('.background-video');
 
-const messengerWrapper = document.querySelector('.desc-messenger-wrapper');
-const sliderCtrlWrapper = document.querySelector('.desc-slider-controls');
-
 const tnailsNavShadows = document.querySelectorAll('.tnails-nav-but');
 
+// PageNavEvent
+function pageSwitchEvent(pageId) {
+	const event = new CustomEvent('pageSwitch', {
+		detail: {pageId: pageId},
+	});
+
+	window.dispatchEvent(event);
+}
+
 const pagesNavSwitch = (id) => {
-	messengerWrapper.classList.remove('hidden');
-	sliderCtrlWrapper.classList.add('hidden');
 	tnailsNavShadows.forEach((item) => item.classList.remove('tnails-nav-visible'));
 
 	switch (id) {
@@ -43,8 +47,6 @@ const pagesNavSwitch = (id) => {
 			backgroundVideo.classList.add('hidden');
 			backgroundWrapper.classList.add('cases-active');
 			backgroundWrapper.classList.remove('contacts-active');
-			messengerWrapper.classList.add('hidden');
-			sliderCtrlWrapper.classList.remove('hidden');
 			break;
 		case 'testimonials':
 			tnailsNavShadows.forEach((item) => item.classList.add('tnails-nav-visible'));
@@ -79,14 +81,18 @@ function setLinkIndex(id) {
 	currPage = linkList.indexOf(id);
 }
 
-//Nav init
+//Nav callbacks
 const navigationsCallbacks = [
 	activeLinksControl,
 	descDotCallback,
 	mobileDotCallback,
 	pagesNavSwitch,
 	setLinkIndex,
+	pageSwitchEvent,
 ];
+
+//PageSmoothInit
+const smoothNavigate = smoothScroll(smoothLinks, navigationsCallbacks);
 
 // Swipe Controller
 const swipeSettings = {
@@ -102,7 +108,7 @@ function pageDown() {
 	}
 
 	currPage++;
-	smoothScroll(linkList[currPage], smoothLinks, navigationsCallbacks);
+	smoothScroll(linkList[currPage], navigationsCallbacks);
 }
 
 function pageUp() {
@@ -111,7 +117,7 @@ function pageUp() {
 	}
 
 	currPage--;
-	smoothScroll(linkList[currPage], smoothLinks, navigationsCallbacks);
+	smoothNavigate(linkList[currPage], navigationsCallbacks);
 }
 
 const swipeCallbacks = {
@@ -141,14 +147,14 @@ window.addEventListener(
 	'load',
 	() => {
 		setTimeout(() => {
-			smoothScroll(linkList[currPage], smoothLinks, navigationsCallbacks);
+			smoothNavigate(linkList[currPage], navigationsCallbacks);
 		}, 1);
 	},
 	{once: true}
 );
 
 const debounceScroll = debounce(() => {
-	smoothScroll(linkList[currPage], smoothLinks, navigationsCallbacks);
+	smoothNavigate(linkList[currPage], navigationsCallbacks);
 }, 250);
 
 window.addEventListener('resize', () => {

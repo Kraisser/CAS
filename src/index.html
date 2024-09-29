@@ -210,26 +210,30 @@
 					</div>
 
 					<ul class="cases-list">
-						<li
-							class="cases-item active"
-							data-video-src="./assets/video/showreels/showreel_full_compr.mp4"
-						>
+						<li class="cases-item active" data-tab="showreel-wrapper">
 							<span>Showreel</span>
 						</li>
-						<li class="cases-item" data-video-src="./assets/video/showreels/showreel_2d_compr.mp4">
+
+						<li class="cases-item" data-tab="slider-2d">
 							<span>2D</span>
 						</li>
-						<li class="cases-item" data-video-src="./assets/video/showreels/showreel_3d_compr.mp4">
+
+						<li class="cases-item" data-tab="slider-3d">
 							<span>3D</span>
 						</li>
-						<li class="cases-item" data-video-src="./assets/video/showreels/showreel_ugc_compr.mp4">
+
+						<li class="cases-item" data-tab="slider-ugc">
 							<span>UGC</span>
 						</li>
-						<li class="cases-item" id="playable-trigger"><span>PLAYABLES</span></li>
+
+						<li class="cases-item" data-tab="plb-wrapper">
+							<span>PLAYABLES</span>
+						</li>
+
 						<div class="cases-dot" id="cases-dot"></div>
 					</ul>
 
-					<div class="cases-slider-controls">
+					<div class="cases-slider-controls hidden">
 						<svg
 							width="58"
 							height="20"
@@ -282,13 +286,75 @@
 					</div>
 
 					<div class="cases-slider-wrapper">
-						<div class="cases-slider">
+						<div class="cases-content-wrapper cases-showreel-wrapper active">
+							<div class="cases-slide-item">
+								<div class="vjs-cases-wrapper">
+									<video class="vjs-cases-custom video-js">
+										<source
+											src="./assets/video/showreels/showreel_full_compr.mp4"
+											type="video/mp4"
+										/>
+										<p>Your browser does not support HTML5 video</p>
+									</video>
+								</div>
+								<div class="slide-gradient-overlay"></div>
+								<div class="slide-item-content showreel">
+									<svg
+										width="44"
+										height="56"
+										viewBox="0 0 44 56"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+										class="slide-play-but"
+									>
+										<path
+											d="M43.1235 26.3088C44.2922 27.0605 44.2922 28.9395 43.1235 29.6912L2.62948 55.7355C1.46082 56.4871 3.8147e-06 55.5475 3.8147e-06 54.0443L0 1.95572C0 0.452446 1.46082 -0.487099 2.62948 0.264538L43.1235 26.3088Z"
+											fill="white"
+										/>
+									</svg>
+									<div class="slide-item-text">Showreel</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="cases-content-wrapper cases-slider-2d">
 							<div class="swiper-wrapper cases-slide-wrapper">
 								<div class="swiper-slide">
 									<div class="cases-slide-item">
 										<div class="vjs-cases-wrapper">
 											<video class="vjs-cases-custom video-js">
-												<source src="./assets/video/cases/ghm_children_16x9.mp4" type="video/mp4" />
+												<source
+													src="./assets/video/showreels/showreel_2d_compr.mp4"
+													type="video/mp4"
+												/>
+												<p>Your browser does not support HTML5 video</p>
+											</video>
+										</div>
+										<div class="slide-gradient-overlay"></div>
+										<div class="slide-item-content showreel">
+											<svg
+												width="44"
+												height="56"
+												viewBox="0 0 44 56"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg"
+												class="slide-play-but"
+											>
+												<path
+													d="M43.1235 26.3088C44.2922 27.0605 44.2922 28.9395 43.1235 29.6912L2.62948 55.7355C1.46082 56.4871 3.8147e-06 55.5475 3.8147e-06 54.0443L0 1.95572C0 0.452446 1.46082 -0.487099 2.62948 0.264538L43.1235 26.3088Z"
+													fill="white"
+												/>
+											</svg>
+											<div class="slide-item-text">2D Showreel</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="swiper-slide">
+									<div class="cases-slide-item">
+										<div class="vjs-cases-wrapper">
+											<video class="vjs-cases-custom video-js">
+												<source src="./assets/video/cases/2d/gnm_2d.mp4" type="video/mp4" />
 												<p>Your browser does not support HTML5 video</p>
 											</video>
 										</div>
@@ -311,12 +377,132 @@
 										</div>
 									</div>
 								</div>
+
+								<div class="swiper-slide">
+									<div class="cases-slide-item">
+										<div class="vjs-cases-wrapper">
+											<video class="vjs-cases-custom video-js">
+												<source src="./assets/video/cases/2d/gnm_2d.mp4" type="video/mp4" />
+												<p>Your browser does not support HTML5 video</p>
+											</video>
+										</div>
+										<div class="slide-gradient-overlay"></div>
+										<div class="slide-item-content">
+											<svg
+												width="44"
+												height="56"
+												viewBox="0 0 44 56"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg"
+												class="slide-play-but"
+											>
+												<path
+													d="M43.1235 26.3088C44.2922 27.0605 44.2922 28.9395 43.1235 29.6912L2.62948 55.7355C1.46082 56.4871 3.8147e-06 55.5475 3.8147e-06 54.0443L0 1.95572C0 0.452446 1.46082 -0.487099 2.62948 0.264538L43.1235 26.3088Z"
+													fill="white"
+												/>
+											</svg>
+											<div class="slide-item-text">IRONHIVE</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="swiper-slide">
+									<div class="cases-slide-item">
+										<div class="vjs-cases-wrapper">
+											<video class="vjs-cases-custom video-js">
+												<source src="./assets/video/cases/2d/gnm_2d.mp4" type="video/mp4" />
+												<p>Your browser does not support HTML5 video</p>
+											</video>
+										</div>
+										<div class="slide-gradient-overlay"></div>
+										<div class="slide-item-content">
+											<svg
+												width="44"
+												height="56"
+												viewBox="0 0 44 56"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg"
+												class="slide-play-but"
+											>
+												<path
+													d="M43.1235 26.3088C44.2922 27.0605 44.2922 28.9395 43.1235 29.6912L2.62948 55.7355C1.46082 56.4871 3.8147e-06 55.5475 3.8147e-06 54.0443L0 1.95572C0 0.452446 1.46082 -0.487099 2.62948 0.264538L43.1235 26.3088Z"
+													fill="white"
+												/>
+											</svg>
+											<div class="slide-item-text">KLONDIKE</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="swiper-slide">
+									<div class="cases-slide-item">
+										<div class="vjs-cases-wrapper">
+											<video class="vjs-cases-custom video-js">
+												<source src="./assets/video/cases/2d/gnm_2d.mp4" type="video/mp4" />
+												<p>Your browser does not support HTML5 video</p>
+											</video>
+										</div>
+										<div class="slide-gradient-overlay"></div>
+										<div class="slide-item-content">
+											<svg
+												width="44"
+												height="56"
+												viewBox="0 0 44 56"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg"
+												class="slide-play-but"
+											>
+												<path
+													d="M43.1235 26.3088C44.2922 27.0605 44.2922 28.9395 43.1235 29.6912L2.62948 55.7355C1.46082 56.4871 3.8147e-06 55.5475 3.8147e-06 54.0443L0 1.95572C0 0.452446 1.46082 -0.487099 2.62948 0.264538L43.1235 26.3088Z"
+													fill="white"
+												/>
+											</svg>
+											<div class="slide-item-text">Riftwardens</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="cases-content-wrapper cases-slider-3d">
+							<div class="swiper-wrapper cases-slide-wrapper">
 								<div class="swiper-slide">
 									<div class="cases-slide-item">
 										<div class="vjs-cases-wrapper">
 											<video class="vjs-cases-custom video-js">
 												<source
-													src="./assets/video/cases/2048-gameplay_16x9.mp4"
+													src="./assets/video/showreels/showreel_3d_compr.mp4"
+													type="video/mp4"
+												/>
+												<p>Your browser does not support HTML5 video</p>
+											</video>
+										</div>
+										<div class="slide-gradient-overlay"></div>
+										<div class="slide-item-content showreel">
+											<svg
+												width="44"
+												height="56"
+												viewBox="0 0 44 56"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg"
+												class="slide-play-but"
+											>
+												<path
+													d="M43.1235 26.3088C44.2922 27.0605 44.2922 28.9395 43.1235 29.6912L2.62948 55.7355C1.46082 56.4871 3.8147e-06 55.5475 3.8147e-06 54.0443L0 1.95572C0 0.452446 1.46082 -0.487099 2.62948 0.264538L43.1235 26.3088Z"
+													fill="white"
+												/>
+											</svg>
+											<div class="slide-item-text">3D Showreel</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="swiper-slide">
+									<div class="cases-slide-item">
+										<div class="vjs-cases-wrapper">
+											<video class="vjs-cases-custom video-js">
+												<source
+													src="./assets/video/cases/3d/alien-invasion_3d.mp4"
 													type="video/mp4"
 												/>
 												<p>Your browser does not support HTML5 video</p>
@@ -337,16 +523,195 @@
 													fill="white"
 												/>
 											</svg>
-											<div class="slide-item-text">2048</div>
+											<div class="slide-item-text">Alien Invasion</div>
 										</div>
 									</div>
 								</div>
+
+								<div class="swiper-slide">
+									<div class="cases-slide-item">
+										<div class="vjs-cases-wrapper">
+											<video class="vjs-cases-custom video-js">
+												<source src="./assets/video/cases/3d/aom-1_3d.mp4" type="video/mp4" />
+												<p>Your browser does not support HTML5 video</p>
+											</video>
+										</div>
+										<div class="slide-gradient-overlay"></div>
+										<div class="slide-item-content">
+											<svg
+												width="44"
+												height="56"
+												viewBox="0 0 44 56"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg"
+												class="slide-play-but"
+											>
+												<path
+													d="M43.1235 26.3088C44.2922 27.0605 44.2922 28.9395 43.1235 29.6912L2.62948 55.7355C1.46082 56.4871 3.8147e-06 55.5475 3.8147e-06 54.0443L0 1.95572C0 0.452446 1.46082 -0.487099 2.62948 0.264538L43.1235 26.3088Z"
+													fill="white"
+												/>
+											</svg>
+											<div class="slide-item-text">Age of Magic</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="swiper-slide">
+									<div class="cases-slide-item">
+										<div class="vjs-cases-wrapper">
+											<video class="vjs-cases-custom video-js">
+												<source src="./assets/video/cases/3d/aom-2_3d.mp4" type="video/mp4" />
+												<p>Your browser does not support HTML5 video</p>
+											</video>
+										</div>
+										<div class="slide-gradient-overlay"></div>
+										<div class="slide-item-content">
+											<svg
+												width="44"
+												height="56"
+												viewBox="0 0 44 56"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg"
+												class="slide-play-but"
+											>
+												<path
+													d="M43.1235 26.3088C44.2922 27.0605 44.2922 28.9395 43.1235 29.6912L2.62948 55.7355C1.46082 56.4871 3.8147e-06 55.5475 3.8147e-06 54.0443L0 1.95572C0 0.452446 1.46082 -0.487099 2.62948 0.264538L43.1235 26.3088Z"
+													fill="white"
+												/>
+											</svg>
+											<div class="slide-item-text">Age of Magic</div>
+										</div>
+									</div>
+								</div>
+
 								<div class="swiper-slide">
 									<div class="cases-slide-item">
 										<div class="vjs-cases-wrapper">
 											<video class="vjs-cases-custom video-js">
 												<source
-													src="./assets/video/cases/Visor_Klondike_abomination_v1_16x9.mp4"
+													src="./assets/video/cases/3d/rooster-fights_3d.mp4"
+													type="video/mp4"
+												/>
+												<p>Your browser does not support HTML5 video</p>
+											</video>
+										</div>
+										<div class="slide-gradient-overlay"></div>
+										<div class="slide-item-content">
+											<svg
+												width="44"
+												height="56"
+												viewBox="0 0 44 56"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg"
+												class="slide-play-but"
+											>
+												<path
+													d="M43.1235 26.3088C44.2922 27.0605 44.2922 28.9395 43.1235 29.6912L2.62948 55.7355C1.46082 56.4871 3.8147e-06 55.5475 3.8147e-06 54.0443L0 1.95572C0 0.452446 1.46082 -0.487099 2.62948 0.264538L43.1235 26.3088Z"
+													fill="white"
+												/>
+											</svg>
+											<div class="slide-item-text">Rooster Fights</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="cases-content-wrapper cases-slider-ugc">
+							<div class="swiper-wrapper cases-slide-wrapper">
+								<div class="swiper-slide">
+									<div class="cases-slide-item showreel">
+										<div class="vjs-cases-wrapper">
+											<video class="vjs-cases-custom video-js">
+												<source
+													src="./assets/video/showreels/showreel_ugc_compr.mp4"
+													type="video/mp4"
+												/>
+												<p>Your browser does not support HTML5 video</p>
+											</video>
+										</div>
+										<div class="slide-gradient-overlay"></div>
+										<div class="slide-item-content showreel">
+											<svg
+												width="44"
+												height="56"
+												viewBox="0 0 44 56"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg"
+												class="slide-play-but"
+											>
+												<path
+													d="M43.1235 26.3088C44.2922 27.0605 44.2922 28.9395 43.1235 29.6912L2.62948 55.7355C1.46082 56.4871 3.8147e-06 55.5475 3.8147e-06 54.0443L0 1.95572C0 0.452446 1.46082 -0.487099 2.62948 0.264538L43.1235 26.3088Z"
+													fill="white"
+												/>
+											</svg>
+											<div class="slide-item-text">UGC Showreel</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="swiper-slide">
+									<div class="cases-slide-item">
+										<div class="vjs-cases-wrapper ugc">
+											<video class="vjs-cases-custom video-js">
+												<source src="./assets/video/cases/ugc/klondike_ugc.mp4" type="video/mp4" />
+												<p>Your browser does not support HTML5 video</p>
+											</video>
+										</div>
+										<div class="slide-gradient-overlay"></div>
+										<div class="slide-item-content">
+											<svg
+												width="44"
+												height="56"
+												viewBox="0 0 44 56"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg"
+												class="slide-play-but"
+											>
+												<path
+													d="M43.1235 26.3088C44.2922 27.0605 44.2922 28.9395 43.1235 29.6912L2.62948 55.7355C1.46082 56.4871 3.8147e-06 55.5475 3.8147e-06 54.0443L0 1.95572C0 0.452446 1.46082 -0.487099 2.62948 0.264538L43.1235 26.3088Z"
+													fill="white"
+												/>
+											</svg>
+											<div class="slide-item-text">KLONDIKE</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="swiper-slide">
+									<div class="cases-slide-item">
+										<div class="vjs-cases-wrapper ugc">
+											<video class="vjs-cases-custom video-js">
+												<source src="./assets/video/cases/ugc/etolls_ugc.mp4" type="video/mp4" />
+												<p>Your browser does not support HTML5 video</p>
+											</video>
+										</div>
+										<div class="slide-gradient-overlay"></div>
+										<div class="slide-item-content">
+											<svg
+												width="44"
+												height="56"
+												viewBox="0 0 44 56"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg"
+												class="slide-play-but"
+											>
+												<path
+													d="M43.1235 26.3088C44.2922 27.0605 44.2922 28.9395 43.1235 29.6912L2.62948 55.7355C1.46082 56.4871 3.8147e-06 55.5475 3.8147e-06 54.0443L0 1.95572C0 0.452446 1.46082 -0.487099 2.62948 0.264538L43.1235 26.3088Z"
+													fill="white"
+												/>
+											</svg>
+											<div class="slide-item-text">ETOLLS</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="swiper-slide">
+									<div class="cases-slide-item">
+										<div class="vjs-cases-wrapper ugc">
+											<video class="vjs-cases-custom video-js">
+												<source
+													src="./assets/video/cases/ugc/enshrouded_ugc.mp4"
 													type="video/mp4"
 												/>
 												<p>Your browser does not support HTML5 video</p>
@@ -371,14 +736,12 @@
 										</div>
 									</div>
 								</div>
+
 								<div class="swiper-slide">
 									<div class="cases-slide-item">
-										<div class="vjs-cases-wrapper">
+										<div class="vjs-cases-wrapper ugc">
 											<video class="vjs-cases-custom video-js">
-												<source
-													src="./assets/video/cases/simple-expedition-fhd-16x9.mp4"
-													type="video/mp4"
-												/>
+												<source src="./assets/video/cases/ugc/domino_ugc.mp4" type="video/mp4" />
 												<p>Your browser does not support HTML5 video</p>
 											</video>
 										</div>
@@ -397,41 +760,50 @@
 													fill="white"
 												/>
 											</svg>
-											<div class="slide-item-text">CHARMBOOK</div>
-										</div>
-									</div>
-								</div>
-								<div class="swiper-slide">
-									<div class="cases-slide-item">
-										<div class="vjs-cases-wrapper">
-											<video class="vjs-cases-custom video-js">
-												<source
-													src="./assets/video/cases/luxury_Big_Avatar_S_gold_16x9.mp4"
-													type="video/mp4"
-												/>
-												<p>Your browser does not support HTML5 video</p>
-											</video>
-										</div>
-										<div class="slide-gradient-overlay"></div>
-										<div class="slide-item-content">
-											<svg
-												width="44"
-												height="56"
-												viewBox="0 0 44 56"
-												fill="none"
-												xmlns="http://www.w3.org/2000/svg"
-												class="slide-play-but"
-											>
-												<path
-													d="M43.1235 26.3088C44.2922 27.0605 44.2922 28.9395 43.1235 29.6912L2.62948 55.7355C1.46082 56.4871 3.8147e-06 55.5475 3.8147e-06 54.0443L0 1.95572C0 0.452446 1.46082 -0.487099 2.62948 0.264538L43.1235 26.3088Z"
-													fill="white"
-												/>
-											</svg>
-											<div class="slide-item-text">DOMINO MASTER</div>
+											<div class="slide-item-text">Domino Master</div>
 										</div>
 									</div>
 								</div>
 							</div>
+						</div>
+
+						<div class="cases-content-wrapper cases-plb-wrapper">
+							<a
+								class="plb-icon"
+								href="./playables/last-hero.html"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<img src="./assets/plb-posters/last_hero.webp" alt="lastHero" />
+								<div class="plb-text"><span>Last Hero</span></div>
+							</a>
+							<a
+								class="plb-icon"
+								href="./playables/car_out.html"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<img src="./assets/plb-posters/car_out.webp" alt="Car Out" />
+								<div class="plb-text"><span>Car Out</span></div>
+							</a>
+							<a
+								class="plb-icon"
+								href="./playables/hero_adventure.html"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<img src="./assets/plb-posters/hero_adventure.webp" alt="Hero Adventure" />
+								<div class="plb-text"><span>Hero Adventure</span></div>
+							</a>
+							<a
+								class="plb-icon"
+								href="./playables/spring_valley.html"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<img src="./assets/plb-posters/spring_valley.webp" alt="Spring Valley" />
+								<div class="plb-text"><span>Spring Valley</span></div>
+							</a>
 						</div>
 					</div>
 				</section>
