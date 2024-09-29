@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Zen+Dots&display=swap');
-
 @import './variables.scss';
 @import './mixins.scss';
 
@@ -132,6 +130,8 @@ main {
 	bottom: 45px;
 	right: 48px;
 	z-index: -11;
+	width: 100vw;
+	height: 100vh;
 	background-color: $bg-second-color;
 	display: flex;
 	justify-content: center;
