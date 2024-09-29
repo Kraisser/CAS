@@ -108,7 +108,7 @@ function pageDown() {
 	}
 
 	currPage++;
-	smoothScroll(linkList[currPage], navigationsCallbacks);
+	smoothNavigate(linkList[currPage], navigationsCallbacks);
 }
 
 function pageUp() {
