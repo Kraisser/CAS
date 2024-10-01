@@ -72,7 +72,7 @@ header {
 }
 
 // Media
-@media (max-width: 1200px) {
+@media (max-width: 1200px), (max-height: 768px) {
 	.desc-wrapper {
 		left: 25px;
 		top: 20px;

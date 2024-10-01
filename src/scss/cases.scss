@@ -541,6 +541,7 @@
 		padding-top: 10px;
 	}
 }
+
 @media (max-height: 800px) {
 	.achievments-list {
 		.achievments-item {
@@ -550,9 +551,47 @@
 		}
 	}
 }
+
+@media (max-height: 768px) {
+	.cases-section {
+		padding: 20px 25px 20px 25px;
+	}
+	.cases-header {
+		padding-top: 45px;
+	}
+}
+
 @media (max-height: 750px) {
 	.cases-plb-wrapper {
 		grid-template: repeat(auto-fit, minmax(100px, auto)) / repeat(auto-fit, minmax(100px, auto));
+	}
+}
+
+@media (min-width: 1200px) and (max-height: 768px) {
+	.cases-section {
+		padding-right: 0;
+	}
+	.cases-list {
+		grid-gap: 2vh;
+	}
+	.cases-item {
+		font-size: 24px;
+	}
+	.achievments-list {
+		.achievments-item {
+			h3 {
+				font-size: 28px;
+			}
+			span {
+				font-size: 16px;
+			}
+		}
+	}
+}
+
+@media (max-width: 1200px) and (min-width: 768px) and (max-height: 768px) {
+	.cases-section {
+		padding-bottom: 65px;
 	}
 }
 

@@ -69,7 +69,7 @@ footer {
 }
 
 // Media
-@media (max-width: 1200px) {
+@media (max-width: 1200px), (max-height: 768px) {
 	.desc-footer {
 		bottom: 20px;
 		right: 25px;

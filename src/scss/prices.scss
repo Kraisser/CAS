@@ -192,9 +192,15 @@
 }
 
 // Media
-@media (max-width: 1850px) {
+@media (max-width: 1850px), (max-height: 800px) {
 	.prices-wrapper {
 		padding: 0 28px;
+	}
+}
+
+@media (max-width: 1350px) {
+	.prices-header {
+		padding-left: 30px;
 	}
 }
 
@@ -297,6 +303,27 @@
 		}
 	}
 }
+
+@media (max-height: 800px) {
+	.prices-wrapper {
+		.swiper-wrapper {
+			margin-bottom: 30px;
+		}
+	}
+	.prices-slider-dots {
+		display: flex;
+		justify-content: center;
+		gap: 15px;
+	}
+}
+
+@media (max-height: 768px) {
+	.prices-header {
+		padding-top: 15px;
+		padding-left: 15px;
+	}
+}
+
 @media (min-width: 500px) and (max-height: 800px) {
 	.prices-card {
 		padding-top: 55px;
@@ -316,5 +343,41 @@
 	}
 	.card-button {
 		height: 50px;
+	}
+}
+
+@media (min-width: 768px) and (max-height: 700px) {
+	.card-head {
+		font-size: 55px;
+	}
+	.prices-card {
+		max-width: 328px;
+		padding-top: 45px;
+	}
+	.card-main-text {
+		h5 {
+			font-size: 28px;
+		}
+		span {
+			font-size: 13px;
+		}
+	}
+	.card-price {
+		.price-value {
+			font-size: 28px;
+		}
+		.price-per-video-value {
+			font-size: 13px;
+		}
+	}
+	.card-list {
+		font-size: 15px;
+
+		ul {
+			grid-gap: 7px;
+		}
+	}
+	.card-button {
+		height: 45px;
 	}
 }

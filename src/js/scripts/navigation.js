@@ -22,7 +22,6 @@ const linkList = ['home', 'cases', 'testimonials', 'prices', 'contacts'];
 let currPage = 0;
 
 const backgroundWrapper = document.querySelector(`.video-wrapper`);
-const backgroundVideo = document.querySelector('.background-video');
 
 const tnailsNavShadows = document.querySelectorAll('.tnails-nav-but');
 
@@ -40,22 +39,18 @@ const pagesNavSwitch = (id) => {
 
 	switch (id) {
 		case 'home':
-			// backgroundVideo.classList.remove('hidden');
 			backgroundWrapper.classList.remove('cases-active', 'contacts-active', 'bg-video-hidden');
 			break;
 		case 'cases':
-			// backgroundVideo.classList.add('hidden');
 			backgroundWrapper.classList.add('cases-active', 'bg-video-hidden');
 			backgroundWrapper.classList.remove('contacts-active');
 			break;
 		case 'testimonials':
 			tnailsNavShadows.forEach((item) => item.classList.add('tnails-nav-visible'));
-			// backgroundVideo.classList.add('hidden');
 			backgroundWrapper.classList.add('bg-video-hidden');
 			backgroundWrapper.classList.remove('cases-active', 'contacts-active');
 			break;
 		case 'contacts':
-			// backgroundVideo.classList.remove('hidden');
 			backgroundWrapper.classList.add('contacts-active');
 			backgroundWrapper.classList.remove('cases-active', 'bg-video-hidden');
 			break;

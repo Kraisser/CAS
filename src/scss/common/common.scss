@@ -172,8 +172,21 @@ main {
 		}
 	}
 }
-
 @media (max-width: 1200px) {
+	.video-wrapper {
+		&.cases-active,
+		&.contacts-active {
+			&::after {
+				transform: translateX(0);
+			}
+			.background-video {
+				opacity: 0;
+			}
+		}
+	}
+}
+
+@media (max-width: 1200px), (max-height: 768px) {
 	main {
 		padding: 0 25px 0;
 	}
@@ -196,16 +209,6 @@ main {
 		bottom: 20px;
 		left: 25px;
 		right: 25px;
-
-		&.cases-active,
-		&.contacts-active {
-			&::after {
-				transform: translateX(0);
-			}
-			.background-video {
-				opacity: 0;
-			}
-		}
 	}
 	.section-header {
 		h2 {
