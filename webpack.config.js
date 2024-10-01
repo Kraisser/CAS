@@ -121,13 +121,13 @@ module.exports = {
 			title: '[title]',
 			template: './src/index.html',
 		}),
-		// new WebpackPwaManifest({
-		// 	name: 'Creative Anatoli Studio',
-		// 	publicPath: './',
-		// 	icons: [
-		// 		{src: path.resolve('./src/assets/favicons/favicon-192x192.png'), sizes: '192x192'},
-		// 		{src: path.resolve('./src/assets/favicons/favicon-512x512.png'), sizes: '512x512'},
-		// 	],
-		// }),
+		new WebpackPwaManifest({
+			name: 'CAS',
+			publicPath: './',
+			icons: [
+				{src: path.resolve('./src/assets/favicons/favicon-cas-192x192.jpg'), sizes: '192x192'},
+				{src: path.resolve('./src/assets/favicons/favicon-cas-512x512.jpg'), sizes: '512x512'},
+			],
+		}),
 	],
 };
