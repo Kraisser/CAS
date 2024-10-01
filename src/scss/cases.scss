@@ -503,13 +503,12 @@
 	.cases-list {
 		grid-template: auto auto / repeat(4, auto);
 		grid-gap: 10px;
-		justify-content: space-around;
+		justify-content: space-between;
 
 		.cases-item:nth-of-type(1) {
-			// grid-area: showreel;
 			grid-column: 1 / span 4;
 			grid-row: 1 / 2;
-			justify-self: center;
+			justify-self: start;
 		}
 	}
 }
