@@ -1,0 +1,19 @@
+{
+  "icons": [
+    {
+      "src": "./icon_512x512.a4f0de09d313356bc0482c273c113862.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "./icon_192x192.631f412a2a391712a25aaf087da5b4a3.jpeg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    }
+  ],
+  "name": "CAS",
+  "short_name": "CAS",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": "."
+}
