@@ -1,7 +1,6 @@
 import smoothScroll from '../modules/smooth-scroll';
 import activeLinksController from '../modules/active-links-controller';
 import menuDotCtrl from '../modules/menu-dot-anim';
-import observerNav from '../modules/observer-nav';
 import burger from '../modules/burger-menu';
 import swipeController from '../modules/swipe-controller';
 

@@ -1,6 +1,6 @@
 import debounce from '../modules/debounce';
 
-const fetchURL = '';
+const fetchURL = 'https://formspree.io/f/mblrnbrz';
 
 const form = document.querySelector('#contact-form');
 const inputs = document.querySelectorAll('#contact-form .contact-input');
