@@ -202,6 +202,9 @@ main {
 			&::after {
 				transform: translateX(0);
 			}
+			.background-video {
+				opacity: 0;
+			}
 		}
 	}
 	.section-header {
