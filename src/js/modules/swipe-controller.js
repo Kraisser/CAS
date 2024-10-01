@@ -7,8 +7,10 @@ export default function swipeController(settings, swipeForbidEls, callbackObj) {
 	function touchHandle(e, pos) {
 		swipeForbidEls.forEach((item) => {
 			if (e.target === item) {
-				touch.forbid = true;
-				return;
+				if (item.scrollHeight > item.clientHeight) {
+					touch.forbid = true;
+					return;
+				}
 			}
 		});
 
@@ -49,10 +51,8 @@ export default function swipeController(settings, swipeForbidEls, callbackObj) {
 		}
 
 		if (yDiff < 0) {
-			// console.log('to top: ' + yDiff);
 			callbackObj.toTop();
 		} else {
-			// console.log('to bot: ' + yDiff);
 			callbackObj.toBot();
 		}
 	}

@@ -19,7 +19,7 @@ const navSelectorList = [
 
 const smoothLinks = document.querySelectorAll('a[href^="#"]');
 const linkList = ['home', 'cases', 'testimonials', 'prices', 'contacts'];
-let currPage = 0;
+let currPage = 2;
 
 const backgroundWrapper = document.querySelector(`.content`);
 const backgroundVideo = document.querySelector('.background-video');
