@@ -21,7 +21,7 @@ const smoothLinks = document.querySelectorAll('a[href^="#"]');
 const linkList = ['home', 'cases', 'testimonials', 'prices', 'contacts'];
 let currPage = 0;
 
-const backgroundWrapper = document.querySelector(`.content`);
+const backgroundWrapper = document.querySelector(`.video-wrapper`);
 const backgroundVideo = document.querySelector('.background-video');
 
 const tnailsNavShadows = document.querySelectorAll('.tnails-nav-but');
@@ -40,26 +40,27 @@ const pagesNavSwitch = (id) => {
 
 	switch (id) {
 		case 'home':
-			backgroundVideo.classList.remove('hidden');
-			backgroundWrapper.classList.remove('cases-active', 'contacts-active');
+			// backgroundVideo.classList.remove('hidden');
+			backgroundWrapper.classList.remove('cases-active', 'contacts-active', 'bg-video-hidden');
 			break;
 		case 'cases':
-			backgroundVideo.classList.add('hidden');
-			backgroundWrapper.classList.add('cases-active');
+			// backgroundVideo.classList.add('hidden');
+			backgroundWrapper.classList.add('cases-active', 'bg-video-hidden');
 			backgroundWrapper.classList.remove('contacts-active');
 			break;
 		case 'testimonials':
 			tnailsNavShadows.forEach((item) => item.classList.add('tnails-nav-visible'));
-			backgroundVideo.classList.add('hidden');
+			// backgroundVideo.classList.add('hidden');
+			backgroundWrapper.classList.add('bg-video-hidden');
 			backgroundWrapper.classList.remove('cases-active', 'contacts-active');
 			break;
 		case 'contacts':
-			backgroundVideo.classList.remove('hidden');
+			// backgroundVideo.classList.remove('hidden');
 			backgroundWrapper.classList.add('contacts-active');
-			backgroundWrapper.classList.remove('cases-active');
+			backgroundWrapper.classList.remove('cases-active', 'bg-video-hidden');
 			break;
 		default:
-			backgroundVideo.classList.add('hidden');
+			backgroundWrapper.classList.add('bg-video-hidden');
 			backgroundWrapper.classList.remove('cases-active', 'contacts-active');
 			break;
 	}
@@ -134,11 +135,10 @@ swipeController(swipeSettings, swipeForbidEl, swipeCallbacks);
 
 // Mouse wheel controller
 function wheelHandler(e, forbidEls) {
-	console.log('e.target: ', e.target);
 	if (forbidEls.scroll.includes(e.target) && e.target.scrollHeight > e.target.clientHeight) {
 		return;
 	}
-
+	console.log(e.wheelDelta);
 	if (e.wheelDelta < 0) {
 		pageDown();
 	} else {
@@ -169,4 +169,8 @@ const debounceWheel = debounce((e) => {
 	wheelHandler(e, swipeForbidEl);
 }, 150);
 
-window.addEventListener('mousewheel', debounceWheel);
+if ('onwheel' in document) {
+	window.addEventListener('wheel', debounceWheel);
+} else if ('onmousewheel' in document) {
+	window.addEventListener('mousewheel', debounceWheel);
+}
