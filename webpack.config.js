@@ -99,10 +99,10 @@ module.exports = {
 	plugins: [
 		new CopyPlugin({
 			patterns: [
-				// {
-				// 	from: path.resolve(__dirname, 'src/assets/favicons/creative-anatoli-studio-share.jpg'),
-				// 	to: path.resolve(__dirname, 'build/assets'),
-				// },
+				{
+					from: path.resolve(__dirname, 'src/assets/favicons/cas-share.jpg'),
+					to: path.resolve(__dirname, 'build/assets'),
+				},
 				{
 					from: path.resolve(__dirname, 'src/assets/video/review'),
 					to: path.resolve(__dirname, 'build/assets/video/review'),
