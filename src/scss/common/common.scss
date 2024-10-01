@@ -55,34 +55,31 @@ main {
 // 		clip-path: polygon(100% 0, 100% 100%, 0 100%, 20% 0);
 // 	}
 // }
-.overlay {
+.overlay-border {
 	z-index: 100;
 	background-color: $bg-color;
+	position: fixed;
 
 	&.top-border {
 		height: 45px;
-		position: fixed;
 		left: 0;
 		top: 0;
 		width: 100%;
 	}
 	&.bottom-border {
 		height: 48px;
-		position: fixed;
 		left: 0;
 		bottom: 0;
 		width: 100%;
 	}
 	&.left-border {
 		height: 100%;
-		position: fixed;
 		right: 0;
 		top: 0;
 		width: 48px;
 	}
 	&.right-border {
 		height: 100%;
-		position: fixed;
 		left: 0;
 		top: 0;
 		width: 48px;
@@ -174,16 +171,12 @@ main {
 	.default-section {
 		padding: 75px 30px 35px;
 	}
-	.overlay {
-		&.top-border {
-			height: 20px;
-		}
+	.overlay-border {
+		&.top-border,
 		&.bottom-border {
 			height: 20px;
 		}
-		&.left-border {
-			width: 25px;
-		}
+		&.left-border,
 		&.right-border {
 			width: 25px;
 		}
@@ -219,7 +212,7 @@ main {
 	.default-section {
 		padding: 82px 30px 35px;
 	}
-	.overlay {
+	.overlay-border {
 		display: none;
 	}
 	.video-wrapper {
