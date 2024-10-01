@@ -213,7 +213,6 @@ function hideArrows() {
 
 window.addEventListener('pageSwitch', (e) => {
 	if (e.detail.pageId === 'cases' && currTab.match(/^(slider)/g)) {
-		console.log(currTab, currTab.match(/^(slider)/g));
 		showArrows();
 	} else {
 		hideArrows();

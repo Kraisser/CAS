@@ -138,7 +138,7 @@ function wheelHandler(e, forbidEls) {
 	if (forbidEls.scroll.includes(e.target) && e.target.scrollHeight > e.target.clientHeight) {
 		return;
 	}
-	console.log(e.wheelDelta);
+
 	if (e.wheelDelta < 0) {
 		pageDown();
 	} else {
