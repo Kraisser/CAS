@@ -47,7 +47,7 @@
 
 // tnails data
 .tnails-video-wrapper {
-	@include grid(grid-template-rows, auto auto);
+	@include grid(grid-template-rows, auto auto, 10px);
 	width: 340px;
 	height: 145px;
 }

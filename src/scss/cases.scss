@@ -311,6 +311,12 @@
 }
 
 //Media
+@media (min-width: 2200px) {
+	.cases-plb-wrapper .plb-icon {
+		width: 340px;
+		height: 340px;
+	}
+}
 @media (max-width: 1700px) {
 	.cases-section {
 		padding-left: 50px;

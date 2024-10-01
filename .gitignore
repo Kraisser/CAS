@@ -1,3 +1,6 @@
 node_modules
 package-lock.json
 build
+src/assets/video/cases/2d/iron-hive_2d.mp4
+src/assets/video/cases/2d/klondike_2d.mp4
+src/assets/video/cases/2d/mnw_2d.mp4

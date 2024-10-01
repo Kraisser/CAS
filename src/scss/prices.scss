@@ -192,6 +192,49 @@
 }
 
 // Media
+
+@media (min-width: 2200px) {
+	.prices-header {
+		margin-bottom: 50px;
+	}
+	.prices-wrapper {
+		padding-right: 96px+155px;
+	}
+	.prices-card {
+		max-width: calc(25% - 22px);
+		padding: 96px 35px 35px;
+	}
+	.card-head {
+		font-size: 96px;
+	}
+	.card-main-text {
+		h5 {
+			font-size: 42px;
+		}
+		span {
+			font-size: 20px;
+		}
+	}
+	.card-price {
+		.price-value {
+			font-size: 42px;
+		}
+		.price-per-video-value {
+			font-size: 20px;
+		}
+	}
+	.card-list {
+		font-size: 20px;
+
+		ul {
+			grid-gap: 15px;
+		}
+	}
+	// .card-button {
+	// 	height: 80px;
+	// }
+}
+
 @media (max-width: 1850px), (max-height: 800px) {
 	.prices-wrapper {
 		padding: 0 28px;
