@@ -137,7 +137,8 @@ main {
 }
 .background-video {
 	object-fit: contain;
-	width: 100%;
+	width: 1920px;
+	height: 1080px;
 	transition: opacity 0.6s ease-out;
 
 	&.hidden {
@@ -157,11 +158,6 @@ main {
 }
 
 // Media
-@media (max-width: 1900px) {
-	.background-video {
-		width: auto;
-	}
-}
 @media (max-width: 1700px) {
 	.content {
 		&.contacts-active {
@@ -231,6 +227,10 @@ main {
 		bottom: 0;
 		left: 0;
 		right: 0;
+
+		&.hidden {
+			display: none;
+		}
 	}
 	.background-video {
 		transition: opacity 0s ease-out;

@@ -106,8 +106,7 @@ header {
 		display: none;
 	}
 	.mobile-menu-overlay {
-		background-color: rgba(21, 21, 26, 0.95);
-		backdrop-filter: blur(100px);
+		background-color: rgba(21, 21, 26, 1);
 		display: block;
 		position: fixed;
 		left: 0;
@@ -120,6 +119,7 @@ header {
 		padding: 244px 30px 95px;
 		@include grid(grid-template-rows, auto auto);
 		align-content: space-between;
+		will-change: transform;
 
 		&.burger-menu-active {
 			transform: translateX(0);
