@@ -5,7 +5,14 @@ export default function swipeController(settings, swipeForbidEls, callbackObj) {
 	document.body.addEventListener('touchend', touchHandle);
 
 	function touchHandle(e, pos) {
-		swipeForbidEls.forEach((item) => {
+		swipeForbidEls.forbid.forEach((item) => {
+			if (e.target === item) {
+				touch.forbid = true;
+				return;
+			}
+		});
+
+		swipeForbidEls.scroll.forEach((item) => {
 			if (e.target === item) {
 				if (item.scrollHeight > item.clientHeight) {
 					touch.forbid = true;

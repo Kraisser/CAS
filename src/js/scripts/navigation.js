@@ -19,7 +19,7 @@ const navSelectorList = [
 
 const smoothLinks = document.querySelectorAll('a[href^="#"]');
 const linkList = ['home', 'cases', 'testimonials', 'prices', 'contacts'];
-let currPage = 2;
+let currPage = 0;
 
 const backgroundWrapper = document.querySelector(`.content`);
 const backgroundVideo = document.querySelector('.background-video');
@@ -125,13 +125,17 @@ const swipeCallbacks = {
 	toBot: pageUp,
 };
 
-const swipeForbidEl = [...document.querySelectorAll('.tnail-review')];
+const swipeForbidEl = {
+	forbid: [...document.querySelectorAll('.mobile-menu-overlay')],
+	scroll: [...document.querySelectorAll('.tnail-review')],
+};
 
 swipeController(swipeSettings, swipeForbidEl, swipeCallbacks);
 
 // Mouse wheel controller
 function wheelHandler(e, forbidEls) {
-	if (forbidEls.includes(e.target) && e.target.clientHeight !== e.target.scrollHeight) {
+	console.log('e.target: ', e.target);
+	if (forbidEls.scroll.includes(e.target) && e.target.scrollHeight > e.target.clientHeight) {
 		return;
 	}
 
