@@ -151,8 +151,9 @@
 		width: 100%;
 		height: 100%;
 		transition: all 0.4s ease-out;
-		opacity: 0;
-		background: linear-gradient(to bottom, transparent 0, $def-text-color 85%);
+		opacity: 0.7;
+		background: linear-gradient(to bottom, transparent 0, $def-text-color 100%),
+			rgba(16, 17, 20, 0.35);
 	}
 
 	.custom-slider-error {
