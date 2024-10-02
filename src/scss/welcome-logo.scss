@@ -12,7 +12,7 @@
 	padding: 77px 7vw 77px 0;
 
 	.logo-description-wrapper {
-		max-width: 616px;
+		max-width: 550px;
 		justify-self: start;
 		span {
 			@include font(42px, 90%, $accent-text-color);
@@ -58,6 +58,8 @@
 		justify-items: start;
 
 		.logo-description-wrapper {
+			max-width: 400px;
+
 			span {
 				font-size: 30px;
 			}
@@ -97,10 +99,8 @@
 	}
 
 	.main-logo-wrapper {
-		justify-items: start;
-
 		.logo-description-wrapper {
-			max-width: 400px;
+			max-width: 300px;
 
 			span {
 				font-size: 22px;
@@ -115,17 +115,6 @@
 	.main-svg-logo-wrapper {
 		svg {
 			height: 33px;
-		}
-	}
-	.main-logo-wrapper {
-		justify-items: start;
-
-		.logo-description-wrapper {
-			max-width: 400px;
-
-			span {
-				font-size: 22px;
-			}
 		}
 	}
 }
