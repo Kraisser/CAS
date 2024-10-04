@@ -1,4 +1,11 @@
 export default function swipeController(settings, swipeForbidEls, callbackObj) {
+	const swipeSettings = {
+		minTime: 150,
+		maxTime: 1000,
+		minMove: 30,
+		maxMove: 800,
+	};
+
 	const touch = {};
 
 	document.body.addEventListener('touchstart', (e) => touchHandle(e, 'start'));

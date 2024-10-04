@@ -160,6 +160,9 @@
 	}
 }
 @media (max-width: 768px) {
+	.contact-section {
+		background-color: $bg-color;
+	}
 	.contact-form {
 		grid-template-columns: [name-start email-start message-start submit-start] 1fr [name-end email-end message-end submit-end];
 		grid-template-rows:

@@ -2,7 +2,7 @@ import smoothScroll from '../modules/smooth-scroll';
 import activeLinksController from '../modules/active-links-controller';
 import menuDotCtrl from '../modules/menu-dot-anim';
 import burger from '../modules/burger-menu';
-import swipeController from '../modules/swipe-controller';
+import observerNav from '../modules/observer-nav';
 
 import debounce from '../modules/debounce';
 
@@ -10,6 +10,8 @@ import debounce from '../modules/debounce';
 const burgerBut = document.querySelector('.burger-icon');
 const mobileMenuWrapper = document.querySelector('.mobile-menu-overlay');
 burger(mobileMenuWrapper, burgerBut);
+
+const header = document.querySelector('.desc-wrapper');
 
 const navSelectorList = [
 	document.querySelector('.menu-list'),
@@ -31,6 +33,33 @@ function pageSwitchEvent(pageId) {
 	});
 
 	window.dispatchEvent(event);
+}
+
+function pageSwitchInit(allAnchorLinks) {
+	if (allAnchorLinks && allAnchorLinks.length > 0) {
+		allAnchorLinks.forEach((item) => {
+			item.addEventListener('click', (e) => {
+				e.preventDefault();
+
+				const id = item.getAttribute('href').slice(1);
+
+				if (id) {
+					pageSwitchEvent(id);
+				}
+			});
+		});
+	}
+}
+
+pageSwitchInit(smoothLinks);
+
+function pageSwitchCallback(id) {
+	activeLinksControl(id);
+	descDotCallback(id);
+	mobileDotCallback(id);
+	pagesNavSwitch(id);
+	setLinkIndex(id);
+	smoothScroll(id);
 }
 
 const pagesNavSwitch = (id) => {
@@ -60,6 +89,27 @@ const pagesNavSwitch = (id) => {
 	}
 };
 
+// Observer Mobile
+const mobileCallback = (id) => {
+	if (window.innerWidth < 768) {
+		activeLinksControl(id);
+		mobileDotCallback(id);
+		setLinkIndex(id);
+		mobileVideoOpacityController(id);
+	}
+};
+
+observerNav(linkList, mobileCallback);
+
+// mobile video opacity controller
+function mobileVideoOpacityController(id) {
+	if (id === 'home') {
+		backgroundWrapper.classList.remove('bg-video-hidden');
+	} else {
+		backgroundWrapper.classList.add('bg-video-hidden');
+	}
+}
+
 // DotController
 const dot = document.querySelector('#desc-menu-dot');
 const navWrapper = document.querySelector('.desc-menu-wrapper');
@@ -76,56 +126,24 @@ function setLinkIndex(id) {
 	currPage = linkList.indexOf(id);
 }
 
-//Nav callbacks
-const navigationsCallbacks = [
-	activeLinksControl,
-	descDotCallback,
-	mobileDotCallback,
-	pagesNavSwitch,
-	setLinkIndex,
-	pageSwitchEvent,
-];
-
-//PageSmoothInit
-const smoothNavigate = smoothScroll(smoothLinks, navigationsCallbacks);
-
-// Swipe Controller
-const swipeSettings = {
-	minTime: 150,
-	maxTime: 1000,
-	minMove: 30,
-	maxMove: 800,
-};
-
 function pageDown() {
 	if (currPage >= linkList.length - 1) {
 		return;
 	}
-
 	currPage++;
-	smoothNavigate(linkList[currPage], navigationsCallbacks);
 }
 
 function pageUp() {
 	if (currPage <= 0) {
 		return;
 	}
-
 	currPage--;
-	smoothNavigate(linkList[currPage], navigationsCallbacks);
 }
-
-const swipeCallbacks = {
-	toTop: pageDown,
-	toBot: pageUp,
-};
 
 const swipeForbidEl = {
 	forbid: [...document.querySelectorAll('.mobile-menu-overlay')],
 	scroll: [...document.querySelectorAll('.tnail-review')],
 };
-
-swipeController(swipeSettings, swipeForbidEl, swipeCallbacks);
 
 // Mouse wheel controller
 function wheelHandler(e, forbidEls) {
@@ -138,33 +156,56 @@ function wheelHandler(e, forbidEls) {
 	} else {
 		pageUp();
 	}
+
+	pageSwitchEvent(linkList[currPage]);
 }
+
+// debounce functions
+const debouncePageCorrection = debounce(() => {
+	if (window.innerWidth > 768) {
+		pageSwitchEvent(linkList[currPage]);
+	}
+}, 100);
+
+const debounceScrollController = debounce(() => {
+	const scrollY = window.scrollY;
+
+	if (scrollY > 400) {
+		header.classList.add('scrolled');
+	} else {
+		header.classList.remove('scrolled');
+	}
+}, 20);
+
+const debounceWheel = debounce((e) => {
+	wheelHandler(e, swipeForbidEl);
+}, 150);
 
 // event listeners
 window.addEventListener(
 	'load',
 	() => {
 		setTimeout(() => {
-			smoothNavigate(linkList[currPage], navigationsCallbacks);
+			pageSwitchEvent(linkList[currPage]);
 		}, 1);
 	},
 	{once: true}
 );
 
-const debounceScroll = debounce(() => {
-	smoothNavigate(linkList[currPage], navigationsCallbacks);
-}, 250);
+window.addEventListener('pageSwitch', (e) => {
+	const id = e.detail.pageId;
 
-window.addEventListener('resize', () => {
-	debounceScroll();
+	if (id) {
+		pageSwitchCallback(id);
+	}
 });
-
-const debounceWheel = debounce((e) => {
-	wheelHandler(e, swipeForbidEl);
-}, 150);
 
 if ('onwheel' in document) {
 	window.addEventListener('wheel', debounceWheel);
 } else if ('onmousewheel' in document) {
 	window.addEventListener('mousewheel', debounceWheel);
 }
+
+window.addEventListener('resize', debouncePageCorrection);
+
+window.addEventListener('scroll', debounceScrollController);

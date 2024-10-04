@@ -92,11 +92,23 @@ header {
 }
 @media (max-width: 768px) {
 	.desc-wrapper {
-		left: 30px;
-		top: 12px;
-		right: 30px;
-		height: 45px;
+		// left: 30px;
+		// top: 12px;
+		// right: 30px;
+		left: 0;
+		top: 0;
+		right: 0;
+		padding: 12px 30px;
+		height: auto;
 		grid-template-columns: auto;
+		transition: all 0.3s ease-out;
+
+		&.scrolled {
+			backdrop-filter: blur(5px);
+			border-bottom: 1px solid $bg-color;
+			border-image: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 100%);
+			border-image-slice: 1;
+		}
 	}
 	.desc-menu-wrapper {
 		display: none;

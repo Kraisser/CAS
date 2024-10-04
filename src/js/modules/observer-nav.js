@@ -1,4 +1,4 @@
-export default function observerNav(observedEntriesSelector, callback) {
+export default function observerNav(observedEntriesSelectors, callback) {
 	const observer = new IntersectionObserver(
 		(entries) => {
 			entries.forEach((entry) => {
@@ -8,10 +8,14 @@ export default function observerNav(observedEntriesSelector, callback) {
 			});
 		},
 		{
-			threshold: 0.1,
+			threshold: 0.6,
 		}
 	);
 
-	const target = document.querySelector(`#${observedEntriesSelector}`);
-	observer.observe(target);
+	if (observedEntriesSelectors) {
+		observedEntriesSelectors.forEach((item) => {
+			const target = document.querySelector(`#${item}`);
+			observer.observe(target);
+		});
+	}
 }
