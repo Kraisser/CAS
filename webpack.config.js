@@ -39,9 +39,9 @@ module.exports = {
 	},
 	output: {
 		path: path.resolve(__dirname, 'build'),
-		filename: '[name].bundle.js',
+		filename: '[name].bundle.[contenthash].js',
 		assetModuleFilename: 'assets/[name][ext]',
-		chunkFilename: '[id].chunk.js',
+		chunkFilename: '[id].chunk.[contenthash].js',
 		clean: true,
 	},
 	target,
